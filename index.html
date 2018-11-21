@@ -32,7 +32,14 @@
   </head>
 
    <body class="module-home" data-spy="scroll" data-target=".navbar">
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=109453656066856&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 	<!-- header -->
@@ -398,9 +405,7 @@
 
                     <nav role="footer-nav">
 
-                        <a href="#">Terms of Use </a>
-
-                        <a href="#">Privacy Policy</a>
+                        <div class="fb-like" data-href="https://facebook.com/aplyplatform" data-width="300" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
 
                     </nav>
 
