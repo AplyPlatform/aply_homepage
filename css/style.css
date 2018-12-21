@@ -2,13 +2,13 @@
 
 	Theme Name: Rooky
 
-	Template URI: 
+	Template URI:
 
-	Description: 
+	Description:
 
 	Author:
 
-	Author URI: 
+	Author URI:
 
 	License: GNU General Public License version 3.0
 
@@ -16,7 +16,7 @@
 
 	Version: 1.0
 
-	
+
 
 	1. Header
 
@@ -56,7 +56,7 @@
 
 	10. Footer
 
-		
+
 
 */
 
@@ -69,6 +69,35 @@ html {
 	-webkit-text-size-adjust: 100%;
 
 }
+
+.overlayLayer {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 *, *:before, *:after {
 
