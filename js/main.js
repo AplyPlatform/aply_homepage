@@ -1,11 +1,8 @@
-// When the DOM is ready, run this function
-$(window).load(function() {
-    // Animate loader off screen
-    //$(".loader").fadeOut("slow");
-    $(".overlayLayer").fadeOut("slow");
-    $(".loader").fadeOut("slow");
-});
 
+$(window).load(function() {
+  $("#loading").delay(500).fadeOut(800);
+  $("#loading-image").delay(500).fadeOut(800);
+});
 
 $(document).ready(function() {
 
@@ -16,7 +13,6 @@ $(document).ready(function() {
 	$(window).resize(function(){'use strict',
 		$('#headere-top figure .item').css('height',slideHeight);
 	});
-
 
 
   //Scroll Menu
