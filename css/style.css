@@ -258,11 +258,11 @@ transition-duration: 0.8s;transition-property: all;transition-timing-function: e
 
 
 
-header[role="header"].header-top .navbar-fixed-top{background-color:rgba(0,0,0,1); padding:5px 0}
+header[role="header"].header-top .navbar-fixed-top{background-color:rgba(0,0,0,0.3); padding:5px 0}
 
 header[role="header"].header-top .navbar-fixed-top .container{ padding-top:0; position:static}
 
-header[role="header"].header-top .navbar-fixed-top h1 img{ width:80px}
+header[role="header"].header-top .navbar-fixed-top h1 img{ width:80px;}
 
 header[role="header"].header-top .navbar-fixed-top nav{ padding-top:7px}
 

@@ -23,7 +23,7 @@
 	header.header-top[role="header"] hgroup nav { margin-top:0}
 	header.header-top[role="header"] hgroup nav .navbar-toggle{ position:absolute; margin:0; top:-33px; right:15px}
 
-	header.header-top[role="header"] .navbar-fixed-top h1 img{ width:80px; top:20px;}
+	header.header-top[role="header"] .navbar-fixed-top h1 img{ width:80px; top:50px;}
 	header.header-top[role="header"] hgroup nav ul{ text-align:center; background-color:rgba(0,0,0,0.8); padding:10px}
 	header.header-top[role="header"] hgroup nav ul > li{ display:block;}
 	.section-two section article{ padding-left:0; padding-right:0; padding-top:0px}
