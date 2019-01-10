@@ -21,9 +21,9 @@
 	header.header-top[role="header"] section a{ font-size:14px; padding:0 20px; line-height:55px}
 	header.header-top[role="header"] hgroup{ position:relative}
 	header.header-top[role="header"] hgroup nav { margin-top:0}
-	header.header-top[role="header"] hgroup nav .navbar-toggle{ position:absolute; margin:0; top:-48px; right:15px}
+	header.header-top[role="header"] hgroup nav .navbar-toggle{ position:absolute; margin:0; top:-33px; right:15px}
 
-	header.header-top[role="header"] .navbar-fixed-top h1 img{ width:60%}
+	header.header-top[role="header"] .navbar-fixed-top h1 img{ width:80px; top:20px;}
 	header.header-top[role="header"] hgroup nav ul{ text-align:center; background-color:rgba(0,0,0,0.8); padding:10px}
 	header.header-top[role="header"] hgroup nav ul > li{ display:block;}
 	.section-two section article{ padding-left:0; padding-right:0; padding-top:0px}
