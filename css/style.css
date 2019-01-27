@@ -168,6 +168,64 @@ blockquote:before, blockquote:after, q:before, q:after {
 
 }
 
+
+.gtco-services {
+  padding: 7em 0;
+}
+.gtco-services .service {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  padding: 2em;
+  margin-bottom: 30px;
+  position: relative;
+  background: #fff;
+  -webkit-box-shadow: 0px 22px 68px -9px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 22px 68px -9px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 22px 68px -9px rgba(0, 0, 0, 0.15);
+  bottom: 0;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+@media screen and (max-width: 992px) {
+  .gtco-services .service {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+.gtco-services .service h3 {
+  font-size: 18px;
+  color: #000;
+  text-align: left;
+  position: relative;
+  padding-left: 30px;
+}
+.gtco-services .service h3 i {
+  position: absolute;
+  left: 0;
+  top: -0.1em;
+  color: #6770b0;
+  font-size: 22px !important;
+}
+.gtco-services .service p {
+  text-align: left;
+  color: #898989;
+  font-size: 15px;
+}
+.gtco-services .service p:last-child {
+  margin-bottom: 0;
+}
+.gtco-services .service.changed {
+  bottom: -7em;
+}
+@media screen and (max-width: 768px) {
+  .gtco-services .service.changed {
+    bottom: 0;
+  }
+}
+
 .clear {
 
 	clear: both;
@@ -310,7 +368,7 @@ header[role="title-page"] h2,header[role="title-page"] h2{ color:#000; font-size
 
 /*== Section One ==*/
 
-.section-one{ padding-top:87px}
+.section-one{ background-color: #6770b0; padding-top:87px}
 
 .section-one article{ padding-top:36px}
 
@@ -334,7 +392,7 @@ header[role="title-page"] h2,header[role="title-page"] h2{ color:#000; font-size
 
 /*== Section Two ==*/
 
-.section-two{ background-color:#f7f7f8; margin-top:80px; overflow:hidden}
+.section-two{ background-color:#ffffff;; margin-top:80px; overflow:hidden}
 
 .section-two section figure{background-position:50% 0; background-size:cover; background-repeat:no-repeat; background-attachment:fixed; min-height:593px}
 
@@ -394,7 +452,7 @@ header[role="title-page"] h2,header[role="title-page"] h2{ color:#000; font-size
 
 /*== Section Three ==*/
 
-.section-three{ background-color:#6770b0; padding-top:87px; padding-bottom:156px}
+.section-three{ background-color:#6770b0; padding-top:80px; padding-bottom:80px}
 
 .section-three header[role="title-page"]{ padding-bottom:83px}
 
@@ -428,7 +486,7 @@ transform:scale(1.1);}
 
 /*== Section Three ==*/
 
-.section-four{ padding-top:86px; padding-bottom:102px; background-color:#f7f7f8}
+.section-four{ padding-top:86px; padding-bottom:102px; background-color: #6770b0;}
 
 .section-four header[role="title-page"]{ padding-bottom:63px}
 
@@ -452,7 +510,7 @@ transform:scale(1.1); opacity:0.8}
 
 /*== Section Five ==*/
 
-.section-five{ background-color:#6770b0; padding-top:87px; padding-bottom:102px}
+.section-five{ background-color:#ffffff; padding-top:80px; padding-bottom:80px}
 
 .section-five header[role="title-page"]{ padding-bottom:49px}
 
@@ -500,7 +558,7 @@ border-bottom-right-radius: 3px;}
 
 /*== Section Six ==*/
 
-.section-six{padding-top:87px;}
+.section-six {padding-top:80px; padding-bottom: 80px;}
 
 .contact-form{ padding-left:184px; padding-right:186px; margin-top:63px; padding-bottom:20px}
 
