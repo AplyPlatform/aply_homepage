@@ -94,6 +94,11 @@ html {
   100% { transform: rotate(360deg); }
 }
 
+.logostyle {
+	margin-top : 6px;
+}
+
+
 *, *:before, *:after {
 
 	-webkit-box-sizing: border-box;
