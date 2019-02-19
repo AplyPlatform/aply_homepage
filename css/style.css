@@ -495,6 +495,7 @@ transform:scale(1.1);}
 
 .section-four header[role="title-page"]{ padding-bottom:63px}
 
+.section-seven{ padding-top:86px; padding-bottom:102px; background-color: #6770b0;}
 /* Team */
 
 .team-pan figure{ padding:5px; border:5px solid #6770b0; overflow:hidden; background-color:#FFF;}
