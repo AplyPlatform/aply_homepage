@@ -105,5 +105,37 @@ $(document).ready(function() {
 
           fixedContentPos: false
         });
-
+
+    	var changeWayPoint = function() {
+    		var i = 0;
+
+    		// $('.gtco-section').waypoint( function( direction ) {
+
+
+    			$('.animate-change').waypoint( function( direction ) {
+
+    				if( direction === 'down' && !$(this.element).hasClass('animated-fast') ) {
+
+    					i++;
+
+    					$(this.element).addClass('item-animate');
+    					setTimeout(function(){
+
+    						$('body .animate-change.item-animate').each(function(k){
+    							var el = $(this);
+    							setTimeout( function () {
+    								el.addClass('changed animated-fast');
+    								el.removeClass('item-animate');
+    							},  k * 100, 'easeInOutExpo' );
+    						});
+
+    					}, 100);
+
+    				}
+
+    			} , { offset: '85%' } );
+    		// }, { offset: '90%'} );
+    	};
+
+      changeWayPoint();
 });
