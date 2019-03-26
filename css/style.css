@@ -374,7 +374,11 @@ header[role="title-page"] h2,header[role="title-page"] h2{ color:#000; font-size
 
 /*== Section One ==*/
 
-.section-one{ background-color: #6770b0; padding-top:87px}
+.section-one{
+	background: url("../images/section-one.jpg") no-repeat;
+  background-size:cover;
+	padding-top:87px
+}
 
 .section-one article{ padding-top:36px}
 
@@ -492,11 +496,17 @@ transform:scale(1.1);}
 
 /*== Section Three ==*/
 
-.section-four{ padding-top:86px; padding-bottom:102px; background-color: #6770b0;}
+.section-four{ padding-top:86px; padding-bottom:102px;
+	background: url("../images/section-four.jpg") no-repeat;
+	background-size:cover;
+}
 
 .section-four header[role="title-page"]{ padding-bottom:63px}
 
-.section-seven{ padding-top:86px; padding-bottom:102px; background-color: #6770b0;}
+.section-seven{ padding-top:86px; padding-bottom:102px;
+	background: url("../images/section-seven.jpg") no-repeat;
+	background-size:cover;
+}
 /* Team */
 
 .team-pan figure{ padding:5px; border:5px solid #6770b0; overflow:hidden; background-color:#FFF;}
