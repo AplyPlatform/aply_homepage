@@ -1,437 +1,542 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130136264-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-<html>
+          gtag('config', 'UA-130136264-2');
+        </script>
 
-  <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130136264-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-  gtag('config', 'UA-130136264-2');
-</script>
+        <meta property="og:title" content="APLY - Advanced platform to fly"/>
+        <meta property="og:image" content="https://www.aply.biz/images/aply_fb.jpg"/>
+        <meta property="og:url" content="https://www.aply.biz"/>
+        <meta property="og:site_name" content="APLY"/>
+        <meta property="og:description" content="We will fly high"/>
+        <title>Advanced Platform to fLY | APLY Inc. | 주식회사 어플라이</title>
+        <!-- Favicons-->
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <title>Aply - Advanced Platform to fLY</title>
-    <meta property="og:title" content="APLY - Advanced platform to fly"/>
-    <meta property="og:image" content="https://www.aply.biz/images/aply_fb.jpg"/>
-    <meta property="og:url" content="https://www.aply.biz"/>
-    <meta property="og:site_name" content="APLY"/>
-    <meta property="og:description" content="We will fly high"/>
-
-    <!-- style -->
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <!-- carousel -->
-    <link href="css/owl.carousel.css" rel="stylesheet" type="text/css">
-    <!-- responsive -->
-    <link href="css/responsive.css" rel="stylesheet" type="text/css">
-    <!-- font-awesome -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- font-awesome -->
-    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
-    <link href="css/popup.css" rel="stylesheet" type="text/css">
-  </head>
-
-   <body class="module-home" data-spy="scroll" data-target=".navbar">
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=109453656066856&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-	<!-- header -->
-
-    	<header role="header" class="header-top" id="headere-top">
-
-
-
-        	<div class="header-fixed-wrapper" role="header-fixed">
-
-                <div class="container">
-
-                    <!-- hgroup -->
-
-                    <hgroup class="row">
-
-                        <!-- logo -->
-
-                        <div class="col-xs-5 col-sm-2 col-md-2 col-lg-2 logostyle">
-
-                            <h1>
-
-                                <a href="#headere-top" title="Rooky"><img src="images/logo.png" width="100px" alt="Rooky" title="Rooky"/></a>
-
-                            </h1>
-
-                        </div>
-
-                        <!-- logo -->
-
-                        <!-- nav -->
-
-                        <nav role="navigation" class="col-xs-12 col-sm-10 col-md-10 col-lg-10 navbar navbar-default">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-
-                            <div id="navbar" class="navbar-collapse collapse">
-                                <ul class="nav navbar-nav">
-                                    <li class="active"><a href="#headere-top" title="Home">홈</a></li>
-                                    <li><a href="#section-one" title="Overview">소개</a></li>
-                                    <li><a href="#section-four" title="History">연혁</a></li>
-                                    <li><a href="#section-two" title="Team">팀</a></li>
-                                    <li><a href="https://blog.aply.biz" target="_new" title="BLOG">블로그</a></li>
-                                    <li><a href="#section-seven" title="Location">찾아오시는길</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-
-                        <!-- nav -->
-
-                    </hgroup>
-
-                    <!-- hgroup -->
-
-                  </div>
-
+        <!-- Web Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300|Poppins:400,500,600%7cPlayfair+Display:400i" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <!-- Plugins-->
+        <link href="assets/css/plugins.min.css" rel="stylesheet">
+        <!-- Template core CSS-->
+        <link href="assets/css/template.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=109453656066856&autoLogAppEvents=1';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Preloader-->
+        <div class="page-loader">
+            <div class="page-loader-inner">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
             </div>
+        </div>
+        <!-- Preloader end-->
 
-            <!-- banner Text -->
+        <!-- Header-->
+        <header class="header header-transparent">
+            <div class="container-fluid">
+                <!-- Brand-->
+                <div class="inner-header"><a class="inner-brand" href="index.html"><img src="assets/images/logo.png" border=0 width=70></a></div>
+                <!-- Navigation-->
+                <div class="inner-navigation collapse">
+                    <div class="inner-nav">
+                        <ul>
+                            <li><a href="#"><span class="menu-item-span">홈</span></a>
+                            </li>
+                            <li><a href="#section-about"><span class="menu-item-span">소개</span></a>
+                            </li>
+                            <li><a href="#section-history"><span class="menu-item-span">연혁</span></a>
+                            </li>
+                            <li><a href="#section-team"><span class="menu-item-span">팀</span></a>
+                            </li>
+                            <li><a href="https://blog.aply.biz" target="new"><span class="menu-item-span">블로그</span></a>
+                            </li>
+                            <li><a href="#section-location"><span class="menu-item-span">찾아오시는길</span></a>
+                            </li>
 
-                 <section class="text-center">
-
-                    <h2><br></h2>
-
-                    <p>Advanced Platform to fLY</p>
-                </section>
-
-
-
-
-
-            <!-- banner Text -->
-
-
-
-            <!-- banner image -->
-
-        	<figure>
-
-							<div class="parallax-window item tp-banner-container" data-parallax="scroll" data-image-src="./images/main_title.jpg" data-jarallax-video="https://www.youtube.com/watch?v=https://youtu.be/sJRjsIhRhhk" data-overlay="0.45">
-                <div id="loading">
-                  <div class="loader"></div>
+                        </ul>
+                    </div>
                 </div>
-              </div>
-
-
-          </figure>
-
-            <!-- banner image -->
-
+                <div class="extra-nav">
+                    <ul>
+                        <li class="nav-toggle"><a href="#" data-toggle="collapse" data-target=".inner-navigation"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>
+                    </ul>
+                </div>
+            </div>
         </header>
+        <!-- Header end-->
 
-    <!-- header -->
-
-
-
-    <!-- main -->
-
-    	<main role="main" id=" main-wrapper">
-
-
-
-            <!-- top pan -->
-        	<!-- top pan -->
-
-
-
-            <!-- section-one -->
-
-            <section class="section-one text-center" id="section-one">
-
-            	<div class="container">
-
-                    <article>
-
-                    	<h4><font color=#ffffff>APLY는 보다 진보된 기술로 재미있고 멋진 서비스를 연구하고 개발합니다</font></h4>
-
-                    </article>
-
-                    <div class="row four-box-pan gtco-services" role="four-box">
-                        <div class="col-md-4 col-sm-4 service-wrap">
-              						<div class="service">
-              						<h3><i class="fa fa-paper-plane"></i> 드론 기술</h3>
-                          <p>드론 기술을 활용하여 각종 활동에 도움이 되는 서비스를 개발합니다</p>
-                          <p><img src="./images/cat_drone.png" class="imgstyle"></p>
-              						</div>
-              					</div>
-              					<div class="col-md-4 col-sm-4 service-wrap">
-              						<div class="service animate-change">
-              						<h3><i class="fa fa-magic"></i> 감성소통 기술</h3>
-                          <p>아주 감성적이며 재미있는 소통 기술을 연구하고 개발합니다</p>
-                          <p><img src="./images/cat_emotion.png" class="imgstyle"></p>
-              						</div>
-              					</div>
-                        <div class="col-md-4 col-sm-4 service-wrap">
-              						<div class="service">
-              						<h3><i class="fa fa-calculator"></i> 빅데이터/인공지능 기술</h3>
-                          <p>데이터를 이해하고, 가치를 발굴하고, 인사이트를 얻고, 인공지능까지 디자인 합니다</p>
-                          <p><img src="./images/cat_data.png" class="imgstyle"></p>
-              						</div>
-              					</div>
+        <!-- Wrapper-->
+        <div class="wrapper">
+            <!-- Hero-->
+            <section class="module-cover parallax fullscreen text-center" data-background="assets/images/module-2.jpg" data-jarallax-video="https://youtube.com/watch?v=sJRjsIhRhhk" data-overlay="0.45">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Advanced Platform <br> to Fly</strong></h1>
+                            <!-- <p class="m-b-40">APLY는 보다 진보된 기술로 재미있고 멋진 서비스를 연구하고 개발합니다</p> -->
+                        </div>
                     </div>
                 </div>
-
             </section>
+            <!-- Hero end-->
 
-
-            <section class="section-five" id="section-five">
-              <div class="container">
-                  <div class="gtco-services" role="four-box">
-                    <div class="row row-pb-sm">
-                        <div class="col-md-4 col-sm-4 service-wrap">
-                          <div class="service">
-                          <h3><i class="fa fa-paperclip"></i> APLY가 개발중인 앱과 서비스</h3>
-                          <p>- <a href="https://top.dkdk.io" target="new">두근두근</a> : 온라인상의 친구에게 심박패턴을 전달하는 감성앱</p>
-                          <p>
-                            <a href="https://top.dkdk.io" target="new"><i class="fa fa-external-link"></i></a>&nbsp;&nbsp;
-                            <a href="https://www.facebook.com/dkdkheart/" target="new"><i class="fa fa-facebook"></i></a>
-                          </p>
-                          <p><br></p>
-                          <p>- <a href="https://drdr.io" target="new">두런두런</a> : 논/밭의 이야기를 담는 감성 브랜딩 서비스</p>
-                          <p>
-                            <a href="https://drdr.io" target="new"><i class="fa fa-external-link"></i></a>&nbsp;&nbsp;
-                            <a href="https://www.facebook.com/두런두런-334464897347449" target="new"><i class="fa fa-facebook"></i></a>&nbsp;&nbsp;
-                            <a href="https://www.instagram.com/drdr_aply/" target="new"><i class="fa fa-instagram"></i></a>
-                          </p>
-                          <p><br></p>
-                          <p>- <a href="#">드로미</a> : 드론, 센서박스 등을 활용하여 논/밭의 작황/병충해 상태를 모니터링 하는 서비스</p>
-                          </div>
+            <!-- About-->
+            <section class="module divider-bottom" id="section-about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 m-auto text-center">
+                            <h3>APLY는 보다 진보된 기술로 재미있고 멋진 서비스를 연구하고 개발합니다</h3>
+                            <p class="lead">드론, 감성소통, 빅데이터, 인공지능 기술을 기반으로 많은 분들에게 도움이 되는 재미있는 서비스를 만듭니다</p>
                         </div>
-                        <div class="col-md-4 col-sm-4 service-wrap">
-                          <div class="service animate-change">
-                          <h3><i class="fa fa-paperclip"></i>  APLY가 후원하는 커뮤니티</h3>
-                          <p>- <a href="https://top.droneplay.io/" target="new">DronePlay</a> : 드론을 세계일주 시키기위한 모임</p>
-                          <p>
-                            <a href="https://top.droneplay.io" target="new"><i class="fa fa-external-link"></i></a>&nbsp;&nbsp;
-                            <a href="https://www.facebook.com/groups/droneplay/" target="new"><i class="fa fa-facebook"></i></a>
-                          </p>
-                          <p><br></p>
-                          <p>- <a href="https://www.facebook.com/noonting2019" target="new">온라인눈싸움 (눈팅)</a> : 온라인으로 눈싸움을 하는 게임 제작 모임</p>
-                          <p>
-                            <a href="https://www.facebook.com/noonting2019" target="new"><i class="fa fa-external-link"></i></a>&nbsp;&nbsp;
-                            <a href="https://www.facebook.com/noonting2019" target="new"><i class="fa fa-facebook"></i></a>
-                          </p>
-                          </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 service-wrap">
-                          <div class="service">
-                            <h3><i class="fa fa-paperclip"></i> APLY의 파트너</h3>
-
-                            <p>- <a href="http://www.creativehongsee.com/" target=new>크리에이티브 홍시</a></p>
-
-                            <p>- <a href="https://blog.naver.com/essong1225" target=new>티아이피 특허법률 사무소</a></p>
-
-                            <p>- <a href="http://appsosystem.com" target=new>(주)앱소</a></p>
-
-                            <p>- <a href="http://koworc.kr" target=new>한국창의여성연구협동조합</a></p>
-
-                            <p>- <a href="https://www.mss.go.kr" target=new>중소벤처기업부</a></p>
-
-                            <p>- <a href="https://www.kibo.or.kr:444/" target=new>기술보증기금</a></p>
-
-                            <p>- <a href="http://koworc.kr" target=new>강원도립대학교</a></p>
-
-                            <p>- <a href="https://m.blog.naver.com/PostList.nhn?blogId=107whos" target=new>청년농부 이호승 (홍천)</a></p>
-
-                            <p>- <a href="https://www.instagram.com/fl_ember" target=new>청년농부 김현승 (파주)</a></p>
-
-                            <p>- <a href="http://cpworks.co.kr" target=new>체리픽웍스</a></p>
-
-                          </div>
-                        </div>
-                        <div class="clearfix visible-md-block visible-sm-block"></div>
                     </div>
-
-                  </div>
-              </div>
-
-            </section>
-
-
-            <section class="section-four" id="section-four">
-            	<div class="container">
-                <header role="title-page" class="text-center">
-                    <h4><font color=#ffffff>연혁</font></h4>
-                      <font color=#ffffff>
-                        <p>2019-02 체리픽웍스(주)와 제휴협약, 청년농부 김현승님과 제휴협약</p>
-                        <p>2019-01 강원도립대와 제휴협약</p>
-                        <p>2018-12 기술보증기금 자금유치, 청년농부 이호승님과 제휴협약</p>
-                        <p>2018-09 법인설립</p>
-                        <p>2018-08 K-Startup 기술혁신형 창업기업 지원사업 선정</p>
-                      </font>
-                </header>
-            </section>
-
-
-            <!-- section-one -->
-            <section class="section-two" id="section-two">
-
-              <div class="container">
-                  <div class="row four-box-pan gtco-services" role="four-box">
-                      <div class="col-md-4 col-sm-4 service-wrap">
-                        <div class="service">
-                        <h3><i class="fa fa-paperclip"></i> 다양한 분야에 특화된 팀원들이 있습니다</h3>
-                        <p>- 인공지능/빅데이터/드론/해상 통신기술등을 두루 경험한 기술팀</p>
-                        <p>- 국가인재 관리, 통계분석, 과학기술 정책 연구 경험이 풍부한 기획팀</p>
-                        <p>- 철학과 이야기가 있는 사용자경험, 디자인을 꾸밀줄 아는 디자인팀</p>
-                        <p>- 정확하게 고객을 찾고 감동시킬 줄 아는 마케팅팀</p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-MY="60px"></div>
                         </div>
-                      </div>
-                      <div class="col-md-4 col-sm-4 service-wrap">
-                        <div class="service animate-change">
-                        <h3><i class="fa fa-paperclip"></i> 재미있게 일 합니다</h3>
-                        <p>- 좀 더 자랑스럽게 드러낼 수 있고</p>
-                        <p>- 더 많은 의미를 담을 수 있으며</p>
-                        <p>- 재미있게 일 하고자 노력합니다</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p><img src="assets/images/main/mega-mockup.png" alt=""></p>
                         </div>
-                      </div>
-                      <div class="col-md-4 col-sm-4 service-wrap">
-                        <div class="service">
-                        <h3><i class="fa fa-paperclip"></i> 기대보다 더 나은 가치를 제공합니다</h3>
-                        <p>- 이왕 무언가를 할거면 의미있고 재미있게</p>
-                        <p>- 효율보다는 효과를</p>
-                        <p>- 더 나은 가치와 사회적 기여를 생각하며 일을 즐깁니다</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-mY="30px"></div>
                         </div>
-                      </div>
-                  </div>
-              </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="icon-box text-center">
+                                <div class="icon-box-icon"><span class="fa fa-paper-plane"></span></div>
+                                <div class="icon-box-title">
+                                    <h6>드론 기술</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p>드론 기술을 활용하여 각종 활동에 도움이 되는 서비스를 개발합니다</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="icon-box text-center">
+                                <div class="icon-box-icon"><span class="fa fa-magic"></span></div>
+                                <div class="icon-box-title">
+                                    <h6>감성소통 기술</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p>아주 감성적이며 재미있는 소통 기술을 연구하고 개발합니다</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="icon-box text-center">
+                                <div class="icon-box-icon"><span class="fa fa-calculator"></span></div>
+                                <div class="icon-box-title">
+                                    <h6>빅데이터/인공지능 기술</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p>데이터를 이해하고, 가치를 발굴하고, 인사이트를 얻고, 인공지능까지 디자인 합니다</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
+            <!-- About end-->
+
+            <!-- Services-->
+            <section class="module">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="icon-box">
+                                <div class="icon-box-icon"><span class="ti-layout"></span></div>
+                                <div class="icon-box-title">
+                                    <h6>APLY가 개발중인 앱과 서비스</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p><a href="https://top.dkdk.io" target="new">두근두근</a> : 온라인상의 친구에게 심박패턴을 전달하는 감성앱</p>
+                                    <p>
+                                      <a href="https://top.dkdk.io" target="new"><i class="ti-link"></i></a>&nbsp;&nbsp;
+                                      <a href="https://www.facebook.com/dkdkheart/" target="new"><i class="ti-facebook"></i></a>
+                                    </p>
+                                    <p><a href="https://drdr.io" target="new">두런두런</a> : 논/밭의 이야기를 담는 감성 브랜딩 서비스</p>
+                                    <p>
+                                      <a href="https://drdr.io" target="new"><i class="ti-link"></i></a>&nbsp;&nbsp;
+                                      <a href="https://www.facebook.com/두런두런-334464897347449" target="new"><i class="ti-facebook"></i></a>&nbsp;&nbsp;
+                                      <a href="https://www.instagram.com/drdr_aply/" target="new"><i class="ti-instagram"></i></a>
+                                    </p>
+                                    <p><a href="#">드로미</a> : 드론, 센서박스 등을 활용하여 논/밭의 작황/병충해 상태를 모니터링 하는 서비스</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="icon-box">
+                                <div class="icon-box-icon"><span class="ti-comments-smiley"></span></div>
+                                <div class="icon-box-title">
+                                    <h6>APLY가 후원하는 커뮤니티</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                  <p><a href="https://top.droneplay.io/" target="new">DronePlay</a> : 드론을 세계일주 시키기위한 모임</p>
+                                  <p>
+                                    <a href="https://top.droneplay.io" target="new"><i class="ti-link"></i></a>&nbsp;&nbsp;
+                                    <a href="https://www.facebook.com/groups/droneplay/" target="new"><i class="ti-facebook"></i></a>
+                                  </p>
+
+                                  <p><a href="https://www.facebook.com/noonting2019" target="new">온라인눈싸움 (눈팅)</a> : 온라인으로 눈싸움을 하는 게임 제작 모임</p>
+                                  <p>
+                                    <a href="https://www.facebook.com/noonting2019" target="new"><i class="ti-link"></i></a>&nbsp;&nbsp;
+                                    <a href="https://www.facebook.com/noonting2019" target="new"><i class="ti-facebook"></i></a>
+                                  </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="icon-box">
+                                <div class="icon-box-icon"><span class="ti-user"></span></div>
+                                <div class="icon-box-title">
+                                    <h6>APLY의 파트너</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                  <p><a href="http://www.creativehongsee.com/" target=new>크리에이티브 홍시</a></p>
+                                  <p><a href="https://blog.naver.com/essong1225" target=new>티아이피 특허법률 사무소</a></p>
+
+                                  <p><a href="http://appsosystem.com" target=new>(주)앱소</a></p>
+
+                                  <p><a href="http://koworc.kr" target=new>한국창의여성연구협동조합</a></p>
+
+                                  <p><a href="https://www.mss.go.kr" target=new>중소벤처기업부</a></p>
+
+                                  <p><a href="https://www.kibo.or.kr:444/" target=new>기술보증기금</a></p>
+
+                                  <p><a href="http://koworc.kr" target=new>강원도립대학교</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="icon-box">
+                                <div class="icon-box-icon"><span class="ti-write" style="color:#fff"></span></div>
+                                <div class="icon-box-title">
+                                    <h6 style="color:#fff">__</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                  <p><a href="https://m.blog.naver.com/PostList.nhn?blogId=107whos" target=new>청년농부 이호승 (홍천)</a></p>
+
+                                  <p><a href="https://www.instagram.com/fl_ember" target=new>청년농부 김현승 (파주)</a></p>
+
+                                  <p><a href="http://cpworks.co.kr" target=new>체리픽웍스</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- Services end-->
+
+            <!-- Alt Services-->
+            <section class="module bg-gray" id="section-history">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6"><img src="assets/images/main/ipad.png" alt=""></div>
+                        <div class="col-lg-5 offset-lg-1">
+                            <h2>연혁</h2>
+                            <p class="lead">좀 더 재미있게, 즐겁게 일하기 위한 진보된 Platform이 걸어온 길</p>
+                            <div class="space" data-MY="50px"></div>
+                            <div class="icon-box icon-box-left">
+                                <div class="icon-box-icon"><span class="ti-alarm-clock"></span></div>
+                                <div class="icon-box-title">
+                                    <h6>2019-02</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p>체리픽웍스(주)와 제휴협약, 청년농부 김현승님과 제휴협약</p>
+                                </div>
+                            </div>
+                            <div class="icon-box icon-box-left">
+                                <div class="icon-box-icon"><span class="ti-alarm-clock"></span></div>
+                                <div class="icon-box-title">
+                                    <h6>2019-01</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p>강원도립대와 제휴협약</p>
+                                </div>
+                            </div>
+                            <div class="icon-box icon-box-left">
+                                <div class="icon-box-icon"><span class="ti-alarm-clock"></span></div>
+                                <div class="icon-box-title">
+                                    <h6>2018-12</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p>기술보증기금 자금유치, 청년농부 이호승님과 제휴협약</p>
+                                </div>
+                            </div>
+                            <div class="icon-box icon-box-left">
+                                <div class="icon-box-icon"><span class="ti-alarm-clock"></span></div>
+                                <div class="icon-box-title">
+                                    <h6>2018-09</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p>법인설립</p>
+                                </div>
+                            </div>
+                            <div class="icon-box icon-box-left">
+                                <div class="icon-box-icon"><span class="ti-alarm-clock"></span></div>
+                                <div class="icon-box-title">
+                                    <h6>2018-08</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p>K-Startup 기술혁신형 창업기업 지원사업 선정</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Alt Services end-->
+
+            <!-- Testimonials-->
+            <section class="module parallax" data-background="assets/images/about-1.jpg" data-overlay="0.5" id="section-team">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-MY="50px"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="review-slides owl-carousel">
+                                <div class="review">
+                                    <div class="review-icons">
+                                    </div>
+                                    <div class="review-content">
+                                        <blockquote>
+                                            <p>다양한 분야에 특화된 팀원들이 있습니다</p>
+                                            <footer class="blockquote-footer">
+                                            - 인공지능/빅데이터/드론/해상 통신기술등을 두루 경험한 기술팀<br>
+                                            - 국가인재 관리, 통계분석, 과학기술 정책 연구 경험이 풍부한 기획팀<br>
+                                            - 철학과 이야기가 있는 사용자경험, 디자인을 꾸밀줄 아는 디자인팀<br>
+                                            - 정확하게 고객을 찾고 감동시킬 줄 아는 마케팅팀
+                                          </footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div class="review">
+                                    <div class="review-icons">
+                                    </div>
+                                    <div class="review-content">
+                                        <blockquote>
+                                            <p>재미있게 일 합니다</p>
+                                            <footer class="blockquote-footer">
+                                            - 좀 더 자랑스럽게 드러낼 수 있고<br>
+                                            - 더 많은 의미를 담을 수 있으며<br>
+                                            - 재미있게 일 하고자 노력합니다</footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div class="review">
+                                    <div class="review-icons">
+                                    </div>
+                                    <div class="review-content">
+                                        <blockquote>
+                                            <p>기대보다 더 나은 가치를 제공합니다</p>
+                                            <footer class="blockquote-footer">
+                                              - 이왕 무언가를 할거면 의미있고 재미있게<br>
+                                              - 효율보다는 효과를<br>
+                                              - 더 나은 가치와 사회적 기여를 생각하며 일을 즐깁니다
+                                            </footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-MY="50px"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonials end-->
 
 
+            <!-- Posts-->
+            <section class="module">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 m-auto text-center">
+                            <h1>APLY 팀을 만나보세요</h1>
+                            <p class="lead">보다 즐겁고, 재미있게 일하는 진보된 플랫폼 -<br>APLY 팀원들의 이야기를 페이스북과 인스타그램에서 만나보세요</p>
+                            <a href="https://www.facebook.com/APLYPLATFORM"><i class="ti-facebook" aria-hidden="true"></i></a>&nbsp;&nbsp;
+                            <a href="https://www.instagram.com/aplyplatform"><i class="ti-instagram" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-MY="60px"></div>
+                        </div>
+                    </div>
+                    <div class="row row-post-masonry">
+                        <div class="col-md-6 post-item">
+                            <!-- Post-->
+                            <article class="post">
+                                <div class="post-preview"><a href="#"><img src="assets/images/blog/1.jpg" alt=""></a></div>
+                                <div class="post-wrapper">
+                                    <div class="post-content">
+                                        <div class="fb-page" data-href="https://www.facebook.com/aplyplatform" data-tabs="timeline" data-height="580" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/aplyplatform" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/aplyplatform">APLY</a></blockquote></div>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- Post end-->
+                        </div>
+                        <div class="col-md-6 post-item">
+                            <!-- Post-->
+                            <article class="post">
+                                <div class="post-preview"><a href="#"><img src="assets/images/blog/3.jpg" alt=""></a></div>
+                                <div class="post-wrapper">
 
-            <!-- section-five -->
-            <section class="section-six" id="section-six">
+                                    <div class="post-content">
+                                        <iframe src="https://snapwidget.com/embed/653802" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:330px; height:580px"></iframe>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- Post end-->
+                        </div>
 
-              <div class="container">
+                    </div>
+                </div>
+            </section>
+            <!-- Posts end-->
 
-                    <header role="title-page" class="text-center">
+            <!-- Counters-->
+            <section class="module bg-gray p-b-0" id="section-location">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
 
-                        <h4>APLY 팀을 만나보세요</h4>
+                          <font color="#ffffff">
+                      		    <h4 style="text-align:center">찾아오시는 길</h4>
+                      		    <h5><i class="ti-location-arrow" aria-hidden="true"></i> 서울특별시 강남구 강남대로 364, 패스트파이브(역삼동, 미왕빌딩) , 17층 / 06241<br>
+                      		    <i class="ti-headphone" aria-hidden="true"></i> 02-6956-0801 /
+                      		    <i class="ti-printer" aria-hidden="true"></i> 02-6954-1019<br>
+                      		    <i class="ti-email" aria-hidden="true"></i> contactus@aply.biz</h5>
+                          </font>
 
-                        <h5><font color=#333333>보다 즐겁고, 재미있게 일하는 진보된 플랫폼<br/>APLY 팀원들의 이야기를 페이스북과 인스타그램에서 만나보세요</h5>
-                        <br>
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3165.5249044228185!2d127.0271385!3d37.4955363!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1509dfe20ab%3A0xe52bb39be1ff4ba5!2z7Yyo7Iqk7Yq47YyM7J2067iMIOqwleuCqCAy7Zi47KCQ!5e0!3m2!1sko!2skr!4v1550571205107" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-                        <section role="socil-icons" class="socil-icons">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Counters end-->
 
-	                        <a href="https://www.facebook.com/APLYPLATFORM"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;&nbsp;
-                          <a href="https://www.instagram.com/aplyplatform"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <!-- Image-->
+            <section class="module no-gutters p-0">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12"><img src="assets/images/module-18.jpg" alt=""></div>
+                    </div>
+                </div>
+            </section>
+            <!-- Image end-->
 
-                    	  </section>
-                        <br>
+            <!-- Footer-->
+            <footer class="footer">
+                <div class="footer-widgets">
+                    <div class="container">
                         <div class="row">
-                              <div class="col-lg-6">
-                                <div class="fb-page" data-href="https://www.facebook.com/aplyplatform" data-tabs="timeline" data-height="580" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/aplyplatform" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/aplyplatform">APLY</a></blockquote></div>
-                                <br><br>
-                              </div>
-                              <div class="col-lg-6">
-                                <iframe src="https://snapwidget.com/embed/653802" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:330px; height:580px"></iframe>
-                              </div>
+                            <div class="col-md-3">
+                                <!-- Text widget-->
+                                <aside class="widget widget-text">
+                                    <div class="widget-title">
+                                        <h6>About Us</h6>
+                                    </div>
+                                    <div class="textwidget">
+                                        <p>보다 재미있게 일하기 위한 진보된 플랫폼 어플라이와 만나보세요.</p>
+                                        <p>
+                                            Location: 서울특별시 강남구 강남대로 364, 패스트파이브(역삼동, 미왕빌딩) , 17층 / 06241<br>
+                                            E-mail: contactus@aply.biz<br>
+                                            Phone: 02-6956-0801<br>
+                                        </p>
+                                        <ul class="social-icons">
+                                            <li><a href="https://www.instagram.com/aplyplatform"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="https://www.facebook.com/APLYPLATFORM"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><div class="fb-like" data-href="https://facebook.com/aplyplatform" data-width="200" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div></i>
+                                        </ul>
+                                    </div>
+                                </aside>
+                            </div>
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="col-md-3">
+                                <!-- Recent works-->
+                                <aside class="widget widget-recent-works">
+                                    <div class="widget-title">
+                                        <h6>Portfolio</h6>
+                                    </div>
+                                    <ul>
+                                        <li><a href="https://top.dkdk.io"><img src="assets/images/widgets/1.jpg" alt=""></a></li>
+                                        <li><a href="https://drdr.io"><img src="assets/images/widgets/2.jpg" alt=""></a></li>
+                                        <li><a href="#"><img src="assets/images/widgets/3.jpg" alt=""></a></li>
+
+                                    </ul>
+                                </aside>
+                            </div>
                         </div>
-                    </header>
-
-              </div>                    <!-- Team -->
-
-            </section>
-            <!-- section-six -->
-
-            <!-- section-seven -->
-            <section class="section-seven" id="section-seven">
-
-              <div class="container">
-                    <head role="title-page">
-                		    <font color="#ffffff">
-                		    <h4 style="text-align:center"><font color="#fff">찾아오시는 길</font></h4>
-                		    <h5><i class="fa fa-location-arrow" aria-hidden="true"></i> 서울특별시 강남구 강남대로 364, 패스트파이브(역삼동, 미왕빌딩) , 17층 / 06241<br>
-                		    <i class="fa fa-phone" aria-hidden="true"></i> 02-6956-0801 /
-                		    <i class="fa fa-fax" aria-hidden="true"></i> 02-6954-1019<br>
-                		    <i class="fa fa-mail-reply" aria-hidden="true"></i> contactus@aply.biz</h5>
-                		    </font>
-
-                			       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3165.5249044228185!2d127.0271385!3d37.4955363!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1509dfe20ab%3A0xe52bb39be1ff4ba5!2z7Yyo7Iqk7Yq47YyM7J2067iMIOqwleuCqCAy7Zi47KCQ!5e0!3m2!1sko!2skr!4v1550571205107" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-                    </head>
-      	      </div>
-
-	    </section>
-
-           <!-- footer -->
-
-           <footer role="footer" class="footer text-center">
-
-         	<div class="container">
-
-                    <div class="fb-like" data-href="https://facebook.com/aplyplatform" data-width="320" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div><br>
-                    <p class="copy">&copy; 2019 <a href=mailto:contactus@aply.biz>APLY Inc.</a> Made with <i class="fa fa-heart pulse"></i> by <a href="http://www.designstub.com/">Designstub</a></p>
-
+                    </div>
                 </div>
-
-           </footer>
-
-           <!-- footer -->
-
-        </main>
-
-    <!-- main -->
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-	<script src="js/jquery.min.js" type="text/javascript"></script>
-
-	<script src="js/parallax.min.js" type="text/javascript"></script>
-
-	<script type="text/javascript">
-
-    		$('.parallax-window').parallax({});
-
-	</script>
-
-	<script src="js/main.js" type="text/javascript"></script>
-
-	<script src="js/owl.carousel.js" type="text/javascript"></script>
-
-	<script src="js/custom.js" type="text/javascript"></script>
-
-	<script src="js/jquery.contact.js" type="text/javascript"></script>
-  <script src="js/jquery.waypoints.min.js" type="text/javascript"></script>
-
-	<script src="js/bootstrap.min.js" type="text/javascript"></script>
-
-	<script src="js/html5shiv.min.js" type="text/javascript"></script>
-
-	<script src="./js/custom/popper.min.js"></script>
-        <script src="./js/custom/plugins.min.js"></script>
-        <script src="./js/custom/custom.min.js"></script>
+                <div class="footer-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>© 2019 APLY Inc</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer end-->
+        </div>
+        <!-- Wrapper end-->
 
 
-  </body>
+        <!-- To top button--><a class="scroll-top" href="#top"><i class="fas fa-angle-up"></i></a>
 
+        <!-- Scripts-->
+        <script src="assets/js/custom/jquery-3.2.1.min.js"></script>
+        <script src="assets/js/custom/popper.min.js"></script>
+        <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+        <script src="assets/js/custom/plugins.min.js"></script>
+        <script src="assets/js/custom/custom.min.js"></script>
+    </body>
 </html>
