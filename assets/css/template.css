@@ -11324,6 +11324,13 @@ img.img-shadow,
     transition: all .3s ease-in-out;
 }
 
+.icon-box .icon-box-icon-wh {
+    font-size: 1.375rem;
+    margin: 0 0 10px;
+    color: #ffffff;
+    transition: all .3s ease-in-out;
+}
+
 .icon-box .icon-box-title h6 {
     margin: 0 0 12px;
 }
