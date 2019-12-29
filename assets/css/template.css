@@ -12939,7 +12939,8 @@ img.img-shadow,
 
 .module-cover {
     position: relative;
-    padding: 240px 0 240px;
+    padding: 240px 0 240px;    
+    height: 100vh !important;
 }
 
 .module-cover,
