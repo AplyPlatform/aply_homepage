@@ -11324,6 +11324,13 @@ img.img-shadow,
     transition: all .3s ease-in-out;
 }
 
+.icon-box .icon-box-icon-wh {
+    font-size: 1.375rem;
+    margin: 0 0 10px;
+    color: #ffffff;
+    transition: all .3s ease-in-out;
+}
+
 .icon-box .icon-box-title h6 {
     margin: 0 0 12px;
 }
@@ -12495,7 +12502,7 @@ img.img-shadow,
     .header,
     .header.header-small,
     .header.header-transparent {
-        background: #fff;
+        background: rgba(255, 255, 255, .7);
         border-bottom: 1px solid rgba(240, 240, 240, .8);
     }
 
@@ -12932,7 +12939,7 @@ img.img-shadow,
 
 .module-cover {
     position: relative;
-    padding: 240px 0 240px;
+    padding: 240px 0 240px;    
 }
 
 .module-cover,
