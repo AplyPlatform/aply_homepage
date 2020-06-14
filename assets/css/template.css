@@ -12502,8 +12502,8 @@ img.img-shadow,
     .header,
     .header.header-small,
     .header.header-transparent {
-        background: rgba(255, 255, 255, .7);
-        border-bottom: 1px solid rgba(240, 240, 240, .8);
+        background: rgba(255, 255, 255, 1);
+        border-bottom: 1px solid rgba(240, 240, 240, 1);
     }
 
     .header .inner-brand,
