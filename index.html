@@ -122,23 +122,25 @@
         <!-- Wrapper-->
         <div class="wrapper">
             <!-- Hero-->
-            <section class="module-cover parallax fullscreen text-center" data-background="assets/images/module-2.jpg" data-jarallax-video="https://youtube.com/watch?v=jVnmsM_8BEg" data-overlay="0.45">
-                <div class="container">
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4 class="ml15">
-															  <span class="word">Advanced Platform
-															  <span class="word">to FLY</span>
-														</h1>
-
-														<div class="col-md-10 m-auto text-center">
-                            	<h5>APLY는 보다 진보된 기술로 재미있고 멋진 서비스를 연구하고 개발합니다</h5>
-                        		</div>
-                        </div>
-                    </div>
+            <section class="module-cover parallax fullscreen text-center" data-background="assets/images/module-2.jpg" data-overlay="0.45">            	            	
+                <div class="container" id="ytbg" data-ytbg-fade-in="true" data-youtube="https://www.youtube.com/watch?v=jVnmsM_8BEg">                    
 
                 </div>
+                
+                <div class="container">
+	                <div class="row">
+	                        <div class="col-md-12">
+	                            <h4 class="ml15">
+																  <span class="word">Advanced Platform
+																  <span class="word">to FLY</span>
+															</h1>
+	
+															<div class="col-md-10 m-auto text-center">
+	                            	<h5>APLY는 보다 진보된 기술로 재미있고 멋진 서비스를 연구하고 개발합니다</h5>
+	                        		</div>
+	                        </div>
+	                    </div>
+	              </div>
             </section>
             <!-- Hero end-->
 
@@ -222,7 +224,10 @@
             </section>
 
 
-						<section class="module-cover parallax fullscreen text-center" data-background="assets/images/module-2.jpg" data-jarallax-video="https://youtube.com/watch?v=3pXgq7lEH1U" data-overlay="0.45" id="section-about">
+						<section class="module-cover parallax fullscreen text-center" data-background="assets/images/module-2.jpg" data-overlay="0.45" id="section-about">
+								<div class="container" id="ytbg2" data-ytbg-fade-in="true" data-youtube="https://www.youtube.com/watch?v=3pXgq7lEH1U">                    
+
+                </div>
                 <div class="container">
                 		<div class="row align-items-center">
                         <div class="col-lg-5">
@@ -1074,6 +1079,7 @@
         <script src="assets/js/custom/plugins.min.js"></script>
         <script src="assets/js/custom/custom.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <script src="assets/js/custom/jquery.youtube-background.js?v=1.0.7"></script>
         <script>
         	anime.timeline({loop: false})
 				  .add({
@@ -1084,6 +1090,12 @@
 				    duration: 800,
 				    delay: (el, i) => 1500 * i
 				  });
+				  
+				  
+					
+					$( document ).ready(function() {
+					    jQuery('[data-youtube]').youtube_background();
+					});
         </script>
     </body>
 </html>
