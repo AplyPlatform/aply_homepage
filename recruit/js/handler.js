@@ -62,8 +62,6 @@ function sendApplicationData(form_id, token)
 		type: "POST",
 		dataType : "jsonp",
 		url: 'https://duni.io/handler/handler.php' + sed,
-		data:sed,
-		enctype: 'multipart/form-data', // 필수
 		processData: false,
     contentType: false,
 		crossDomain:true,
