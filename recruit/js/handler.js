@@ -60,6 +60,7 @@ function sendApplicationData(form_id, token)
 		processData: false,
     contentType: false,
 		crossDomain:true,
+		jsonpCallback: "callback",
     cache: false,
 		success: function (data) {
 			if (data.result == "success") {
