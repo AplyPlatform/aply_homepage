@@ -1,7 +1,15 @@
 
-function showDialog(msg) {
+function showDialog(msg, callback) {
 	$('#askModalContent').text(msg);
 	$('#askModal').modal('show');
+
+	if (callback == null) return;
+
+	$('#askModalOKButton').off('click');
+	$('#askModalOKButton').click(function () {
+			$('#askModal').modal('hide');
+			callback();
+	});
 }
 
 function showPrivacyDialog() {
@@ -27,24 +35,24 @@ function sendApplicationData(form_id, token)
 
 	var form_name = $(form_id).find('input[name="form_name"]').val();
 	if (form_name == "") {
-		showDialog("성함을 입력해 주세요.");
+		showDialog("성함을 입력해 주세요.", null);
 		return false;
 	}
 
 	var form_phone = $(form_id).find('input[name="form_phone"]').val();
 	if (form_phone == "") {
-		showDialog("전화번호를 입력해 주세요.");
+		showDialog("전화번호를 입력해 주세요.", null);
 		return false;
 	}
 
 	var form_email = $(form_id).find('input[name="form_email"]').val();
 	if (form_email == "") {
-		showDialog("이메일을 입력해 주세요.");
+		showDialog("이메일을 입력해 주세요.", null);
 		return false;
 	}
 
 	if ($(form_id).find("#agree_1").length > 0 && $(form_id).find("#agree_1").is(":checked") == false) {
-		showDialog("개인정보 처리방침에 동의해주세요.");
+		showDialog("개인정보 처리방침에 동의해주세요.", null);
 		return false;
 	}
 
@@ -65,17 +73,16 @@ function sendApplicationData(form_id, token)
     cache: false,
 		success: function (data) {
 			if (data.result == "success") {
-				showDialog("신청이 완료되었습니다. 채용계획이 발생할 경우 검토 후 연락드리겠습니다!");
-
-				$(form_id)[0].reset();
-				location.href="/index.html";
+				showDialog("신청이 완료되었습니다. 채용계획이 발생할 경우 검토 후 연락드리겠습니다!", function(){
+					location.href="/index.html";
+				});
 				return;
 			}
 
 			$(form_id + " input").last().remove();
 		},
 		error: function(jqXHR, text, error){
-			showDialog("죄송합니다, 일시적인 오류가 발생하였습니다. 다시 시도 부탁드립니다.");
+			showDialog("죄송합니다, 일시적인 오류가 발생하였습니다. 다시 시도 부탁드립니다.", null);
 		}
 	});
 }
