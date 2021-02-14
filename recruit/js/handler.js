@@ -52,7 +52,7 @@ function sendApplicationData(form_id, token)
 	var ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');
 	$(form_id).append(ref);
 
-	var sed = "?form_name=" + encodeURIComponent(form_name) + "&form_phone=" + encodeURIComponent(form_phone)
+	var sed = "?form_kind='recruit'&form_name=" + encodeURIComponent(form_name) + "&form_phone=" + encodeURIComponent(form_phone)
 							+ "&form_email=" + encodeURIComponent(form_email) + "&form_token=" + encodeURIComponent(token)
 							+ "&ref=" + encodeURIComponent(document.referrer);
 	//var sed = new FormData($(form_id)[0]);
