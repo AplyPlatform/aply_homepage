@@ -60,8 +60,6 @@ function sendApplicationData(form_id, token)
 
 	$.ajax({
 		url: 'https://duni.io/handler/handler.php' + sed,
-		processData: false,
-    contentType: false,
 		crossDomain:true,
 		jsonpCallback: "callback",
     cache: false,
