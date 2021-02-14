@@ -59,8 +59,6 @@ function sendApplicationData(form_id, token)
 
 
 	$.ajax({
-		type: "POST",
-		dataType : "jsonp",
 		url: 'https://duni.io/handler/handler.php' + sed,
 		processData: false,
     contentType: false,
