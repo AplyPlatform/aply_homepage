@@ -61,8 +61,7 @@ function sendApplicationData(form_id, token)
 	$.ajax({
 		url: 'https://duni.io/handler/handler.php' + sed,
 		crossDomain: true,
-		dataType: "text",
-		jsonpCallback: "callback",
+		dataType: "json",
     cache: false,
 		success: function (data) {
 			if (data.result == "success") {
