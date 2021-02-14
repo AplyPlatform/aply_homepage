@@ -11,6 +11,7 @@ function showPrivacyDialog() {
 var appSent = false;
 function sendApplicationData(form_id, token)
 {
+	var min_type;
 	if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
 		min_type = "조종";
 	}
@@ -24,17 +25,20 @@ function sendApplicationData(form_id, token)
 		min_type = "체험";
 	}
 
-	if ($(form_id).find('input[name="form_name"]').val() == "") {
+	var form_name = $(form_id).find('input[name="form_name"]').val();
+	if (form_name == "") {
 		showDialog("성함을 입력해 주세요.");
 		return false;
 	}
 
-	if ($(form_id).find('input[name="form_phone"]').val() == "") {
+	var form_phone = $(form_id).find('input[name="form_phone"]').val();
+	if (form_phone == "") {
 		showDialog("전화번호를 입력해 주세요.");
 		return false;
 	}
 
-	if ($(form_id).find('input[name="form_email"]').val() == "") {
+	var form_email = $(form_id).find('input[name="form_email"]').val();
+	if (form_email == "") {
 		showDialog("이메일을 입력해 주세요.");
 		return false;
 	}
@@ -44,17 +48,20 @@ function sendApplicationData(form_id, token)
 		return false;
 	}
 
-	$(form_id).find('input[name="min_type"]').val(min_type);
-	$(form_id).find('input[name="form_token"]').val(token);
+	//$(form_id).find('input[name="form_token"]').val(token);
 	var ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');
 	$(form_id).append(ref);
 
-	var sed = new FormData($(form_id)[0]);
+	var sed = "?form_name=" + encodeURIComponent(form_name) + "&form_phone" + encodeURIComponent(form_phone)
+							+ "&form_email" + encodeURIComponent(form_email) + "&form_token" + encodeURIComponent(token)
+							+ "&ref" + encodeURIComponent(document.referrer);
+	//var sed = new FormData($(form_id)[0]);
+
 
 	$.ajax({
 		type: "POST",
 		dataType : "jsonp",
-		url: 'https://duni.io/handler/handler.php',
+		url: 'https://duni.io/handler/handler.php' + sed,
 		data:sed,
 		enctype: 'multipart/form-data', // 필수
 		processData: false,
@@ -64,7 +71,6 @@ function sendApplicationData(form_id, token)
     cache: false,
 		success: function (data) {
 			if (data.result == "success") {
-				appSent = true;
 				showDialog("신청이 완료되었습니다. 채용계획이 발생할 경우 검토 후 연락드리겠습니다!");
 
 				$(form_id)[0].reset();
