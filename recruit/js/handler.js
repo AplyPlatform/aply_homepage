@@ -53,12 +53,13 @@ function sendApplicationData(form_id, token)
 
 	$.ajax({
 		type: "POST",
-		dataType : "json",
+		dataType : "jsonp",
 		url: 'https://duni.io/handler/handler.php',
 		data:sed,
 		enctype: 'multipart/form-data', // 필수
 		processData: false,
     contentType: false,
+		crossDomain:true,
     cache: false,
 		success: function (data) {
 			if (data.result == "success") {
