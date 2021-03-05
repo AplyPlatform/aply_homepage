@@ -141,38 +141,62 @@
 														       <div class="collapse show" id="collapse-1" data-parent="#accordion1">
 														          <div class="accordion-item-body">
 														              <p>
-
-														              	<div style="color: rgb(32, 33, 36); font-family: Arial, Helvetica, sans-serif; font-size: small; background-color: rgb(255, 255, 255);">
-														              		<font color="#aaa">
-														              			<br>&nbsp;​________________________________________________________<br/>
-														              		</font>
-														              		<font color="#999999"><br/>&nbsp;&nbsp;<strong>김누구 (Someone Kim)</strong>&nbsp; |&nbsp;&nbsp;<strong>Ultra Super Commander</strong></font>
-														              		<br/>
-														              		<br/>&nbsp;
-														              		<em style="color: rgb(0, 0, 0);"><strong><font color="#999999"">APLY Inc.</font></strong></em>
-														              		<font color="#8e7cc3" style="font-size: x-small; font-family: arial, sans-serif;">
-														              		<br/>
-														              			&nbsp; &nbsp;<strong>T</strong>&nbsp;
-														              			<font color="#999999">+82-2-6956-0801&nbsp;</font>
-														              			<font color="#999999">&nbsp;|&nbsp;&nbsp;</font>
-														              			<font color="#8e7cc3"><strong>F</strong>&nbsp;</font>
-														              			<font color="#999999">+82-2-6468-2031&nbsp;</font>
-														              			<font color="#999999">&nbsp;|&nbsp;&nbsp;</font>
-														              			<strong>M</strong>&nbsp;
-														              			<font color="#999999">+82-10-1234-5678</font>
-														              		</font>														              															              	
-														              		<font size="1" color="#999999"><br/>&nbsp;&nbsp;
-														              			<a href="mailto:gunman@aply.biz" target="_blank" style="color: rgb(153, 153, 153);">someone@aply.biz</a>&nbsp; |&nbsp;&nbsp;
-														              		</font>
-														              		<a href="http://www.aply.biz/" target="_blank"><font style="font-family: arial, sans-serif;" color="#999999" size="1">www.aply.biz</font></a>														              		
-															              	<font size="1" style="font-family: arial, sans-serif;"><br />&nbsp;&nbsp;<br />
-															              		<strong><font color="#8e7cc3">&nbsp; &nbsp;Office</font></strong>
-															              		<font color="#999999">&nbsp;<br />&nbsp; &nbsp;04768 | 4F 115,&nbsp;Wangsimni-ro, Seongdong-gu, Seoul, Republic of Korea</font>
-															              	</font>														              	
-															              	<br><br>&nbsp;&nbsp;<a href="https://aply.biz/" target="_blank"><img src="https://aply.biz/assets/images/logo.png" width="96" height="30"/></a>
-															              	
+														              	<div>
+														              		
+														              		<form role="form" id="namecard">
+										                            <div class="row">
+										                                <div class="col-lg-6">
+										                                    <div class="form-group">
+										                                        <div class="form-control" style="padding-bottom:.05rem;">
+										                                        	<div class="row">
+						                                           						<div class="col-lg-6"><b>이름</b></div>
+						                                           						<input class="form-control" type="text" name="form_name" id="form_name" value="이건우" placeholder="한글 이름을 입력해 주세요." required="">
+						                                           				</div>
+										                                        </div>										                                        
+										                                    </div>
+										                                    <div class="form-group">
+										                                        <div class="form-control" style="padding-bottom:.05rem;">
+										                                        	<div class="row">
+						                                           						<div class="col-lg-6"><b>영문 이름</b></div>
+						                                           						<input class="form-control" type="text" name="form_engname" id="form_engname" value="Gunwoo Lee" placeholder="영문 이름을 입력해 주세요." required="">
+						                                           				</div>
+										                                        </div>										                                        
+										                                    </div>
+										                                    
+										                                    <div class="form-group">
+										                                        <div class="form-control" style="padding-bottom:.05rem;">
+										                                        	<div class="row">
+						                                           						<div class="col-lg-6"><b>직위/직책</b></div>
+						                                           						<input class="form-control" type="text" name="form_title" id="form_title" value="CEO/CTO" placeholder="직위/직책을 입력해 주세요." required="">
+						                                           				</div>
+										                                        </div>										                                        
+										                                    </div>
+										                                    
+										                                    <div class="form-group">
+										                                        <div class="form-control" style="padding-bottom:.05rem;">
+										                                        	<div class="row">
+						                                           						<div class="col-lg-6"><b>이메일</b> (abc@aply.biz)</div>
+						                                           						<input class="form-control" type="text" name="form_email" id="form_email" value="abc@aply.biz" placeholder="이메일을 입력해 주세요." required="">						                                           						
+						                                           				</div>
+										                                        </div>										                                        
+										                                    </div>
+										                                    <div class="form-group">
+										                                        <div class="form-control" style="padding-bottom:.05rem;">
+										                                        	<div class="row">
+						                                           						<div class="col-lg-6"><b>전화번호</b> (+82-10-1234-1234)</div>
+						                                           						<input class="form-control" type="text" name="form_number" id="form_number" value="+82-10-1234-5678" placeholder="전화번호를 입력해 주세요." required="">
+						                                           				</div>
+										                                        </div>										                                        
+										                                    </div>
+										                                </div> 
+										                                <div class="col-lg-6" id="sign_field"></div>
+										                            </div>
+										                          </form>
+														              		
 														              	</div>
-
+														              	
+														              	
+														              	
 														              </p>
 														          </div>
 														       </div>
@@ -431,6 +455,7 @@
         <script src="../assets/js/custom/custom.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
         <script src="../assets/js/custom/jquery.youtube-background.js?v=1.0.7"></script>
+        <script src="./js/aply_sign.js"></script>
         <script>
         	anime.timeline({loop: false})
 				  .add({
@@ -446,6 +471,7 @@
 
 					$( document ).ready(function() {
 					    jQuery('[data-youtube]').youtube_background();
+					    setSign();
 					});
         </script>
     </body>
