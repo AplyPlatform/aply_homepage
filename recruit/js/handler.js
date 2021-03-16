@@ -19,18 +19,24 @@ function showPrivacyDialog() {
 var appSent = false;
 function sendApplicationData(form_id, token)
 {
-	var min_type;
+	var min_type = "";
 	if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
-		min_type = "조종";
+		min_type = "/SW개발";
 	}
 	else if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
-		min_type = "코딩";
+		min_type = min_type + "/데이터 분석";
 	}
 	else if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
-		min_type = "제작";
+		min_type = min_type + "/HW개발";
 	}
 	else if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
-		min_type = "체험";
+		min_type = min_type + "/마케팅";
+	}
+	else if ($(form_id).find('input[name="min_type_5"]').is(":checked")) {
+		min_type = min_type + "/디자인";
+	}
+	else if ($(form_id).find('input[name="min_type_6"]').is(":checked")) {
+		min_type = min_type + "/기획";
 	}
 
 	var form_name = $(form_id).find('input[name="form_name"]').val();
@@ -60,8 +66,12 @@ function sendApplicationData(form_id, token)
 	var ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');
 	$(form_id).append(ref);
 
-	var sed = "?form_kind=recruit&form_name=" + encodeURIComponent(form_name) + "&form_phone=" + encodeURIComponent(form_phone)
-							+ "&form_email=" + encodeURIComponent(form_email) + "&form_token=" + encodeURIComponent(token)
+	var sed = "?form_kind=recruit&form_name="
+							+ encodeURIComponent(form_name)
+							+ "&form_phone=" + encodeURIComponent(form_phone)
+							+ "&form_email=" + encodeURIComponent(form_email)
+							+ "&form_token=" + encodeURIComponent(token)
+							+ "&min_type=" + encodeURIComponent(min_type)
 							+ "&ref=" + encodeURIComponent(document.referrer);
 	//var sed = new FormData($(form_id)[0]);
 
@@ -73,7 +83,7 @@ function sendApplicationData(form_id, token)
     cache: false,
 		success: function (data) {
 			if (data.result == "success") {
-				showDialog("신청이 완료되었습니다. 채용계획이 발생할 경우 검토 후 연락드리겠습니다!", function(){
+				showDialog("신청이 완료되었습니다. 채용계획이 발생할 경우 연락드리겠습니다!", function(){
 					location.href="/index.html";
 				});
 				return;
