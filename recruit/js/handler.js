@@ -23,19 +23,24 @@ function sendApplicationData(form_id, token)
 	if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
 		min_type = "/SW개발";
 	}
-	else if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
+
+	if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
 		min_type = min_type + "/데이터 분석";
 	}
-	else if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
+
+	if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
 		min_type = min_type + "/HW개발";
 	}
-	else if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
+
+	if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
 		min_type = min_type + "/마케팅";
 	}
-	else if ($(form_id).find('input[name="min_type_5"]').is(":checked")) {
+
+	if ($(form_id).find('input[name="min_type_5"]').is(":checked")) {
 		min_type = min_type + "/디자인";
 	}
-	else if ($(form_id).find('input[name="min_type_6"]').is(":checked")) {
+
+	if ($(form_id).find('input[name="min_type_6"]').is(":checked")) {
 		min_type = min_type + "/기획";
 	}
 
