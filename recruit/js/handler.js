@@ -66,7 +66,7 @@ function sendApplicationData(form_id, token)
 		return false;
 	}
 
-	//$(form_id).find('input[name="form_token"]').val(token);
+	$(form_id).find('input[name="form_token"]').val(token);
 	var ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');
 	$(form_id).append(ref);
 
@@ -79,11 +79,8 @@ function sendApplicationData(form_id, token)
 							+ "&min_type=" + encodeURIComponent(min_type)
 							+ "&ref=" + encodeURIComponent(document.referrer);
 	*/
-	
-	let form_kind = $('<input type="hidden" value="recruit" name="form_kind">');
-	$(form_id).append(form_kind);
+		
 	let sed = new FormData($(form_id)[0]);
-
 
 	$.ajax({
 		type: "POST",
