@@ -86,6 +86,7 @@ function sendApplicationData(form_id, token)
 
 
 	$.ajax({
+		type: "POST",
 		url: 'https://duni.io/handler/handler.php',
 		crossDomain: true,
 		dataType: "json",
