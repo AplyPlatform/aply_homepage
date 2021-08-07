@@ -101,7 +101,7 @@ function sendApplicationData(form_id, token)
 				});				
 			}
 			else {
-				showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.reason , null);
+				showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message , null);
 			}
 
 			$(form_id + " input").last().remove();
