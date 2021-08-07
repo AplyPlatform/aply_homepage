@@ -65,10 +65,14 @@ function sendApplicationData(form_id, token)
 		showDialog("개인정보 처리방침에 동의해주세요.", null);
 		return false;
 	}
-	
-	let ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');
-	$(form_id).append(ref);
+
 	$(form_id).find('input[name="form_token"]').val(token);
+	
+	let ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');	
+	$(form_id).append(ref);	
+	ref = $('<input type="hidden" value="' + min_type + '" name="min_type">');	
+	$(form_id).append(ref);	
+		
 	let sed = new FormData($(form_id)[0]);
 
 	$.ajax({
