@@ -18,7 +18,7 @@ function showPrivacyDialog() {
 var appSent = false;
 function sendApplicationData(form_id, token)
 {
-	var min_type = "";
+	let min_type = "";
 	if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
 		min_type = "/SW개발";
 	}
@@ -43,19 +43,19 @@ function sendApplicationData(form_id, token)
 		min_type = min_type + "/기획";
 	}
 
-	var form_name = $(form_id).find('input[name="form_name"]').val();
+	let form_name = $(form_id).find('input[name="form_name"]').val();
 	if (form_name == "") {
 		showDialog("성함을 입력해 주세요.", null);
 		return false;
 	}
 
-	var form_phone = $(form_id).find('input[name="form_phone"]').val();
+	let form_phone = $(form_id).find('input[name="form_phone"]').val();
 	if (form_phone == "") {
 		showDialog("전화번호를 입력해 주세요.", null);
 		return false;
 	}
 
-	var form_email = $(form_id).find('input[name="form_email"]').val();
+	let form_email = $(form_id).find('input[name="form_email"]').val();
 	if (form_email == "") {
 		showDialog("이메일을 입력해 주세요.", null);
 		return false;
@@ -65,21 +65,10 @@ function sendApplicationData(form_id, token)
 		showDialog("개인정보 처리방침에 동의해주세요.", null);
 		return false;
 	}
-
-	$(form_id).find('input[name="form_token"]').val(token);
-	var ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');
+	
+	let ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');
 	$(form_id).append(ref);
-
-	/*
-	var sed = "?form_kind=recruit&form_name="
-							+ encodeURIComponent(form_name)
-							+ "&form_phone=" + encodeURIComponent(form_phone)
-							+ "&form_email=" + encodeURIComponent(form_email)
-							+ "&form_token=" + encodeURIComponent(token)
-							+ "&min_type=" + encodeURIComponent(min_type)
-							+ "&ref=" + encodeURIComponent(document.referrer);
-	*/
-		
+	$(form_id).find('input[name="form_token"]').val(token);
 	let sed = new FormData($(form_id)[0]);
 
 	$.ajax({
