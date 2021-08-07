@@ -77,11 +77,11 @@ function sendApplicationData(form_id, token)
 		type: "POST",
 		dataType: "json",
 		url: 'https://duni.io/handler/handler.php',		
-		data : sed,
-		//processData: false,    
+		data : sed,		
 		crossDomain: true,
 		enctype: 'multipart/form-data',
-		contentType: false,
+		processData: false,
+   	contentType: false,
     cache: false,
 		success: function (data) {
 			if (data.result == "success") {
