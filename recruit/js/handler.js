@@ -78,7 +78,9 @@ function sendApplicationData(form_id, token)
 		dataType: "json",
 		url: 'https://duni.io/handler/handler.php',		
 		data : sed,
+		crossDomain: true,
 		enctype: 'multipart/form-data',
+		contentType: "application/json; charset=utf-8",
     cache: false,
 		success: function (data) {
 			if (data.result == "success") {
