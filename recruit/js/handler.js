@@ -67,24 +67,18 @@ function sendApplicationData(form_id, token)
 		return false;
 	}
 
-	//$(form_id).find('input[name="form_token"]').val(token);
+	$(form_id).find('#form_token').val(token);
 	var ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');
 	$(form_id).append(ref);
 
-	var sed = "?form_kind=recruit&form_name="
-							+ encodeURIComponent(form_name)
-							+ "&form_phone=" + encodeURIComponent(form_phone)
-							+ "&form_email=" + encodeURIComponent(form_email)
-							+ "&form_token=" + encodeURIComponent(token)
-							+ "&min_type=" + encodeURIComponent(min_type)
-							+ "&ref=" + encodeURIComponent(document.referrer);
-	//var sed = new FormData($(form_id)[0]);
-
+	var sed = new FormData($(form_id)[0]);
 
 	$.ajax({
-		url: 'https://duni.io/handler/handler.php' + sed,
-		crossDomain: true,
+		type: "POST",
 		dataType: "json",
+		url: 'https://duni.io/handler/handler.php',		
+		data : sed,
+		enctype: 'multipart/form-data',
     cache: false,
 		success: function (data) {
 			if (data.result == "success") {
