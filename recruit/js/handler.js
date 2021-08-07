@@ -81,7 +81,7 @@ function sendApplicationData(form_id, token)
 		processData: false,    
 		crossDomain: true,
 		enctype: 'multipart/form-data',
-		contentType: "application/json; charset=utf-8",
+		contentType: false,
     cache: false,
 		success: function (data) {
 			if (data.result == "success") {
