@@ -79,7 +79,10 @@ function sendApplicationData(form_id, token)
 							+ "&min_type=" + encodeURIComponent(min_type)
 							+ "&ref=" + encodeURIComponent(document.referrer);
 	*/
-	var sed = new FormData($(form_id)[0]);
+	
+	let form_kind = $('<input type="hidden" value="recruit" name="form_kind">');
+	$(form_id).append(form_kind);
+	let sed = new FormData($(form_id)[0]);
 
 
 	$.ajax({
