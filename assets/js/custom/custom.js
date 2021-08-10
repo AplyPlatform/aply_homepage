@@ -631,6 +631,13 @@
             speed: 0.4,
         });
 
+        function detectMob() {
+          return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
+        }
+
+        if (detectMob()) {
+          $("#ytbg2").attr("data-youtube", "https://www.youtube.com/watch?v=L6NgEkfEqHA");
+        }
     });
 
 })(jQuery);
