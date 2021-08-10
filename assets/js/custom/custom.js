@@ -632,7 +632,7 @@
         });
 
         function detectMob() {
-          return ( typeof window.orientation !== 'undefined' );
+          return !( Math.max($(window).width(), window.innerWidth) > 736 );
         }
 
         if (detectMob()) {
