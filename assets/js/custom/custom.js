@@ -633,7 +633,11 @@
             if ($(this).scrollTop() > 74) {
             		isTop = false;
                 $('.scroll-top').addClass('scroll-top-visible');                
-                $('#top_logo').attr("src", "assets/images/logo.png");
+                
+                if (currentLogoKind == 1) {
+                	$('#top_logo').attr("src", "assets/images/logo.png");
+                	currentLogoKind = 0;
+                }
             } else {
             		isTop = true;
                 $('.scroll-top').removeClass('scroll-top-visible');
