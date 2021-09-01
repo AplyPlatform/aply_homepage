@@ -5,6 +5,9 @@
 (function($){
 
     "use strict";
+    
+    let isMobileView = false;
+    let isTop = true;
 
     /* ---------------------------------------------- /*
      * Preloader
@@ -158,7 +161,14 @@
             var width    = Math.max($(window).width(), window.innerWidth);
 
             if ( width <= 991 ) {
-                $('body').removeClass('off-canvas-sidebar-open');
+            		isMobileView = true;
+                $('body').removeClass('off-canvas-sidebar-open');                                
+                $('#top_logo').attr("src", "assets/images/logo.png");
+            }
+            else {
+            		isMobileView = false;
+            		
+            		if (isTop) $('#top_logo').attr("src", "assets/images/logo_white.png");
             }
         });
 
@@ -611,10 +621,20 @@
         /* ---------------------------------------------- */
 
         $(window).scroll(function() {
-            if ($(this).scrollTop() > 100) {
-                $('.scroll-top').addClass('scroll-top-visible');
+            if ($(this).scrollTop() > 74) {
+            		isTop = false;
+                $('.scroll-top').addClass('scroll-top-visible');                
+                $('#top_logo').attr("src", "assets/images/logo.png");
             } else {
+            		isTop = true;
                 $('.scroll-top').removeClass('scroll-top-visible');
+                
+                if (isMobileView) {
+                	$('#top_logo').attr("src", "assets/images/logo.png");
+                }
+                else {
+                	$('#top_logo').attr("src", "assets/images/logo_white.png");
+                }
             }
         });
 
@@ -637,7 +657,23 @@
 
         if (detectMob()) {
           $("#ytbg2").attr("data-youtube", "https://www.youtube.com/watch?v=L6NgEkfEqHA");
+          isMobileView = true;                    
+          $('#top_logo').attr("src", "assets/images/logo.png");
         }
+        
+        anime.timeline({loop: false})
+				  .add({
+				    targets: '.ml15 .word',
+				    scale: [14,1],
+				    opacity: [0,1],
+				    easing: "easeOutCirc",
+				    duration: 800,
+				    delay: function(el, i) { 1500 * i }
+				  });
+					
+				$('[data-youtube]').youtube_background();
+				
+				
     });
 
 })(jQuery);

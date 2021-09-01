@@ -88,7 +88,7 @@
         <header class="header header-transparent">
             <div class="container-fluid">
                 <!-- Brand-->
-                <div class="inner-header"><a class="inner-brand" href="index.html"><img src="assets/images/logo.png" border=0 width=70></a></div>
+                <div class="inner-header"><a class="inner-brand" href="index.html"><img src="assets/images/logo_white.png" border=0 width=70 id="top_logo"></a></div>
                 <!-- Navigation-->
                 <div class="inner-navigation collapse">
                     <div class="inner-nav">
@@ -1192,24 +1192,9 @@
         <script src="assets/js/custom/jquery-3.2.1.min.js"></script>
         <script src="assets/js/custom/popper.min.js"></script>
         <script src="assets/js/bootstrap/bootstrap.min.js"></script>
-        <script src="assets/js/custom/plugins.min.js"></script>
-        <script src="assets/js/custom/custom.js"></script>
+        <script src="assets/js/custom/plugins.min.js"></script>        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
         <script src="assets/js/custom/jquery.youtube-background.js?v=1.0.7"></script>
-        <script>
-        	anime.timeline({loop: false})
-				  .add({
-				    targets: '.ml15 .word',
-				    scale: [14,1],
-				    opacity: [0,1],
-				    easing: "easeOutCirc",
-				    duration: 800,
-				    delay: function(el, i) { 1500 * i }
-				  });
-
-					$( document ).ready(function() {
-					    jQuery('[data-youtube]').youtube_background();
-					});
-        </script>
+        <script src="assets/js/custom/custom.js"></script>        
     </body>
 </html>
