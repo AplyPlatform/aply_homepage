@@ -172,9 +172,11 @@
             else {
             		isMobileView = false;
             		            		
-            		if (isTop && currentLogoKind == 0) {
-            			$('#top_logo').attr("src", "assets/images/logo_white.png");
-            			currentLogoKind = 1;
+            		if (isTop) {
+            			if (currentLogoKind == 0) {
+	            			$('#top_logo').attr("src", "assets/images/logo_white.png");
+	            			currentLogoKind = 1;
+	            		}
             		}
             }
         });
@@ -636,13 +638,17 @@
             		isTop = true;
                 $('.scroll-top').removeClass('scroll-top-visible');
                 
-                if (isMobileView && currentLogoKind == 1) {
-                	$('#top_logo').attr("src", "assets/images/logo.png");
-                	currentLogoKind = 0;
+                if (isMobileView) {
+                	if (currentLogoKind == 1) {
+	                	$('#top_logo').attr("src", "assets/images/logo.png");
+	                	currentLogoKind = 0;
+	                }
                 }
-                else if (currentLogoKind == 0) {
-                	$('#top_logo').attr("src", "assets/images/logo_white.png");
-                	currentLogoKind = 1;
+                else {
+                	if (currentLogoKind == 0) {
+	                	$('#top_logo').attr("src", "assets/images/logo_white.png");
+	                	currentLogoKind = 1;
+	                }
                 }
             }
         });
