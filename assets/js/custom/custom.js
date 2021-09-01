@@ -8,6 +8,7 @@
     
     let isMobileView = false;
     let isTop = true;
+    let currentLogoKind = 1; // 0 = original, 1 = white
 
     /* ---------------------------------------------- /*
      * Preloader
@@ -162,13 +163,19 @@
 
             if ( width <= 991 ) {
             		isMobileView = true;
-                $('body').removeClass('off-canvas-sidebar-open');                                
+                $('body').removeClass('off-canvas-sidebar-open');
+                
+                if (currentLogoKind == 0) return;
                 $('#top_logo').attr("src", "assets/images/logo.png");
+                currentLogoKind = 0;
             }
             else {
             		isMobileView = false;
-            		
-            		if (isTop) $('#top_logo').attr("src", "assets/images/logo_white.png");
+            		            		
+            		if (isTop && currentLogoKind == 0) {
+            			$('#top_logo').attr("src", "assets/images/logo_white.png");
+            			currentLogoKind = 1;
+            		}
             }
         });
 
@@ -629,11 +636,13 @@
             		isTop = true;
                 $('.scroll-top').removeClass('scroll-top-visible');
                 
-                if (isMobileView) {
+                if (isMobileView && currentLogoKind == 1) {
                 	$('#top_logo').attr("src", "assets/images/logo.png");
+                	currentLogoKind = 0;
                 }
-                else {
+                else if (currentLogoKind == 0) {
                 	$('#top_logo').attr("src", "assets/images/logo_white.png");
+                	currentLogoKind = 1;
                 }
             }
         });
@@ -659,6 +668,7 @@
           $("#ytbg2").attr("data-youtube", "https://www.youtube.com/watch?v=L6NgEkfEqHA");
           isMobileView = true;                    
           $('#top_logo').attr("src", "assets/images/logo.png");
+          currentLogoKind = 0;
         }
         
         anime.timeline({loop: false})
