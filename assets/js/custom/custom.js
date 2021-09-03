@@ -731,11 +731,11 @@
         // ——————————————————————————————————————————————————
 
         const phrases_title = [
-          'ADVANCED,',
+          'Advanced,',
           'PLATFORM',
           'TO',
           'TO FLY',
-          'ADVANCED PLATFORM TO FLY'
+          'Advanced platform to fly'
         ];
 
         const el = document.querySelector('.title_text');
