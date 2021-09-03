@@ -5,7 +5,7 @@
 (function($){
 
     "use strict";
-    
+
     let isMobileView = false;
     let isTop = true;
     let currentLogoKind = 1; // 0 = original, 1 = white
@@ -164,14 +164,14 @@
             if ( width <= 991 ) {
             		isMobileView = true;
                 $('body').removeClass('off-canvas-sidebar-open');
-                
+
                 if (currentLogoKind == 0) return;
                 $('#top_logo').attr("src", "assets/images/logo.png");
                 currentLogoKind = 0;
             }
             else {
             		isMobileView = false;
-            		            		
+
             		if (isTop) {
             			if (currentLogoKind == 0) {
 	            			$('#top_logo').attr("src", "assets/images/logo_white.png");
@@ -632,8 +632,8 @@
         $(window).scroll(function() {
             if ($(this).scrollTop() > 74) {
             		isTop = false;
-                $('.scroll-top').addClass('scroll-top-visible');                
-                
+                $('.scroll-top').addClass('scroll-top-visible');
+
                 if (currentLogoKind == 1) {
                 	$('#top_logo').attr("src", "assets/images/logo.png");
                 	currentLogoKind = 0;
@@ -641,7 +641,7 @@
             } else {
             		isTop = true;
                 $('.scroll-top').removeClass('scroll-top-visible');
-                
+
                 if (isMobileView) {
                 	if (currentLogoKind == 1) {
 	                	$('#top_logo').attr("src", "assets/images/logo.png");
@@ -670,30 +670,123 @@
             speed: 0.4,
         });
 
+
+        async function TypeAniInit () {
+          const node = document.querySelector("#title_text");
+
+          await sleep(1000);
+          node.innerText = "";
+          await node.type('Advanced ');
+
+          while (true) {
+            await node.type('Platform');
+            await sleep(2000);
+            await node.delete('Platform');
+            await node.type('Platform to fly');
+            await sleep(2000);
+            await node.delete('Platform to fly');
+          }
+        }
+
+        async function TypeAni1Init () {
+          const node = document.querySelector("#small_text_1");
+
+          await sleep(1000);
+          node.innerText = "";
+          await node.type('Drone');
+
+          while (true) {
+            await node.type(', ');
+            await sleep(2000);
+            await node.delete(', ');
+            await node.type(', Everywhere');
+            await sleep(2000);
+            await node.delete(', Everywhere');
+          }
+        }
+
+        async function TypeAni2Init () {
+          const node = document.querySelector("#small_text_2");
+
+          await sleep(1000);
+          node.innerText = "";
+          await node.type('Vision, ');
+
+          while (true) {
+            await node.type('AR, Bigdata');
+            await sleep(2000);
+            await node.delete('AR, Bigdata');
+            await node.type('AR, Bigdata, AI');
+            await sleep(2000);
+            await node.delete('AR, Bigdata, AI');
+          }
+        }
+
+        async function TypeAni3Init () {
+          const node = document.querySelector("#small_text_3");
+
+          await sleep(1000);
+          node.innerText = "";
+          await node.type('Emotional ');
+
+          while (true) {
+            await node.type('Communication');
+            await sleep(2000);
+            await node.delete('Communication');
+            await node.type('Communication Technology');
+            await sleep(2000);
+            await node.delete('Communication Technology');
+          }
+        }
+
+
+        const sleep = time => new Promise(resolve => setTimeout(resolve, time));
+
+        class TypeAsync extends HTMLSpanElement {
+          get typeInterval () {
+            const randomMs = 100 * Math.random();
+            return randomMs < 50 ? 10 : randomMs;
+          }
+
+          async type (text) {
+            for (let character of text) {
+              this.innerText += character;
+              await sleep(this.typeInterval);
+            }
+          }
+
+          async delete (text) {
+            for (let character of text) {
+              this.innerText = this.innerText.slice(0, this.innerText.length -1);
+              await sleep(this.typeInterval);
+            }
+          }
+        };
+
+        customElements.define('type-async', TypeAsync, { extends: 'span' });
+
+
+        TypeAniInit();
+        TypeAni1Init();
+        TypeAni2Init();
+        TypeAni3Init();
+
+        //
+
         function detectMob() {
           return !( Math.max($(window).width(), window.innerWidth) > 736 );
         }
 
         if (detectMob()) {
           $("#ytbg2").attr("data-youtube", "https://www.youtube.com/watch?v=L6NgEkfEqHA");
-          isMobileView = true;                    
+          isMobileView = true;
           $('#top_logo').attr("src", "assets/images/logo.png");
           currentLogoKind = 0;
         }
-        
-        anime.timeline({loop: false})
-				  .add({
-				    targets: '.ml15 .word',
-				    scale: [14,1],
-				    opacity: [0,1],
-				    easing: "easeOutCirc",
-				    duration: 800,
-				    delay: function(el, i) { 1500 * i }
-				  });
-					
+
 				$('[data-youtube]').youtube_background();
-				
-				
+
+
     });
 
 })(jQuery);

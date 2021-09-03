@@ -1,3 +1,5 @@
+
+
 :root {
     --alabaster: #f8f8f8;
     --athens-gray: #f0f0f0;
@@ -12939,7 +12941,7 @@ img.img-shadow,
 
 .module-cover {
     position: relative;
-    padding: 240px 0 240px;    
+    padding: 240px 0 240px;
 }
 
 .module-cover,
@@ -14209,4 +14211,21 @@ body.off-canvas-sidebar-open:after {
 
 .nav-sidebar a:hover {
     color: #505cfd;
+}
+
+#header_title {
+  display: flex;
+  align-items: baseline;
+  margin: 15px;
+}
+
+.blinking-cursor {
+  user-select: none;
+  -webkit-animation: blink 0.8s infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {color: #222}
+  50% {color: #fff}
+  100% {color: #222}
 }
