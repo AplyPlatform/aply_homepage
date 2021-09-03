@@ -678,14 +678,12 @@
           node.innerText = "";
           await node.type('Advanced ');
 
-          while (true) {
+          //while (true) {
             await node.type('Platform');
             await sleep(2000);
             await node.delete('Platform');
             await node.type('Platform to fly');
-            await sleep(2000);
-            await node.delete('Platform to fly');
-          }
+          //}
         }
 
         async function TypeAni1Init () {
