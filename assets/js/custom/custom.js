@@ -753,6 +753,70 @@
 
         startTitleAni();
 
+
+        let speed = 120; /* The speed/duration of the effect in milliseconds */
+
+
+        let count_1 = 0;
+        let txt_1 = 'Drone, Everywhere'; /* The text */
+        function typeWriterReset1() {
+          document.getElementById("small_text_1").innerHTML = "";
+          count_1 = 0;
+          typeWriter1();
+        }
+        function typeWriter1() {
+          if (count_1 < txt_1.length) {
+            document.getElementById("small_text_1").innerHTML += txt_1.charAt(count_1);
+            count_1++;
+            setTimeout(typeWriter1, speed);
+            return;
+          }
+
+          count_1 = 0;
+          setTimeout(typeWriterReset1, 3000);
+        }
+        typeWriter1();
+
+        let count_2 = 0;
+        let txt_2 = 'Vision, AR, Bigdata, AI'; /* The text */
+        function typeWriterReset2() {
+          document.getElementById("small_text_2").innerHTML = "";
+          count_2 = 0;
+          typeWriter2();
+        }
+        function typeWriter2() {
+          if (count_2 < txt_2.length) {
+            document.getElementById("small_text_2").innerHTML += txt_2.charAt(count_2);
+            count_2++;
+            setTimeout(typeWriter2, speed);
+            return;
+          }
+
+          count_2 = 0;
+          setTimeout(typeWriterReset2, 3000);
+        }
+        typeWriter2();
+
+        let count_3 = 0;
+        let txt_3 = 'Emotional Communication Technology'; /* The text */
+        function typeWriterReset3() {
+          document.getElementById("small_text_3").innerHTML = "";
+          count_3 = 0;
+          typeWriter3();
+        }
+        function typeWriter3() {
+          if (count_3 < txt_3.length) {
+            document.getElementById("small_text_3").innerHTML += txt_3.charAt(count_3);
+            count_3++;
+            setTimeout(typeWriter3, speed);
+            return;
+          }
+
+          count_3 = 0;
+          setTimeout(typeWriterReset3, 3000);
+        }
+        typeWriter3();
+
         function detectMob() {
           return !( Math.max($(window).width(), window.innerWidth) > 736 );
         }
