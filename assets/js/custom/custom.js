@@ -670,106 +670,88 @@
             speed: 0.4,
         });
 
-
-        async function TypeAniInit () {
-          const node = document.querySelector("#title_text");
-
-          await sleep(1000);
-          node.innerText = "";
-          await node.type('Advanced ');
-
-          //while (true) {
-            await node.type('Platform');
-            await sleep(2000);
-            await node.delete('Platform');
-            await node.type('Platform to fly');
-          //}
-        }
-
-        async function TypeAni1Init () {
-          const node = document.querySelector("#small_text_1");
-
-          await sleep(1000);
-          node.innerText = "";
-          await node.type('Drone');
-
-          while (true) {
-            await node.type(', ');
-            await sleep(2000);
-            await node.delete(', ');
-            await node.type(', Everywhere');
-            await sleep(2000);
-            await node.delete(', Everywhere');
-          }
-        }
-
-        async function TypeAni2Init () {
-          const node = document.querySelector("#small_text_2");
-
-          await sleep(1000);
-          node.innerText = "";
-          await node.type('Vision, ');
-
-          while (true) {
-            await node.type('AR, Bigdata');
-            await sleep(2000);
-            await node.delete('AR, Bigdata');
-            await node.type('AR, Bigdata, AI');
-            await sleep(2000);
-            await node.delete('AR, Bigdata, AI');
-          }
-        }
-
-        async function TypeAni3Init () {
-          const node = document.querySelector("#small_text_3");
-
-          await sleep(1000);
-          node.innerText = "";
-          await node.type('Emotional ');
-
-          while (true) {
-            await node.type('Communication');
-            await sleep(2000);
-            await node.delete('Communication');
-            await node.type('Communication Technology');
-            await sleep(2000);
-            await node.delete('Communication Technology');
-          }
-        }
-
-
-        const sleep = time => new Promise(resolve => setTimeout(resolve, time));
-
-        class TypeAsync extends HTMLSpanElement {
-          get typeInterval () {
-            const randomMs = 100 * Math.random();
-            return randomMs < 50 ? 10 : randomMs;
+        class TextScramble {
+          constructor(el) {
+            this.el = el;
+            this.chars = '!<>-_\\/[]{}—=+*^?#________';
+            this.update = this.update.bind(this);
           }
 
-          async type (text) {
-            for (let character of text) {
-              this.innerText += character;
-              await sleep(this.typeInterval);
+          setText(newText) {
+            const oldText = this.el.innerText;
+            const length = Math.max(oldText.length, newText.length);
+            const promise = new Promise((resolve) => this.resolve = resolve);
+            this.queue = [];
+            for (let i = 0; i < length; i++) {
+              const from = oldText[i] || '';
+              const to = newText[i] || '';
+              const start = Math.floor(Math.random() * 40);
+              const end = start + Math.floor(Math.random() * 40);
+              this.queue.push({ from, to, start, end });
+            }
+            cancelAnimationFrame(this.frameRequest);
+            this.frame = 0;
+            this.update();
+            return promise;
+          }
+
+          update() {
+            let output = ''
+            let complete = 0
+            for (let i = 0, n = this.queue.length; i < n; i++) {
+              let { from, to, start, end, char } = this.queue[i]
+              if (this.frame >= end) {
+                complete++
+                output += to
+              } else if (this.frame >= start) {
+                if (!char || Math.random() < 0.28) {
+                  char = this.randomChar()
+                  this.queue[i].char = char
+                }
+                output += `<span class="dud">${char}</span>`
+              } else {
+                output += from
+              }
+            }
+            this.el.innerHTML = output
+            if (complete === this.queue.length) {
+              this.resolve()
+            } else {
+              this.frameRequest = requestAnimationFrame(this.update)
+              this.frame++
             }
           }
-
-          async delete (text) {
-            for (let character of text) {
-              this.innerText = this.innerText.slice(0, this.innerText.length -1);
-              await sleep(this.typeInterval);
-            }
+          randomChar() {
+            return this.chars[Math.floor(Math.random() * this.chars.length)]
           }
-        };
+        }
 
-        customElements.define('type-async', TypeAsync, { extends: 'span' });
+        // ——————————————————————————————————————————————————
+        // Example
+        // ——————————————————————————————————————————————————
 
+        const phrases_title = [
+          'ADVANCED,',
+          'PLATFORM',
+          'TO',
+          'TO FLY',
+          'ADVANCED PLATFORM TO FLY'
+        ];
 
-        TypeAniInit();
-        TypeAni1Init();
-        TypeAni2Init();
-        TypeAni3Init();
+        const el = document.querySelector('.title_text');
+        const fx = new TextScramble(el);
 
-        //
+        let counter_title = 0;
+        const startTitleAni = function () {
+          fx.setText(phrases_title[counter_title]).then(function () {
+            if (counter_title == (phrases_title.length)) return;
+            setTimeout(startTitleAni, 800);
+          });
+
+          counter_title = (counter_title + 1);
+        }
+
+        startTitleAni();
 
         function detectMob() {
           return !( Math.max($(window).width(), window.innerWidth) > 736 );
