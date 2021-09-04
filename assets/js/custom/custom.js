@@ -166,7 +166,7 @@
                 $('body').removeClass('off-canvas-sidebar-open');
 
                 if (currentLogoKind == 0) return;
-                $('#top_logo').attr("src", "assets/images/logo.png");
+                $('#top_logo').attr("src", "/assets/images/logo.png");
                 currentLogoKind = 0;
             }
             else {
@@ -174,7 +174,7 @@
 
             		if (isTop) {
             			if (currentLogoKind == 0) {
-	            			$('#top_logo').attr("src", "assets/images/logo_white.png");
+	            			$('#top_logo').attr("src", "/assets/images/logo_white.png");
 	            			currentLogoKind = 1;
 	            		}
             		}
@@ -635,7 +635,7 @@
                 $('.scroll-top').addClass('scroll-top-visible');
 
                 if (currentLogoKind == 1) {
-                	$('#top_logo').attr("src", "assets/images/logo.png");
+                	$('#top_logo').attr("src", "/assets/images/logo.png");
                 	currentLogoKind = 0;
                 }
             } else {
@@ -644,13 +644,13 @@
 
                 if (isMobileView) {
                 	if (currentLogoKind == 1) {
-	                	$('#top_logo').attr("src", "assets/images/logo.png");
+	                	$('#top_logo').attr("src", "/assets/images/logo.png");
 	                	currentLogoKind = 0;
 	                }
                 }
                 else {
                 	if (currentLogoKind == 0) {
-	                	$('#top_logo').attr("src", "assets/images/logo_white.png");
+	                	$('#top_logo').attr("src", "/assets/images/logo_white.png");
 	                	currentLogoKind = 1;
 	                }
                 }
@@ -824,7 +824,7 @@
         if (detectMob()) {
           $("#ytbg2").attr("data-youtube", "https://www.youtube.com/watch?v=L6NgEkfEqHA");
           isMobileView = true;
-          $('#top_logo').attr("src", "assets/images/logo.png");
+          $('#top_logo').attr("src", "/assets/images/logo.png");
           currentLogoKind = 0;
         }
 
