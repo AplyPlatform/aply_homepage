@@ -773,7 +773,7 @@
           }
 
           count_1 = 0;
-          setTimeout(typeWriterReset1, 3000);
+          setTimeout(typeWriterReset1, 3500);
         }
         typeWriter1();
 
@@ -793,12 +793,12 @@
           }
 
           count_2 = 0;
-          setTimeout(typeWriterReset2, 3000);
+          setTimeout(typeWriterReset2, 3500);
         }
         typeWriter2();
 
         let count_3 = 0;
-        let txt_3 = 'Emotional Communication Technology'; /* The text */
+        let txt_3 = 'Software And Hardware'; /* The text */
         function typeWriterReset3() {
           document.getElementById("small_text_3").innerHTML = "";
           count_3 = 0;
@@ -813,7 +813,7 @@
           }
 
           count_3 = 0;
-          setTimeout(typeWriterReset3, 3000);
+          setTimeout(typeWriterReset3, 3500);
         }
         typeWriter3();
 
