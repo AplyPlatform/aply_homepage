@@ -18,6 +18,40 @@
     	$('.page-loader').delay(1500).fadeOut(800);
     }
 
+    const targetsInfo = [        
+        ["recruit", "https://aply.biz/recruit/index.html"],
+        ["duni", "https://duni.io"],
+        ["dunipilot", "https://pilot.duni.io"],
+        ["dunistock", "https://dunistock.com"],
+        ["dromi", "https://dromi.aply.biz"],
+        ["dkdk", "https://dkdk.io"],
+        ["drdr", "https://drdr.io"]
+    ];
+
+    $('#selSites').change(function() {
+        let targetVal = $(this).val();
+        let targetUrl = "";
+        
+        targetsInfo.forEach(function(t) {
+            if (t[0] == targetVal) {
+                targetUrl = t[1];
+            }
+        });
+
+        if (targetUrl != "")
+            window.open(targetUrl, "new");            
+    });
+
+    function chageLangSelect(){  
+        var langSelect = document.getElementById("id-lang");  
+          
+        // select element에서 선택된 option의 value가 저장된다.  
+        var selectValue = langSelect.options[langSelect.selectedIndex].value;  
+          
+        // select element에서 선택된 option의 text가 저장된다.  
+        var selectText = langSelect.options[langSelect.selectedIndex].text;  
+    }
+
     $(document).ready(function() {
 
         var header             = $('.header'),
@@ -731,7 +765,7 @@
         // ——————————————————————————————————————————————————
 
         const phrases_title = [
-          'Advanced,',
+          'ADVANCED',
           'PLATFORM',
           'TO',
           'TO FLY',
@@ -828,9 +862,6 @@
           currentLogoKind = 0;
         }
 
-				$('[data-youtube]').youtube_background();
-
-
+		$('[data-youtube]').youtube_background();        
     });
-
 })(jQuery);
