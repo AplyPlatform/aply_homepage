@@ -26,7 +26,8 @@
         ["dromi", "https://dromi.aply.biz"],
         ["dkdk", "https://dkdk.io"],
         ["drdr", "https://drdr.io"],
-        ["blog", "https://blog.naver.com/duniplatform"]
+        ["blog", "https://blog.naver.com/duniplatform"],
+        ["catchme", "https://catchme.aply.biz"]
     ];
 
     $('#selSites').change(function () {
