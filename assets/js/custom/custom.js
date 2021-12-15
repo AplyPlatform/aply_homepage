@@ -864,6 +864,51 @@
             currentLogoKind = 0;
         }
 
+
+        function setExtendAni() {
+            let once_data_t = true;
+            let once_drone_t = true;
+            let once_comm_t = true;
+
+            $(window).scroll(function () {
+                let once_data_t = true;
+                let once_drone_t = true;
+                let once_comm_t = true;
+                let oTop;
+
+                if (once_data_t == true) {
+                    oTop = $('#data_t').offset().top - window.innerHeight;
+                    oTop += 500;
+
+                    if ($(window).scrollTop() > oTop) {                    
+                        once_data_t = false;
+                        $("#collapse-2").collapse('show');
+                    }
+                }
+
+                if (once_drone_t == true) {
+                    oTop = $('#drone_t').offset().top - window.innerHeight;
+                    oTop += 500;
+
+                    if ($(window).scrollTop() > oTop) {                    
+                        once_drone_t = false;
+                        $("#collapse-1").collapse('show');
+                    }
+                }
+
+                if (once_comm_t == true) {
+                    oTop = $('#comm_t').offset().top - window.innerHeight;
+                    oTop += 500;
+
+                    if ($(window).scrollTop() > oTop) {                    
+                        once_comm_t = false;
+                        $("#collapse-3").collapse('show');
+                    }
+                }
+            });
+        }        
+
+        setExtendAni();
         $('[data-youtube]').youtube_background();
     });
 })(jQuery);
