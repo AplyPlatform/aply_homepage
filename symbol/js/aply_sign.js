@@ -42,9 +42,9 @@ function processChange() {
 								+	'&nbsp;&nbsp;<font size="2"><strong>' + curName + ' (' + curEngName + ')</strong>&nbsp;&nbsp;|&nbsp;&nbsp;' + curTitle + '</font><br>&nbsp;&nbsp;<font color="#8e7cc3"><strong>M</strong></font>&nbsp;'
           			+ curNumber + '&nbsp;&nbsp;|&nbsp;&nbsp<font color="#8e7cc3"><strong>E</strong></font>&nbsp;&nbsp;<a href="mailto:'
           			+ curEmail + '" target="_blank" style="color: rgb(153, 153, 153);">' + curEmail + '</a><br><br><br>'
-            		+ '&nbsp;&nbsp;<em><strong><font size="2">APLY Inc.</font></strong></em><br>&nbsp;&nbsp;<font color="#8e7cc3"><strong>T</strong></font>&nbsp;+82-2-6956-0801&nbsp;&nbsp;|&nbsp;&nbsp;<font color="#8e7cc3"><strong>F</strong>&nbsp;</font>'
-            		+ '+82-2-6468-2031&nbsp;&nbsp;|&nbsp;&nbsp;<font color="#8e7cc3"><strong>H</strong></font>&nbsp;&nbsp;<a href="http://www.aply.biz/" target="_blank"><font color="#999999">www.aply.biz</font></a><br>'
-            		+ '<strong><font color="#8e7cc3">&nbsp;&nbsp;Office</font></strong><br>&nbsp;&nbsp;04768 | S426,S427 4F HEYGROUND 115,&nbsp;Wangsimni-ro, Seongdong-gu,<br>&nbsp;&nbsp;Seoul, Republic of Korea<br><br>&nbsp;&nbsp;<a href="https://aply.biz/" target="_blank"><img src="https://aply.biz/assets/images/logo.png" width="96" height="30"/></a>'
+            		+ '&nbsp;&nbsp;<em><strong><font size="2">APLY Inc.</font></strong></em><br>&nbsp;&nbsp;<font color="#8e7cc3"><strong>T</strong></font>&nbsp;+82-2-6956-0801&nbsp;&nbsp;'
+            		+ '|&nbsp;&nbsp;<font color="#8e7cc3"><strong>H</strong></font>&nbsp;&nbsp;<a href="http://www.aply.biz/" target="_blank"><font color="#999999">www.aply.biz</font></a><br>'
+            		+ '<strong><font color="#8e7cc3">&nbsp;&nbsp;Office</font></strong><br>&nbsp;&nbsp;02751 | 5F 17-5,&nbsp;Hwarang-ro 11-gil, Seongbuk-gu,<br>&nbsp;&nbsp;Seoul, Republic of Korea<br><br>&nbsp;&nbsp;<a href="https://aply.biz/" target="_blank"><img src="https://aply.biz/assets/images/logo.png" width="96" height="30"/></a>'
             		+ '<br><br><font color="#ddd" size="1">____________________________________________</font></font>';
 	
 	//alert(sigStr);
