@@ -25,6 +25,7 @@
         ["dunipilot", "https://pilot.duni.io"],
         ["dunistock", "https://dunistock.com"],
         ["dromi", "https://dromi.aply.biz"],
+        ["aplx", "https://aplx.aply.biz"],
         ["dkdk", "https://dkdk.io"],
         ["drdr", "https://drdr.io"],
         ["blog", "https://blog.naver.com/duniplatform"],
