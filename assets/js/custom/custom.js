@@ -29,7 +29,9 @@
         ["dkdk", "https://dkdk.io"],
         ["drdr", "https://drdr.io"],
         ["blog", "https://blog.naver.com/duniplatform"],
-        ["catchme", "https://catchme.aply.biz"]
+        ["catchme", "https://catchme.aply.biz"],
+        ["kiosk", "https://aplylab.com/kiosk/index_2022.html"],
+        ["polaris", "https://polarisconsulting.modoo.at"]
     ];
 
     $('#selSites').change(function () {
@@ -813,7 +815,7 @@
             count_1 = 0;
             setTimeout(typeWriterReset1, 3500);
         }
-        typeWriter1();
+        //typeWriter1();
 
         let count_2 = 0;
         let txt_2 = 'Vision, AR, Bigdata, AI'; /* The text */
@@ -869,12 +871,12 @@
 
         function setExtendAni() {
             let once_data_t = true;
-            let once_drone_t = true;
+            //let once_drone_t = true;
             let once_comm_t = true;
 
             $(window).scroll(function () {
                 let once_data_t = true;
-                let once_drone_t = true;
+                //let once_drone_t = true;
                 let once_comm_t = true;
                 let oTop;
 
@@ -888,6 +890,7 @@
                     }
                 }
 
+                /*
                 if (once_drone_t == true) {
                     oTop = $('#drone_t').offset().top - window.innerHeight;
                     oTop += 500;
@@ -897,6 +900,7 @@
                         $("#collapse-1").collapse('show');
                     }
                 }
+                */
 
                 if (once_comm_t == true) {
                     oTop = $('#comm_t').offset().top - window.innerHeight;
