@@ -24,7 +24,7 @@ function sendApplicationData(form_id, token)
 	}
 
 	if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
-		min_type = min_type + "/제휴 및 협업";
+		min_type = min_type + "/데이터분석";
 	}
 
 	if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
