@@ -6,14 +6,14 @@ var curNumber = "+82-10-1234-1234";
 var curTitle = "CEO/CTO";
 
 function setSign() {
-		var btn = document.getElementById('sign_copy_btn');
-		var clipboard = new Clipboard(btn);
-		clipboard.on('success', function(e) {
-			alert("서명이 복사되었습니다.");
-		});
-		clipboard.on('error', function(e) {
-			alert("서명이 복사 실패");
-		});
+		// var btn = document.getElementById('sign_copy_btn');
+		// var clipboard = new ClipboardJS(btn);
+		// clipboard.on('success', function(e) {
+		// 	alert("서명이 복사되었습니다.");
+		// });
+		// clipboard.on('error', function(e) {
+		// 	alert("서명이 복사 실패");
+		// });
 	
 		$("#form_name").on("keyup", function() {
 			curName = $(this).val();
@@ -53,7 +53,7 @@ function processChange() {
 					+ '&nbsp;&nbsp;ADVANCED PLATFORM TO FLY<br>'
             		+ '&nbsp;&nbsp;<strong><font size="2" color="#777">주식회사 어플라이 <font color="#8e7cc3">|</font> APLY Inc.</font></strong><br>&nbsp;&nbsp;<font color="#8e7cc3"><strong>T</strong></font>&nbsp;+82-2-6956-0801&nbsp;&nbsp;'
             		+ '<font color="#8e7cc3">|</font>&nbsp;&nbsp;<font color="#8e7cc3"><strong>H</strong></font>&nbsp;&nbsp;<a href="http://aply.biz/" target="_blank"><font color="#777">www.aply.biz</font></a><br>'
-            		+ '<br>&nbsp;&nbsp;10915 <font color="#8e7cc3">|</font> 6F, 24-21,&nbsp;Geumbit-ro, Paju-si,<br>&nbsp;&nbsp;Gyeonggi-do, Republic of Korea<br><br>&nbsp;&nbsp;'
+            		+ '<br>&nbsp;&nbsp;10915 <font color="#8e7cc3">|</font> 6F, 24-21,&nbsp;Geumbit-ro, Paju-si,<br>&nbsp;&nbsp;Gyeonggi-do, Republic of Korea<br>&nbsp;&nbsp;'
 					+ '<table border="0" cellpadding="0" cellspacing="0" width="220px"><tr><td width="110px" align="left" valign="center"><a href="https://aply.biz/" target="_blank"><img src="https://home.aply.biz/assets/images/logo.png" width="96" height="30"/></a></td>'
 					+ '<td width="1" bgcolor="#8e7cc3"></td>'
 					+ '<td align="right" valign="center"><a href="https://aplx.aply.biz/" target="_blank"><img src="https://home.aply.biz/symbol/images/aplx_og_image.png" width="30" height="30" alt="증강현실 기반의 홍보/전시/커뮤니케이션 플랫폼"/></a></td>'
@@ -63,5 +63,5 @@ function processChange() {
 	
 
 	$("#sign_field").html(sigStr);
-	$("#sign_copy_btn").attr("data-clipboard-text", sigStr);	
+	//$("#sign_copy_btn").attr("data-clipboard-text", sigStr);	
 }

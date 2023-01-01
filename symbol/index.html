@@ -410,15 +410,16 @@
 
                                         </div>
                                         </p>
-                                        <p>
+                                        <!-- <p>
                                             <div class="row">
-                                                <div class="col-md-12">
-                                                    <button class="btn" id="sign_copy_btn" data-clipboard-text="TEST">
+                                                <div class="col-md-12 text-center">
+                                                    <button class="btn btn-info btn-block" id="sign_copy_btn" data-clipboard-text="TEST">
                                                        서명 복사하기
                                                     </button>
                                                 </div>
                                             </div>
                                         </p>
+                                        -->
                                     </div>
                                 </div>
                             </div>
@@ -621,7 +622,9 @@
                 duration: 800,
                 delay: function (el, i) { 1500 * i }
             });
-        $(document).ready(function () {
+     
+
+        $(function() {
             jQuery('[data-youtube]').youtube_background();
             setSign();
         });
