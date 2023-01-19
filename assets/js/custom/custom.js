@@ -819,7 +819,7 @@
         //typeWriter1();
 
         let count_2 = 0;
-        let txt_2 = 'Vision, AR, Bigdata, AI'; /* The text */
+        let txt_2 = 'Vision, AR, Big Data, AI'; /* The text */
         function typeWriterReset2() {
             document.getElementById("small_text_2").innerHTML = "";
             count_2 = 0;
@@ -839,7 +839,7 @@
         typeWriter2();
 
         let count_3 = 0;
-        let txt_3 = 'Software And Hardware'; /* The text */
+        let txt_3 = 'Software and Hardware'; /* The text */
         function typeWriterReset3() {
             document.getElementById("small_text_3").innerHTML = "";
             count_3 = 0;
