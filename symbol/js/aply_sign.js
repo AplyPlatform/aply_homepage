@@ -45,21 +45,21 @@ function setSign() {
 
 
 function processChange() {	
-	var sigStr = '<font style="font-size: x-small; font-family:나눔고딕,NanumGothic,Sans-serif;" color="#777"><br><font color="#ddd" size="1">____________________________________________</font><br><br><br>'
+	var sigStr = '<div style="font-size: x-small; font-family:나눔고딕,NanumGothic,Sans-serif;" color="#777"><br><font color="#ddd" size="1">____________________________________________</font><br><br><br>'
 					+ '&nbsp;&nbsp;<font size="2"><strong style="font-family:나눔고딕,NanumGothic,Sans-serif">' + curName + ' (' + curEngName + ')</strong>&nbsp;&nbsp;<font color="#8e7cc3">|</font>&nbsp;&nbsp;' + curTitle + '</font>'
 					+ '<br>&nbsp;&nbsp;<font color="#8e7cc3"><strong>M</strong></font>&nbsp;'
           			+ curNumber + '&nbsp;&nbsp;<font color="#8e7cc3">|</font>&nbsp;&nbsp<font color="#8e7cc3"><strong>E</strong></font>&nbsp;&nbsp;<a href="mailto:'
           			+ curEmail + '" target="_blank" style="color:#777">' + curEmail + '</a><br><br><br>'
 					+ '&nbsp;&nbsp;ADVANCED PLATFORM TO FLY<br>'
-            		+ '&nbsp;&nbsp;<strong style="font-family:나눔고딕,NanumGothic,Sans-serif"><font size="2" color="#777">주식회사 어플라이 <font color="#8e7cc3">|</font> APLY Inc.</font></strong><br>&nbsp;&nbsp;<font color="#8e7cc3"><strong>T</strong></font>&nbsp;+82-2-6956-0801&nbsp;&nbsp;'
-            		+ '<font color="#8e7cc3">|</font>&nbsp;&nbsp;<font color="#8e7cc3"><strong>H</strong></font>&nbsp;&nbsp;<a href="http://aply.biz/" target="_blank"><font color="#777">www.aply.biz</font></a><br>'
+            		+ '&nbsp;&nbsp;<strong><font size="2" color="#777">주식회사 어플라이 <font color="#8e7cc3">|</font> APLY Inc.</font></strong><br>&nbsp;&nbsp;<font color="#8e7cc3"><strong>T</strong></font>&nbsp;+82-2-6956-0801&nbsp;&nbsp;'
+            		+ '<font color="#8e7cc3">|</font>&nbsp;&nbsp;<font color="#8e7cc3"><strong>H</strong></font>&nbsp;&nbsp;<a href="http://aply.biz/" target="_blank" style="color:#777">www.aply.biz</font></a><br>'
             		+ '<br>&nbsp;&nbsp;<font color="#8e7cc3"><strong>O</strong></font> 10915 <font color="#8e7cc3">|</font> 6F, 24-21,&nbsp;Geumbit-ro, Paju-si,<br>&nbsp;&nbsp;Gyeonggi-do, Republic of Korea<br>&nbsp;&nbsp;'
 					+ '<table border="0" cellpadding="0" cellspacing="0" width="220px"><tr><td width="4px"></td><td width="110px" align="left" valign="center"><a href="https://aply.biz/" target="_blank"><img src="https://home.aply.biz/assets/images/logo.png" width="96" height="30"/></a></td>'
 					+ '<td width="1" bgcolor="#8e7cc3"></td>'
 					+ '<td align="right" valign="center" width="52px"><a href="https://aplx.aply.biz/" target="_blank"><img src="https://home.aply.biz/symbol/images/aplx_og_image.png" width="30" height="30" alt="증강현실 기반의 홍보/전시/커뮤니케이션 플랫폼"/></a></td>'
 					+ '<td align="center" valign="center" width="53px"><a href="https://aplx.aply.biz/aqr" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_squre2.png" width="30" height="30" alt="간편 송금 지원 서비스"/></a>'
 					+ '</td></tr></table>'
-            		+ '<br><br><font color="#ddd" size="1">____________________________________________</font></font>';
+            		+ '<br><br><font color="#ddd" size="1">____________________________________________</font></div>';
 	
 
 	$("#sign_field").html(sigStr);
