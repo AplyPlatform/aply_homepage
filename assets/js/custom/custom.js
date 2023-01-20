@@ -29,7 +29,7 @@
         ["aplx", "https://aplx.aply.biz"],
         ["dkdk", "https://dkdk.io"],
         ["drdr", "https://drdr.io"],
-        ["blog", "https://blog.naver.com/duniplatform"],
+        ["blog", "https://blog.naver.com/PostList.naver?blogId=jebo78&categoryNo=38&from=postList"],
         ["catchme", "https://catchme.aply.biz"],
         ["kiosk", "https://kiosk.aply.biz"],
         ["polaris", "https://polarisconsulting.modoo.at"]
