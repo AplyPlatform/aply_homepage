@@ -77,7 +77,7 @@ function sendApplicationData(form_id, token)
 
 	$.ajax({
 		type: "POST",
-		url: 'https://aply.biz/handler/handler.php',
+		url: 'https://aply.biz/contact/handler.php',
 		crossDomain: true,
 		dataType: "json",
 		data:sed,
