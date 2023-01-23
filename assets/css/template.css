@@ -14232,7 +14232,7 @@ overflow: hidden;
 background: linear-gradient(90deg, #fff, #000, #fff);
 background-repeat: no-repeat;
 background-size: 80%;
-animation: animate 12s linear infinite;
+animation: animate 20s linear infinite;
 -webkit-background-clip: text;
 -webkit-text-fill-color: rgba(0, 0, 0, 0);
 }
