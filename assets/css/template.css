@@ -14228,10 +14228,6 @@ body.off-canvas-sidebar-open:after {
   
 .anitext {
 position: relative;
-font-family: sans-serif;
-text-transform: uppercase;
-font-size: 1.2em;
-letter-spacing: 4px;
 overflow: hidden;
 background: linear-gradient(90deg, #fff, #000, #fff);
 background-repeat: no-repeat;
@@ -14239,6 +14235,17 @@ background-size: 80%;
 animation: animate 6s linear infinite;
 -webkit-background-clip: text;
 -webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
+
+.anitextMini {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #fff, #000, #fff);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(90, 90, 90, 100);
 }
 
 @keyframes animate {
