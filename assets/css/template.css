@@ -14232,20 +14232,9 @@ overflow: hidden;
 background: linear-gradient(90deg, #fff, #000, #fff);
 background-repeat: no-repeat;
 background-size: 80%;
-animation: animate 6s linear infinite;
+animation: animate 12s linear infinite;
 -webkit-background-clip: text;
 -webkit-text-fill-color: rgba(0, 0, 0, 0);
-}
-
-.anitextMini {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(90deg, #fff, #000, #fff);
-    background-repeat: no-repeat;
-    background-size: 80%;
-    animation: animate 3s linear infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(90, 90, 90, 100);
 }
 
 @keyframes animate {
