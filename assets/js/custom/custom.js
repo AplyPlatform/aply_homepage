@@ -771,6 +771,7 @@
         // Example
         // ——————————————————————————————————————————————————
 
+        /*
         const phrases_title = [
             'ADVANCED',
             'PLATFORM',
@@ -793,7 +794,7 @@
         }
 
         startTitleAni();
-
+        */
 
         let speed = 120; /* The speed/duration of the effect in milliseconds */
 

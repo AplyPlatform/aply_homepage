@@ -14223,3 +14223,29 @@ body.off-canvas-sidebar-open:after {
   50% {color: #fff}
   100% {color: #222}
 }
+
+
+  
+.anitext {
+position: relative;
+font-family: sans-serif;
+text-transform: uppercase;
+font-size: 1.2em;
+letter-spacing: 4px;
+overflow: hidden;
+background: linear-gradient(90deg, #fff, #000, #fff);
+background-repeat: no-repeat;
+background-size: 80%;
+animation: animate 6s linear infinite;
+-webkit-background-clip: text;
+-webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
+
+@keyframes animate {
+0% {
+    background-position: -500%;
+}
+100% {
+    background-position: 500%;
+}
+}
