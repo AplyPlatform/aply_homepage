@@ -20,13 +20,13 @@
 
     const targetsInfo = [
         ["aply", "https://aply.biz/"],
-        ["aqr", "https://aplx.aply.biz/aqr"],
+        ["aqr", "https://aqr.aplx.link"],
         ["recruit", "https://home.aply.biz/recruit/index.html"],
         ["duni", "https://duni.io"],
         ["dunipilot", "https://pilot.duni.io"],
         ["dunistock", "https://dunistock.com"],
         ["dromi", "https://dromi.aply.biz"],
-        ["aplx", "https://aplx.aply.biz"],
+        ["aplx", "https://home.aplx.link"],
         ["dkdk", "https://dkdk.io"],
         ["drdr", "https://drdr.io"],
         ["blog", "https://blog.naver.com/PostList.naver?blogId=jebo78&categoryNo=38&from=postList"],
