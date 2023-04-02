@@ -8,7 +8,8 @@
 
     let isMobileView = false;
     let isTop = true;
-    let currentLogoKind = 1; // 0 = original, 1 = white
+    let currentLogoKind = 1; // 0 = original, 1 = white    
+    
 
     /* ---------------------------------------------- /*
      * Preloader

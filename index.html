@@ -1067,7 +1067,7 @@
                                     <script>
                                         document.write("©" + (new Date()).getFullYear());
                                     </script>
-                                    APLY Inc. All rights reserved.
+                                    APLY Inc. All rights reserved. | <a href="javascript:showEmailPolicyDialog();">이메일무단수집거부</a>
                                 </p>
                             </div>
                         </div>
@@ -1079,9 +1079,33 @@
     </div>
     <!-- Wrapper end-->
 
-
+<!-- Modal 3 -->
+    <div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">(주)어플라이 이메일무단수집거부</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body" id="modal-content">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary btn-sm btn-circle" type="button" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- To top button--><a class="scroll-top" href="#top"><i class="fas fa-angle-up"></i></a>
 
+    <script>
+        function showEmailPolicyDialog() {        
+            $('#modal-content').load("emailpolicy.html");
+            $('#modal-1').modal('show');
+        }
+    </script>
     <!-- Scripts-->
     <script src="assets/js/custom/jquery-3.2.1.min.js"></script>
     <script src="assets/js/custom/popper.min.js"></script>
