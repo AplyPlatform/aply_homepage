@@ -14215,7 +14215,7 @@ body.off-canvas-sidebar-open:after {
 
 .blinking-cursor {
   user-select: none;
-  -webkit-animation: blink 0.8s infinite;
+  -webkit-animation: blink 1.3s infinite;
 }
 
 @-webkit-keyframes blink {
@@ -14226,22 +14226,21 @@ body.off-canvas-sidebar-open:after {
 
 
   
-.anitext {
-position: relative;
-overflow: hidden;
-background: linear-gradient(90deg, #fff, #000, #fff);
-background-repeat: no-repeat;
-background-size: 80%;
-animation: animate 20s linear infinite;
--webkit-background-clip: text;
--webkit-text-fill-color: rgba(0, 0, 0, 0);
+.btn-grad {
+background-image: linear-gradient(to right, #283048 0%, #859398  51%, #283048  100%);
+margin: 5px;
+padding: 5px 15px;
+text-align: center;
+transition: 0.5s;
+background-size: 200% auto;
+color: white;            
+box-shadow: 0 0 20px #eee;
+border-radius: 5px;
+display: block;
 }
 
-@keyframes animate {
-0% {
-    background-position: -500%;
-}
-100% {
-    background-position: 500%;
-}
+.btn-grad:hover {
+background-position: right center; /* change the direction of the change here */
+color: #fff;
+text-decoration: none;
 }
