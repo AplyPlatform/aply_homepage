@@ -14229,7 +14229,7 @@ body.off-canvas-sidebar-open:after {
 .btn-grad {
 background-image: linear-gradient(to right, #283048 0%, #859398  51%, #283048  100%);
 margin: 5px;
-padding: 5px 15px;
+padding: 3px 12px;
 text-align: center;
 transition: 0.5s;
 background-size: 200% auto;
