@@ -14224,23 +14224,3 @@ body.off-canvas-sidebar-open:after {
   100% {color: #222}
 }
 
-
-  
-.btn-grad {
-background-image: linear-gradient(to right, #283048 0%, #859398  51%, #283048  100%);
-margin: 5px;
-padding: 3px 12px;
-text-align: center;
-transition: 0.5s;
-background-size: 200% auto;
-color: white;            
-box-shadow: 0 0 20px #eee;
-border-radius: 5px;
-display: block;
-}
-
-.btn-grad:hover {
-background-position: right center; /* change the direction of the change here */
-color: #fff;
-text-decoration: none;
-}
