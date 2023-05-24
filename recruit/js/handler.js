@@ -45,28 +45,43 @@ function sendApplicationData(form_id, token)
 
 	if (min_type == "") {
 		showDialog("지원 분야를 선택해 주세요.", null);
+		if ($('div').is('.page-loader')) {
+			$('.page-loader').delay(200).fadeOut(800);
+		}
 		return false;
 	}
 
 	let form_name = $(form_id).find('input[name="form_name"]').val();
 	if (form_name == "") {
 		showDialog("성함을 입력해 주세요.", null);
+		if ($('div').is('.page-loader')) {
+			$('.page-loader').delay(200).fadeOut(800);
+		}
 		return false;
 	}
 
 	let form_phone = $(form_id).find('input[name="form_phone"]').val();
 	if (form_phone == "") {
 		showDialog("전화번호를 입력해 주세요.", null);
+		if ($('div').is('.page-loader')) {
+			$('.page-loader').delay(200).fadeOut(800);
+		}
 		return false;
 	}
 
 	let form_email = $(form_id).find('input[name="form_email"]').val();
 	if (form_email == "") {
 		showDialog("이메일을 입력해 주세요.", null);
+		if ($('div').is('.page-loader')) {
+			$('.page-loader').delay(200).fadeOut(800);
+		}
 		return false;
 	}
 
 	if ($(form_id).find("#agree_1").length > 0 && $(form_id).find("#agree_1").is(":checked") == false) {
+		if ($('div').is('.page-loader')) {
+			$('.page-loader').delay(200).fadeOut(800);
+		}
 		showDialog("개인정보 처리방침에 동의해주세요.", null);
 		return false;
 	}	
@@ -97,9 +112,13 @@ function ajaxRequest(fed) {
 		data:fed,
 		enctype: 'multipart/form-data', // 필수
 		processData: false,
-    contentType: false,
-    cache: false,
+    	contentType: false,
+    	cache: false,
 		success: function (data) {
+			if ($('div').is('.page-loader')) {
+				$('.page-loader').delay(200).fadeOut(800);
+			}
+
 			if (data.result == "success") {
 				showDialog("신청이 완료되었습니다. 채용계획이 발생할 경우 연락드리겠습니다!", function(){
 					location.href="/index.html";
@@ -110,7 +129,10 @@ function ajaxRequest(fed) {
 			showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message , null);			
 			//$(form_id + " input").last().remove();
 		},
-		error: function(jqXHR, text, error){
+		error: function(jqXHR, text, error) {
+			if ($('div').is('.page-loader')) {
+				$('.page-loader').delay(200).fadeOut(800);
+			}
 			showDialog("죄송합니다, 일시적인 오류가 발생하였습니다. 다시 시도 부탁드립니다.", null);
 		}
 	});
@@ -130,6 +152,7 @@ function setSubmitHandler(form_p_id) {
 			}
 		}
 
+		$('.page-loader').show();
 		sendApplicationData(form_id);		
 	});
 
