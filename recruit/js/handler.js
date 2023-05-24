@@ -65,18 +65,24 @@ function sendApplicationData(form_id, token)
 		showDialog("개인정보 처리방침에 동의해주세요.", null);
 		return false;
 	}
-
-	$(form_id).find('input[name="form_token"]').val(token);
-	
+		
 	let ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');	
 	$(form_id).append(ref);	
 	ref = $('<input type="hidden" value="' + min_type + '" name="min_type">');	
 	$(form_id).append(ref);	
 	ref = $('<input type="hidden" value="recruitcontact" name="form_kind">');	
 	$(form_id).append(ref);
-		
-	let sed = new FormData($(form_id)[0]);
 
+	grecaptcha.ready(function() {
+		grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
+			$(form_id).find('input[name="form_token"]').val(token);
+			let fed = new FormData($(form_id)[0]);			
+			ajaxRequest(fed);
+		});
+	});	
+}
+
+function ajaxRequest(fed) {
 	$.ajax({
 		type: "POST",
 		url: 'https://aply.biz/contact/handler.php',
@@ -119,11 +125,7 @@ function setSubmitHandler(form_p_id) {
 			}
 		}
 
-		grecaptcha.ready(function() {
-	      grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
-	         sendApplicationData(form_id, token);
-	      });
-	  });
+		sendApplicationData(form_id);		
 	});
 
 	$('[name^=form_phone]').keypress(validateNumber);
