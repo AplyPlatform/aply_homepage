@@ -97,12 +97,11 @@ function ajaxRequest(fed) {
 			if (data.result == "success") {
 				showDialog("신청이 완료되었습니다. 채용계획이 발생할 경우 연락드리겠습니다!", function(){
 					location.href="/index.html";
-				});				
+				});
+				return;
 			}
-			else {
-				showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message , null);
-			}
-
+			
+			showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message , null);			
 			//$(form_id + " input").last().remove();
 		},
 		error: function(jqXHR, text, error){
