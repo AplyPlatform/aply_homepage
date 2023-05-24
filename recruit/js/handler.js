@@ -88,7 +88,7 @@ function ajaxRequest(fed) {
 		url: 'https://aply.biz/contact/handler.php',
 		crossDomain: true,
 		dataType: "json",
-		data:sed,
+		data:fed,
 		enctype: 'multipart/form-data', // 필수
 		processData: false,
     contentType: false,
