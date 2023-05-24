@@ -103,7 +103,7 @@ function ajaxRequest(fed) {
 				showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message , null);
 			}
 
-			$(form_id + " input").last().remove();
+			//$(form_id + " input").last().remove();
 		},
 		error: function(jqXHR, text, error){
 			showDialog("죄송합니다, 일시적인 오류가 발생하였습니다. 다시 시도 부탁드립니다.", null);
