@@ -1,3 +1,6 @@
+let isRecaptchaInit = false;
+let appSent = false;
+
 function showDialog(msg, callback) {
 	$('#askModalContent').text(msg);
 	$('#askModal').modal('show');
@@ -15,7 +18,6 @@ function showPrivacyDialog() {
 	$('#modal-3').modal('show');
 }
 
-var appSent = false;
 function sendApplicationData(form_id, token)
 {
 	let min_type = "";
@@ -94,13 +96,23 @@ function sendApplicationData(form_id, token)
 	ref = $('<input type="hidden" value="recruitcontact" name="form_kind">');	
 	$(form_id).append(ref);
 
-	grecaptcha.ready(function() {
+	if (isRecaptchaInit == true) {
 		grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
 			$(form_id).find('input[name="form_token"]').val(token);
-			let fed = new FormData($(form_id)[0]);			
-			ajaxRequest(fed);
+			let fed = new FormData($(form_id)[0]);
+			ajaxRequest(fed, form_id);
 		});
-	});	
+	}
+	else {
+		grecaptcha.ready(function() {
+			isRecaptchaInit = true;
+			grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
+				$(form_id).find('input[name="form_token"]').val(token);
+				let fed = new FormData($(form_id)[0]);
+				ajaxRequest(fed);
+			});
+		});
+	}
 }
 
 function ajaxRequest(fed) {
@@ -160,6 +172,10 @@ function setSubmitHandler(form_p_id) {
 }
 
 function setPage() {
+	grecaptcha.ready(function() {
+		isRecaptchaInit = true;		
+	});
+
 	setSubmitHandler("email_up");
 }
 
