@@ -35,7 +35,8 @@
         ["kiosk", "https://kiosk.aply.biz"],
         ["polaris", "https://polarisconsulting.modoo.at"],
         ["gps", "https://gps.aply.biz"],
-        ["wifi", "https://wifi.aply.biz"]
+        ["wifi", "https://wifi.aply.biz"],
+        ["store", "https://smartstore.naver.com/aqr"]
     ];
 
     $('#selSites').change(function () {
