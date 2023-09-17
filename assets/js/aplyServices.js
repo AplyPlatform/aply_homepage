@@ -20,17 +20,18 @@ const targetsInfo = [
 
 $(function() {
 	let selContents = '<option selected>Family Sites</option> \
-			<option>---------------</option> \
+			<option>--------------------</option> \
 			<option value="aply">APLY Inc.</option> \
 			<option value="recruit">Recruit</option> \
 			<option value="blog">Blog</option> \
-			<option>---------------</option> \
-			<option value="aplx">APLX</option> \
-			<option value="kiosk">R&D KIOSK</option> \
-			<option>---------------</option> \
-			<option value="gps">GPS <-> 주소 변환</option> \
+			<option>--------------------</option> \
+			<option value="aqr">AQR : 간편 송금 서비스</option> \
+			<option value="aplx">APLX : 증강현실 플랫폼</option> \
+			<option value="kiosk">R&D KIOSK : 국가연구개발사업 길잡이</option> \
+			<option>--------------------</option> \
 			<option value="wifi">WiFi QR코드 만들기</option> \
 			<option value="store">QR코드 플레이트 스토어</option> \
+			<option value="gps">GPS <-> 주소 변환</option> \
 			<option value="catchme">캐치미</option>';
 
 	$('#selSites').append(selContents);
