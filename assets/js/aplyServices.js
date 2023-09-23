@@ -16,6 +16,7 @@ const targetsInfo = [
 	["gps", "https://gps.aply.biz"],
 	["wifi", "https://wifi.aply.biz"],
 	["store", "https://smartstore.naver.com/aqr"],
+	["qr", "https://qr.aply.biz"],
 ];
 
 $(function() {
@@ -32,7 +33,9 @@ $(function() {
 			<option value="wifi">WiFi QR코드 만들기</option> \
 			<option value="store">QR코드 플레이트 스토어</option> \
 			<option value="gps">GPS <-> 주소 변환</option> \
-			<option value="catchme">캐치미</option>';
+			<option value="catchme">캐치미</option> \
+			<option value="qr">QR코드 만들기</option>';
+
 
 	$('#selSites').append(selContents);
 
