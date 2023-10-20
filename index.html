@@ -1196,13 +1196,20 @@
                         </div>
 
                         <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea class="form-control" name="form_content" id="form_content" rows="7" placeholder="문의 내용" required=""></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
                             <p><input type="checkbox" name="agree_1" id="agree_1" value="제공"><label class="lab_check"
                                     for="agree_1"><span class="checkbox"></span> <a
                                         href="javascript:showPrivacyDialog();">개인정보 처리방침</a> 동의 <span
                                         class="required">(필수)</span></label></p>
                             <hr class="m-b-30 m-t-30">
                             <div class="text-center">
-                                <input class="btn btn-circle btn-brand btn-block" id="email_up_send" type="submit" value="연락처 남기기">
+                                <input class="btn btn-circle btn-brand btn-block" id="email_up_send" type="submit" value="전송하기">
                                     이 사이트는 reCAPTCHA의 보호를 받으며 Google <a href='https://policies.google.com/privacy' style='color:#333;' target='_blank'>개인 정보 보호 정책</a> 및 <a href='https://policies.google.com/terms' style='color:#333;' target='_blank'>서비스 약관</a>이 적용됩니다.</a>
                             </div>
                             <input type="hidden" name="form_token" id="form_token">
