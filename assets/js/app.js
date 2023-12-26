@@ -535,7 +535,7 @@ function sendApplicationData(form_id)
 
 function ajaxRequest(fed, btn_id) {
   $('.loadingio-spinner-pulse-wy2zuz4u6s').show();
-  $("#" + btn_id).hide();
+  $(btn_id).hide();
 
   $.ajax({
       type: "POST",
@@ -548,7 +548,7 @@ function ajaxRequest(fed, btn_id) {
       contentType: false,
       cache: false,
     success: function (data) {
-      $("#" + btn_id).show();
+      $(btn_id).show();
       $('.loadingio-spinner-pulse-wy2zuz4u6s').hide();
 
       if (data.result == "success") {
@@ -562,7 +562,7 @@ function ajaxRequest(fed, btn_id) {
       //$(form_id + " input").last().remove();
     },
     error: function(jqXHR, text, error) {
-      $("#" + btn_id).show();
+      $(btn_id).show();
       $('.loadingio-spinner-pulse-wy2zuz4u6s').hide();
 
       showDialog("죄송합니다. 일시적인 오류가 발생하였습니다. 다시 시도해 주세요.");
