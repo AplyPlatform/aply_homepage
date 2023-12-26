@@ -552,7 +552,7 @@ function ajaxRequest(fed) {
 
       if (data.result == "success") {
         showDialog("전송이 완료되었습니다. APLY가 연락드리겠습니다.", function() {
-          location.href="index.html";
+          location.href = location.href;
         });
         return;
       }

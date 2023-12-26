@@ -20553,6 +20553,7 @@ pre[class*="language-"] {
       display: inline-block;
       overflow: hidden;
       background: none;
+      display:none;
     }
     .ldio-nmhf9bu0h7t {
       width: 100%;
