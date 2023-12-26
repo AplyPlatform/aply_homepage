@@ -20537,6 +20537,7 @@ pre[class*="language-"] {
   display: inline-block;
   overflow: hidden;
   background: none;
+  display: none;
 }
 .ldio-ec10op87166 {
   width: 100%;
