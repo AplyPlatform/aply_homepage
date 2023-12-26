@@ -20538,6 +20538,9 @@ pre[class*="language-"] {
   overflow: hidden;
   background: none;
   display: none;
+  position: absolute;
+  left:50%;
+  transform: translate(-50%, -50%);
 }
 .ldio-ec10op87166 {
   width: 100%;
