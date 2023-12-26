@@ -399,24 +399,24 @@ function initPage(callback) {
 
 
 function showDialog(msg, callback) {
-$('#askModalContent').text(msg);
-$('#askModal').modal('show');
+  $('#askModalContent').text(msg);
+  $('#askModal').modal('show');
 
-if (callback == null) return;
+  if (callback == null) return;
 
-$('#askModalOKButton').off('click');
-$('#askModalOKButton').click(function () {
-    $('#askModal').modal('hide');
-    callback();
-});
+  $('#askModalOKButton').off('click');
+  $('#askModalOKButton').click(function () {
+      $('#askModal').modal('hide');
+      callback();
+  });
 }
 
 function showPrivacyDialog() {
-$('#modal-3').modal('show');
+  $('#modal-3').modal('show');
 }
 
 function getPageFile(pageName) {
-return pageFileTable[pageName];
+  return pageFileTable[pageName];
 }
 
 function setMenus() {
@@ -425,7 +425,7 @@ function setMenus() {
   });    
   
   $("#menu_about").click(function() {                
-  location.href = "?p=about";
+      location.href = "?p=about";
   });
 
   $("#menu_service").click(function() {		
@@ -433,15 +433,15 @@ function setMenus() {
   });
 
   $("#menu_team").click(function() {        
-  location.href = "?p=team";
+      location.href = "?p=team";
   });
 
   $("#menu_contact").click(function() {
-  location.href = "?p=contact";        
+      location.href = "?p=contact";        
   });
 
   $("#menu_recruit").click(function() {
-  location.href = "?p=recruit";        
+      location.href = "?p=recruit";        
   });
 }
 
@@ -461,126 +461,111 @@ async function loadTemplate(templateName) {
 
 function sendApplicationData(form_id)
 {
-let min_type = "";
-if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
-  min_type = "/제휴및협업";
-}
-
-if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
-  min_type = min_type + "/서비스관련";
-}
-
-if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
-  min_type = min_type + "/SW개발";
-}
-
-if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
-  min_type = min_type + "/기타문의";
-}
-
-if (min_type == "") {
-  showDialog("문의 분야를 선택해 주세요.");		
-  if ($('div').is('.page-loader')) {
-    $('.page-loader').delay(200).fadeOut(800);
+  let min_type = "";
+  if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
+    min_type = "/제휴및협업";
   }
-  return false;
-}
 
-let form_content = $(form_id).find('input[name="form_content"').val();
-if (form_content == "") {
-  showDialog("문의 내용을 입력해 주세요.");
-  if ($('div').is('.page-loader')) {
-    $('.page-loader').delay(200).fadeOut(800);
+  if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
+    min_type = min_type + "/서비스관련";
   }
-  return false;
-}
 
-let form_phone = $(form_id).find('input[name="form_phone"]').val();
-if (form_phone == "") {
-  showDialog("전화번호를 입력해 주세요.");
-  if ($('div').is('.page-loader')) {
-    $('.page-loader').delay(200).fadeOut(800);
+  if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
+    min_type = min_type + "/SW개발";
   }
-  return false;
-}
 
-let form_email = $(form_id).find('input[name="form_email"]').val();
-if (form_email == "") {
-  showDialog("이메일을 입력해 주세요.");
-  if ($('div').is('.page-loader')) {
-    $('.page-loader').delay(200).fadeOut(800);
+  if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
+    min_type = min_type + "/기타문의";
   }
-  return false;
-}
 
-if ($(form_id).find('input[name="agree_1"').length > 0 && $(form_id).find('input[name="agree_1"').is(":checked") == false) {
-  showDialog("개인정보 처리방침에 동의해 주세요.");
-  if ($('div').is('.page-loader')) {
-    $('.page-loader').delay(200).fadeOut(800);
+  if (min_type == "") {
+    showDialog("문의 분야를 선택해 주세요.");  
+    return false;
   }
-  return false;
-}	
-  
-let ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');	
-$(form_id).append(ref);
 
-ref = $('<input type="hidden" value="' + min_type + '" name="min_type">');	
-$(form_id).append(ref);	
-ref = $('<input type="hidden" value="aplycontact" name="form_kind">');	
-$(form_id).append(ref);
+  let form_content = $(form_id).find('input[name="form_content"').val();
+  if (form_content == "") {
+    showDialog("문의 내용을 입력해 주세요.");  
+    return false;
+  }
 
-if (isRecaptchaInit == true) {
-  grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
-    $(form_id).find('input[name="form_token"]').val(token);
-    let fed = new FormData($(form_id)[0]);
-    ajaxRequest(fed);
-  });
-}
-else {
-  grecaptcha.ready(function() {
-    isRecaptchaInit = true;
+  let form_phone = $(form_id).find('input[name="form_phone"]').val();
+  if (form_phone == "") {
+    showDialog("전화번호를 입력해 주세요.");  
+    return false;
+  }
+
+  let form_email = $(form_id).find('input[name="form_email"]').val();
+  if (form_email == "") {
+    showDialog("이메일을 입력해 주세요.");  
+    return false;
+  }
+
+  if ($(form_id).find('input[name="agree_1"').length > 0 && $(form_id).find('input[name="agree_1"').is(":checked") == false) {
+    showDialog("개인정보 처리방침에 동의해 주세요.");  
+    return false;
+  }	
+    
+  let ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');	
+  $(form_id).append(ref);
+
+  ref = $('<input type="hidden" value="' + min_type + '" name="min_type">');	
+  $(form_id).append(ref);	
+  ref = $('<input type="hidden" value="aplycontact" name="form_kind">');	
+  $(form_id).append(ref);
+
+  if (isRecaptchaInit == true) {
     grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
       $(form_id).find('input[name="form_token"]').val(token);
       let fed = new FormData($(form_id)[0]);
       ajaxRequest(fed);
     });
-  });
-}
+  }
+  else {
+    grecaptcha.ready(function() {
+      isRecaptchaInit = true;
+      grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
+        $(form_id).find('input[name="form_token"]').val(token);
+        let fed = new FormData($(form_id)[0]);
+        ajaxRequest(fed);
+      });
+    });
+  }
 }
 
 function ajaxRequest(fed) {
-$.ajax({
-  type: "POST",
-  url: 'https://aply.biz/contact/handler.php',
-  crossDomain: true,
-  dataType: "json",
-  data:fed,
-  enctype: 'multipart/form-data', // 필수
-  processData: false,
-    contentType: false,
-    cache: false,
-  success: function (data) {
-    if ($('div').is('.page-loader')) {
-      $('.page-loader').delay(200).fadeOut(800);
-    }
+  $('.loadingio-spinner-pulse-wy2zuz4u6s').show();
 
-    if (data.result == "success") {
-      showDialog("전송이 완료되었습니다. APLY가 연락드리겠습니다.", function() {
-        location.href="index.html";
-      });
-      return;
+  $.ajax({
+      type: "POST",
+      url: 'https://aply.biz/contact/handler.php',
+      crossDomain: true,
+      dataType: "json",
+      data:fed,
+      enctype: 'multipart/form-data', // 필수
+      processData: false,
+      contentType: false,
+      cache: false,
+    success: function (data) {
+      
+      $('.loadingio-spinner-pulse-wy2zuz4u6s').hide();
+
+      if (data.result == "success") {
+        showDialog("전송이 완료되었습니다. APLY가 연락드리겠습니다.", function() {
+          location.href="index.html";
+        });
+        return;
+      }
+      
+      showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message);
+      //$(form_id + " input").last().remove();
+    },
+    error: function(jqXHR, text, error) {
+      $('.loadingio-spinner-pulse-wy2zuz4u6s').hide();
+
+      showDialog("죄송합니다. 일시적인 오류가 발생하였습니다. 다시 시도해 주세요.");
     }
-    
-    showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message);
-    //$(form_id + " input").last().remove();
-  },
-  error: function(jqXHR, text, error) {
-    if ($('div').is('.page-loader')) {
-      $('.page-loader').delay(200).fadeOut(800);
-    }
-    showDialog("죄송합니다. 일시적인 오류가 발생하였습니다. 다시 시도해 주세요.");
-  }
-});
+  });
 }
 
 function setSubmitHandler(form_p_id) {
