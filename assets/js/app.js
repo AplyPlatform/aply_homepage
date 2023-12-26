@@ -534,7 +534,7 @@ function sendApplicationData(form_id)
 }
 
 function ajaxRequest(fed, btn_id) {
-  $('.loadingio-spinner-pulse-wy2zuz4u6s').show();
+  $('.loadingio-spinner').show();
   $(btn_id).hide();
 
   $.ajax({
@@ -549,21 +549,20 @@ function ajaxRequest(fed, btn_id) {
       cache: false,
     success: function (data) {
       $(btn_id).show();
-      $('.loadingio-spinner-pulse-wy2zuz4u6s').hide();
+      $('.loadingio-spinner').hide();
 
       if (data.result == "success") {
         showDialog("전송이 완료되었습니다. APLY가 연락드리겠습니다.", function() {
-          location.href = location.href;
+          location.href = "index.html";
         });
         return;
       }
       
-      showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message);
-      //$(form_id + " input").last().remove();
+      showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message);      
     },
     error: function(jqXHR, text, error) {
       $(btn_id).show();
-      $('.loadingio-spinner-pulse-wy2zuz4u6s').hide();
+      $('.loadingio-spinner').hide();
 
       showDialog("죄송합니다. 일시적인 오류가 발생하였습니다. 다시 시도해 주세요.");
     }
