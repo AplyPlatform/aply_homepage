@@ -518,7 +518,7 @@ function sendApplicationData(form_id)
     grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
       $(form_id).find('input[name="form_token"]').val(token);
       let fed = new FormData($(form_id)[0]);
-      ajaxRequest(fed);
+      ajaxRequest(fed, form_id + "_send");
     });
   }
   else {
@@ -527,14 +527,15 @@ function sendApplicationData(form_id)
       grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
         $(form_id).find('input[name="form_token"]').val(token);
         let fed = new FormData($(form_id)[0]);
-        ajaxRequest(fed);
+        ajaxRequest(fed, form_id + "_send");
       });
     });
   }
 }
 
-function ajaxRequest(fed) {
+function ajaxRequest(fed, btn_id) {
   $('.loadingio-spinner-pulse-wy2zuz4u6s').show();
+  $("#" + btn_id).hide();
 
   $.ajax({
       type: "POST",
@@ -547,7 +548,7 @@ function ajaxRequest(fed) {
       contentType: false,
       cache: false,
     success: function (data) {
-      
+      $("#" + btn_id).show();
       $('.loadingio-spinner-pulse-wy2zuz4u6s').hide();
 
       if (data.result == "success") {
@@ -561,6 +562,7 @@ function ajaxRequest(fed) {
       //$(form_id + " input").last().remove();
     },
     error: function(jqXHR, text, error) {
+      $("#" + btn_id).show();
       $('.loadingio-spinner-pulse-wy2zuz4u6s').hide();
 
       showDialog("죄송합니다. 일시적인 오류가 발생하였습니다. 다시 시도해 주세요.");
@@ -573,8 +575,7 @@ var form_id = "#" + form_p_id;
 
 $(form_id + "_send").on("click", function(e) {
   e.preventDefault();
-
-  $('.page-loader').show();
+  
   sendApplicationData(form_id);
 });
 
@@ -641,7 +642,7 @@ if (isRecaptchaInit == true) {
   grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
     $(form_id).find('input[name="form_token"]').val(token);
     let fed = new FormData($(form_id)[0]);
-    ajaxRequest(fed);
+    ajaxRequest(fed, form_id + "_send");
   });
 }
 else {
@@ -650,7 +651,7 @@ else {
     grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
       $(form_id).find('input[name="form_token"]').val(token);
       let fed = new FormData($(form_id)[0]);
-      ajaxRequest(fed);
+      ajaxRequest(fed, form_id + "_send");
     });
   });
 }
@@ -660,9 +661,7 @@ function setRecruitSubmitHandler(form_p_id) {
 var form_id = "#" + form_p_id;
 
 $(form_id + "_send").on("click", function(e) {
-  e.preventDefault();
-
-  $('.page-loader').show();
+  e.preventDefault();  
   sendRecruitApplicationData(form_id);	  
 });
 
