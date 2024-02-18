@@ -11,7 +11,7 @@ const targetsInfo = [
 	["drdr", "https://drdr.io"],
 	["blog", "https://blog.naver.com/PostList.naver?blogId=jebo78&categoryNo=38&from=postList"],
 	["catchme", "https://catchme.aply.biz"],
-	["kiosk", "https://aplylab.com/kiosk/index_2022.html"],
+	["kiosk", "https://kiosk.aply.biz/index_2022.html"],
 	["polaris", "https://polarisconsulting.modoo.at"],
 	["gps", "https://gps.aply.biz"],	
 	["store", "https://smartstore.naver.com/aqr"],
