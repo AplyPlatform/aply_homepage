@@ -9,7 +9,7 @@ const targetsInfo = [
 	["aplx", "https://home.aplx.link"],
 	["dkdk", "https://dkdk.io"],
 	["drdr", "https://drdr.io"],
-	["blog", "https://blog.naver.com/PostList.naver?blogId=jebo78&categoryNo=38&from=postList"],
+	["blog", "https://blog.naver.com/aply-platform"],
 	["catchme", "https://catchme.aply.biz"],
 	["kiosk", "https://aplylab.com/kiosk/index_2022.html"],
 	["polaris", "https://polarisconsulting.modoo.at"],
