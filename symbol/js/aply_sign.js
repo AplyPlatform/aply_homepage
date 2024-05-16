@@ -49,11 +49,11 @@ function processChange() {
             		+ '&nbsp;&nbsp;<strong><font size="2" color="#777">주식회사 어플라이 APLY Inc.</font></strong><br>&nbsp;&nbsp;<font color="#8e7cc3"><strong>T</strong></font>&nbsp;+82-2-6956-0801&nbsp;&nbsp;'
             		+ '<font color="#8e7cc3">|</font>&nbsp;&nbsp;<font color="#8e7cc3"><strong>H</strong></font>&nbsp;&nbsp;<a href="http://aply.biz/" target="_blank" style="color:#777">www.aply.biz</font></a><br>'
             		+ '<br>&nbsp;&nbsp;<font color="#8e7cc3"><strong>O</strong></font> 10915 <font color="#8e7cc3">|</font> 6F, 24-21,&nbsp;Geumbit-ro, Paju-si,<br>&nbsp;&nbsp;Gyeonggi-do, Republic of Korea<br>&nbsp;&nbsp;'
-					+ '<table border="0" cellpadding="0" cellspacing="0" width="220px"><tr><td width="4px"></td><td width="110px" align="left" valign="center"><a href="https://aply.biz/" target="_blank"><img src="https://home.aply.biz/assets/images/logo.png" width="96" height="30"/></a></td>'
-					+ '<td width="1" bgcolor="#8e7cc3"></td>'
-					+ '<td align="right" valign="center" width="52px"><a href="https://aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aplx_og_image.png" width="30" height="30" alt="증강현실 기반의 홍보/전시/커뮤니케이션 플랫폼"/></a></td>'
-					+ '<td align="center" valign="center" width="53px"><a href="https://aqr.aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_squre2.png" width="30" height="30" alt="간편 송금 지원 서비스"/></a>'
-					+ '</td></tr></table>'
+					+ '<table border="0" cellpadding="0" cellspacing="0"><tr><td width="4px" rowspan="2"></td>'
+					+ '<td width="102px" align="left" valign="center" rowspan="2"><a href="https://aply.biz/" target="_blank"><img src="https://home.aply.biz/assets/images/logo.png" height="25px"/></a></td><td width="1px" rowspan="2" bgcolor="#ccc"></td>'
+					+ '<td width="71px" height="33px" align="center" valign="center" ><a href="https://aqr.aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_squre2.png" width="25px" height="25px" alt="간편 송금 지원 서비스"/></a></td>'
+					+ '<td width="71px" align="center" valign="center" rowspan="2"><a href="https://aplx.link/to/aply" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_qr.png" width="58px" height="58px" alt="APLY Link-in-bio"/></a></td></tr>'
+					+ '<tr><td width="70px" height="33px" align="center" valign="center" ><a href="https://aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aplx_og_image.png" width="25px" height="25px" alt="증강현실 기반의 홍보/전시/커뮤니케이션 플랫폼"/></a></td></tr></table>'
             		+ '<br><br><font color="#ddd" size="1">____________________________________________</font></div>';
 	
 
