@@ -59,26 +59,38 @@
   
   <body>
     <script src="../assets/js/custom/jquery-3.2.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/javascript-obfuscator/dist/index.browser.js"></script>
+    <script src="../assets/js/obs.browser.js"></script>
+    <script src="../symbol/js/clipboard.min.js"></script>
                
     <!-- main contents (JS코드로 변경됨) -->
-    <div id="mainContents" class="main-container">
+    <div id="mainContents" class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <hr><h5>JS Obfuscator</h5><hr>
+        </div>
+      </div>
       <div class="row">
         <div class="col-sm-6">
           <div class="textwrapper">
             <textarea cols="2" rows="20" id="code_area"></textarea>            
           </div>
+          <br>
+          <button id="btnDoIt" class="btn btn-info btn-block">난독화하기</button>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6" style="display:none;" id="result_display">
           <div class="textwrapper">
             <textarea cols="2" rows="20" id="result_area"></textarea>
           </div>
-        </div>
-        <div class="col-sm-12">
-          <button id="btnDoIt">DO IT</button>
+          <br>
+          <button id="btnCopyIt" class="btn btn-success btn-block">복사하기</button>
         </div>
       </div>
       <script>
+        function CopyToClipboard() {
+          $("#result_area").select();
+          document.execCommand('copy');
+          alert("코드가 복사되었습니다");
+        }
           
           $(function () {
             //var JavaScriptObfuscator = require('javascript-obfuscator');
@@ -101,6 +113,11 @@
 
                 let result = obfuscationResult.getObfuscatedCode();
                 $("#result_area").val(result);
+                $("#result_display").show();                
+            });
+
+            $("#btnCopyIt").click(function() {
+              CopyToClipboard();
             });
           });
       </script>
