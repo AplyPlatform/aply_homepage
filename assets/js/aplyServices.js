@@ -1,6 +1,7 @@
 const targetsInfo = [
 	["aply", "https://aply.biz/"],
 	["aqr", "https://aqr.aplx.link"],
+	["aqr-m", "https://aqr-m.aplx.link"],
 	["recruit", "https://home.aply.biz/?p=recruit"],
 	["duni", "https://duni.io"],
 	["dunipilot", "https://pilot.duni.io"],
@@ -26,6 +27,7 @@ $(function() {
 			<option value="blog">Blog</option> \
 			<option>--------------------</option> \
 			<option value="aqr">AQR : 간편 송금 서비스</option> \
+			<option value="aqr-m">AQR-M : QR 관리 솔루션</option> \
 			<option value="aplx">APLX : 증강현실 플랫폼</option> \
 			<option value="kiosk">R&D KIOSK : 국가연구개발사업 길잡이</option> \
 			<option>--------------------</option> \
