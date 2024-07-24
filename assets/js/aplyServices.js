@@ -12,7 +12,7 @@ const targetsInfo = [
 	["drdr", "https://drdr.io"],
 	["blog", "https://blog.naver.com/aply-platform"],
 	["catchme", "https://catchme.aply.biz"],
-	["kiosk", "https://aplylab.com/kiosk/index_2022.html"],
+	["kiosk", "https://kiosk.aply.biz"],
 	["polaris", "https://polarisconsulting.modoo.at"],
 	["gps", "https://gps.aply.biz"],	
 	["store", "https://smartstore.naver.com/aqr"],
