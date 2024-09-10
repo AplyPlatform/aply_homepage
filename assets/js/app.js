@@ -5,6 +5,7 @@ let pageFileTable = {
 	"team" : "team.html",
 	"contact" : "contact.html",
 	"recruit" : "recruit.html",
+  "board" : "board.html",
 };
 
 let isRecaptchaInit = false;
@@ -443,6 +444,10 @@ function setMenus() {
   $("#menu_recruit").click(function() {
       location.href = "?p=recruit";        
   });
+
+  $("#menu_board").click(function() {
+    location.href = "?p=board";        
+});
 }
 
 async function setContent(targetId, templateName, callback) {
