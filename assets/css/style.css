@@ -14956,7 +14956,7 @@ header {
     }
 
 @media (max-width: 1199.98px) {
-  header {border-radius: 0.25rem; margin: 15px; width: calc(100% - 30px);}
+  header {border-radius: 0.25rem; margin: 15px; width: calc(100% - 30px); border:1px solid #e5e5e5;}
   }
 
 .header-sticky {-webkit-transition: all 0.4s; -moz-transition: all 0.4s; transition: all 0.4s; -webkit-transition-delay: 0s; -moz-transition-delay: 0s; transition-delay: 0s; -webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); position: fixed; top: 0; right: 0; bottom: auto; left: 0;}
@@ -15454,8 +15454,9 @@ footer .nav li {display: inline-block; }
 .burger span::before {top: -6px; }
 .burger span::after {top: 6px; }
 
+
 @media (max-width: 1024px) {
- .burger span, .burger span::before, .burger span::after {display: block; width: 20px; height: 2px; background-color:#000;}
+  header[class*="-dark"] .navbar-logo-light .burger span, .burger span::before, .burger span::after {display: block; width: 20px; height: 2px; background-color:#000;}
   }
     
   .burger.clicked span {background-color: transparent; }
