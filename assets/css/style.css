@@ -14960,6 +14960,12 @@ header {
   .header-dark[class*="-not-top"][class*="-pinned"], .header-light[class*="-not-top"][class*="-pinned"] {padding: 0; background: #fff; border-color: #e5e5e5;}
   .header-dark[class*="-not-top"][class*="---unpinned"], .header-light[class*="-not-top"][class*="---unpinned"] {padding: 0; background: #fff; border-color: #e5e5e5;}
   }
+  
+@media (max-width: 1024px) {
+  .header-sticky[class*="-unpinned"] .burger span, .burger span::before, .burger span::after {background-color:#000;}
+  .header-dark[class*="-not-top"][class*="-pinned"] .burger span, .burger span::before, .burger span::after {background-color:#000;}
+  .header-dark[class*="-not-top"][class*="---unpinned"] .burger span, .burger span::before, .burger span::after {background-color:#000;}
+  }  
 
 .header-sticky {-webkit-transition: all 0.4s; -moz-transition: all 0.4s; transition: all 0.4s; -webkit-transition-delay: 0s; -moz-transition-delay: 0s; transition-delay: 0s; -webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); position: fixed; top: 0; right: 0; bottom: auto; left: 0;}
 .header-sticky[class*="-unpinned"] {background: #fff;}
@@ -15455,11 +15461,6 @@ footer .nav li {display: inline-block; }
 .burger span::before, .burger span::after {position: absolute;  content: ""; }
 .burger span::before {top: -6px; }
 .burger span::after {top: 6px; }
-
-
-@media (max-width: 1024px) {
-  header[class*="-dark"] .navbar-logo-light .burger span, .burger span::before, .burger span::after {display: block; width: 20px; height: 2px; background-color:#000;}
-  }
     
   .burger.clicked span {background-color: transparent; }
   .burger.clicked span::before {
