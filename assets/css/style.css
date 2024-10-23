@@ -14962,6 +14962,7 @@ header {
   }
   
 @media (max-width: 1024px) {
+  .header-sticky[class*="-pinned"] .burger span, .header-sticky[class*="-pinned"] .burger span::before, .header-sticky[class*="-pinned"] .burger span::after {background-color:#000;}
   .header-sticky[class*="-unpinned"] .burger span, .header-sticky[class*="-unpinned"] .burger span::before, .header-sticky[class*="-unpinned"] .burger span::after {background-color:#000;}
   }  
 
