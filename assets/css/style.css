@@ -14970,13 +14970,13 @@ header {
 .header-sticky[class*="-unpinned"] {background: #fff;}
 
 .header-dark[class*="-not-top"][class*="-pinned"], .header-light[class*="-not-top"][class*="-pinned"] {padding: 0; background: #fff;}
-.header-dark[class*="-not-top"][class*="---unpinned"], .header-light[class*="-not-top"][class*="---unpinned"] {padding: 0; background: #fff;}
+.header-dark[class*="-not-top"][class*="-unpinned"], .header-light[class*="-not-top"][class*="-unpinned"] {padding: 0; background: #fff;}
 
 .header-dark[class*="-not-top"][class*="-pinned"] .navbar-logo, .header-light[class*="-not-top"][class*="-pinned"] .navbar-logo {display: none !important; }
-.header-dark[class*="-not-top"][class*="--unpinned"] .navbar-logo, .header-light[class*="-not-top"][class*="--unpinned"] .navbar-logo {display: none !important; }
+.header-dark[class*="-not-top"][class*="-unpinned"] .navbar-logo, .header-light[class*="-not-top"][class*="-unpinned"] .navbar-logo {display: none !important; }
 
 .header-dark[class*="-not-top"][class*="-pinned"] .navbar-logo.navbar-logo-dark, .header-light[class*="-not-top"][class*="-pinned"] .navbar-logo.navbar-logo-dark {display: block !important; }
-.header-dark[class*="-not-top"][class*="--unpinned"] .navbar-logo.navbar-logo-dark, .header-light[class*="-not-top"][class*="--unpinned"] .navbar-logo.navbar-logo-dark {display: block !important; }
+.header-dark[class*="-not-top"][class*="-unpinned"] .navbar-logo.navbar-logo-dark, .header-light[class*="-not-top"][class*="-unpinned"] .navbar-logo.navbar-logo-dark {display: block !important; }
   
 .header-dark[class*="-not-top"][class*="-pinned"]::before, .header-light[class*="-not-top"][class*="-pinned"]::before {-webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); opacity: 1; }
 .header-dark[class*="-not-top"][class*="-unpinned"]::before, .header-light[class*="-not-top"][class*="-unpinned"]::before {-webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); opacity: 1; }
