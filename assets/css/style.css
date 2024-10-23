@@ -14962,9 +14962,7 @@ header {
   }
   
 @media (max-width: 1024px) {
-  .header-sticky[class*="-unpinned"] .burger span, .burger span::before, .burger span::after {background-color:#000;}
-  .header-dark[class*="-not-top"][class*="-pinned"] .burger span, .burger span::before, .burger span::after {background-color:#000;}
-  .header-dark[class*="-not-top"][class*="---unpinned"] .burger span, .burger span::before, .burger span::after {background-color:#000;}
+  .header-sticky[class*="-unpinned"] .burger span, .header-sticky[class*="-unpinned"] .burger span::before, .header-sticky[class*="-unpinned"] .burger span::after {background-color:#000;}
   }  
 
 .header-sticky {-webkit-transition: all 0.4s; -moz-transition: all 0.4s; transition: all 0.4s; -webkit-transition-delay: 0s; -moz-transition-delay: 0s; transition-delay: 0s; -webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); position: fixed; top: 0; right: 0; bottom: auto; left: 0;}
