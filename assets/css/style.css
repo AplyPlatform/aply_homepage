@@ -14949,20 +14949,19 @@ header {
   border-bottom: 1px solid transparent; }
 
 @media (min-width: 1200px) {
-    header[class*="-dark"] {border-color: rgba(0, 0, 0, 0.1); }
-    header[class*="-dark"] .navbar-logo-light {display: block !important; }
+    header[class*="-dark"] {border-color: rgba(0, 0, 0, 0.1);}
+    header[class*="-dark"] .navbar-logo-light {display: block !important;}
     header[class*="-light"] {border-color: #e5e5e5;}
-    header[class*="-light"] .navbar-logo-dark {display: block !important; }
+    header[class*="-light"] .navbar-logo-dark {display: block !important;}
     }
 
 @media (max-width: 1199.98px) {
-  header {border-radius: 0.25rem; margin: 15px; width: calc(100% - 30px);}
+  header {border-radius: 0.25rem; margin: 15px; width: calc(100% - 30px); border:1px solid #e5e5e5;}
   .header-dark[class*="-not-top"][class*="-pinned"], .header-light[class*="-not-top"][class*="-pinned"] {padding: 0; background: #fff; border-color: #e5e5e5;}
-  .header-dark[class*="-not-top"][class*="---unpinned"], .header-light[class*="-not-top"][class*="---unpinned"] {padding: 0; background: #fff; border-color: #e5e5e5;}
-  }
-  
-@media (max-width: 1024px) {
-  .header-sticky[class*="-pinned"] .burger span, .header-sticky[class*="-pinned"] .burger span::before, .header-sticky[class*="-pinned"] .burger span::after {background-color:#000;}
+  .header-dark[class*="-not-top"][class*="-unpinned"], .header-light[class*="-not-top"][class*="-unpinned"] {padding: 0; background: #fff; border-color: #e5e5e5;}
+  .header-dark[class*="-not-top"][class*="-pinned"] .burger span, .header-dark[class*="-not-top"][class*="-pinned"] .burger span::before,                       .header-dark[class*="-not-top"][class*="-pinned"] .burger span::after {background-color:#000;}
+     
+  .header-light[class*="-not-top"][class*="-pinned"] .header-sticky[class*="-pinned"] .burger span, .header-sticky[class*="-pinned"] .burger span::before, .header-sticky[class*="-pinned"] .burger span::after {background-color:#FFF;}
   .header-sticky[class*="-unpinned"] .burger span, .header-sticky[class*="-unpinned"] .burger span::before, .header-sticky[class*="-unpinned"] .burger span::after {background-color:#000;}
   }  
 
