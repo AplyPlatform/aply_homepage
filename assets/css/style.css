@@ -14956,9 +14956,8 @@ header {
     }
 
 @media (max-width: 1199.98px) {
-    header {border-radius: 0.25rem; margin: 15px; width: calc(100% - 30px);}
-    .burger span, .burger span::before, .burger span::after {display: block; width: 20px; height: 2px; background-color:#888;;}
-    }
+  header {border-radius: 0.25rem; margin: 15px; width: calc(100% - 30px);}
+  }
 
 .header-sticky {-webkit-transition: all 0.4s; -moz-transition: all 0.4s; transition: all 0.4s; -webkit-transition-delay: 0s; -moz-transition-delay: 0s; transition-delay: 0s; -webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); position: fixed; top: 0; right: 0; bottom: auto; left: 0;}
 .header-sticky[class*="-unpinned"] {background: #fff;}
@@ -15421,7 +15420,7 @@ footer .nav li {display: inline-block; }
 .overlay-active {overflow: hidden; }
 
 .burger {display: inline-block; position: relative; width: 60px; height: 60px; z-index: 100;}
-  .burger span {
+.burger span {
     position: relative;
     margin-top: 6px;
     margin-bottom: 6px;
@@ -15451,9 +15450,14 @@ footer .nav li {display: inline-block; }
       -o-transition-duration: 0.3s;
       transition-duration: 0.3s;
       transition-duration: 0.3s; }
-    .burger span::before, .burger span::after {position: absolute;  content: ""; }
-    .burger span::before {top: -6px; }
-    .burger span::after {top: 6px; }
+.burger span::before, .burger span::after {position: absolute;  content: ""; }
+.burger span::before {top: -6px; }
+.burger span::after {top: 6px; }
+
+@media (max-width: 1024px) {
+ .burger span, .burger span::before, .burger span::after {display: block; width: 20px; height: 2px; background-color:#000;}
+  }
+    
   .burger.clicked span {background-color: transparent; }
   .burger.clicked span::before {
     -webkit-transform: translateY(6px) rotate(45deg);
