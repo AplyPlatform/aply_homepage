@@ -14975,7 +14975,7 @@ header {
     right: 0;
     bottom: auto;
     left: 0; }
-  .header-sticky[class*="-unpinned"] { }
+  .header-sticky[class*="-unpinned"] {background: #fff;}
   }
 
 @media (min-width: 1200px) {
