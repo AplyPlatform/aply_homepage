@@ -14951,19 +14951,21 @@ header {
 @media (min-width: 1200px) {
     header[class*="-dark"] {border-color: rgba(0, 0, 0, 0.1); }
     header[class*="-dark"] .navbar-logo-light {display: block !important; }
-    header[class*="-light"] {border-color: #e5e5e5; }
+    header[class*="-light"] {border-color: #e5e5e5;}
     header[class*="-light"] .navbar-logo-dark {display: block !important; }
     }
 
 @media (max-width: 1199.98px) {
-  header {border-radius: 0.25rem; margin: 15px; width: calc(100% - 30px); border:1px solid #e5e5e5;}
+  header {border-radius: 0.25rem; margin: 15px; width: calc(100% - 30px);}
+  .header-dark[class*="-not-top"][class*="-pinned"], .header-light[class*="-not-top"][class*="-pinned"] {padding: 0; background: #fff; border-color: #e5e5e5;}
+  .header-dark[class*="-not-top"][class*="---unpinned"], .header-light[class*="-not-top"][class*="---unpinned"] {padding: 0; background: #fff; border-color: #e5e5e5;}
   }
 
 .header-sticky {-webkit-transition: all 0.4s; -moz-transition: all 0.4s; transition: all 0.4s; -webkit-transition-delay: 0s; -moz-transition-delay: 0s; transition-delay: 0s; -webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); position: fixed; top: 0; right: 0; bottom: auto; left: 0;}
 .header-sticky[class*="-unpinned"] {background: #fff;}
 
-.header-dark[class*="-not-top"][class*="-pinned"], .header-light[class*="-not-top"][class*="-pinned"] {padding: 0; background: #fff; }
-.header-dark[class*="-not-top"][class*="---unpinned"], .header-light[class*="-not-top"][class*="---unpinned"] {padding: 0; background: #fff; }
+.header-dark[class*="-not-top"][class*="-pinned"], .header-light[class*="-not-top"][class*="-pinned"] {padding: 0; background: #fff;}
+.header-dark[class*="-not-top"][class*="---unpinned"], .header-light[class*="-not-top"][class*="---unpinned"] {padding: 0; background: #fff;}
 
 .header-dark[class*="-not-top"][class*="-pinned"] .navbar-logo, .header-light[class*="-not-top"][class*="-pinned"] .navbar-logo {display: none !important; }
 .header-dark[class*="-not-top"][class*="--unpinned"] .navbar-logo, .header-light[class*="-not-top"][class*="--unpinned"] .navbar-logo {display: none !important; }
