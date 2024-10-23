@@ -14956,13 +14956,25 @@ header {
     }
 
 @media (max-width: 1199.98px) {
-  header {border-radius: 0.25rem; margin: 15px; width: calc(100% - 30px); border:1px solid #e5e5e5;}
-  .header-dark[class*="-not-top"][class*="-pinned"], .header-light[class*="-not-top"][class*="-pinned"] {padding: 0; background: #fff; border-color: #e5e5e5;}
-  .header-dark[class*="-not-top"][class*="-unpinned"], .header-light[class*="-not-top"][class*="-unpinned"] {padding: 0; background: #fff; border-color: #e5e5e5;}
-  .header-dark[class*="-not-top"][class*="-pinned"] .burger span, .header-dark[class*="-not-top"][class*="-pinned"] .burger span::before,                       .header-dark[class*="-not-top"][class*="-pinned"] .burger span::after {background-color:#000;}
-     
-  .header-light[class*="-not-top"][class*="-pinned"] .header-sticky[class*="-pinned"] .burger span, .header-sticky[class*="-pinned"] .burger span::before, .header-sticky[class*="-pinned"] .burger span::after {background-color:#FFF;}
-  .header-sticky[class*="-unpinned"] .burger span, .header-sticky[class*="-unpinned"] .burger span::before, .header-sticky[class*="-unpinned"] .burger span::after {background-color:#000;}
+  header {border-radius: 0.25rem; margin: 15px; width: calc(100% - 30px);}
+  
+  .header-dark[class*="-not-top"][class*="-pinned"], 
+  .header-light[class*="-not-top"][class*="-pinned"] {padding: 0; background: #fff; border:1px solid #e5e5e5;}
+  
+  .header-dark[class*="-not-top"][class*="-unpinned"], 
+  .header-light[class*="-not-top"][class*="-unpinned"] {padding: 0; background: #fff; border:1px solid #e5e5e5;}
+  
+  .header-dark[class*="-not-top"][class*="-pinned"] .burger span, 
+  .header-dark[class*="-not-top"][class*="-pinned"] .burger span::before,                       
+  .header-dark[class*="-not-top"][class*="-pinned"] .burger span::after {background-color:#000;} 
+  
+  .header-sticky[class*="-pinned"] .burger span, 
+  .header-sticky[class*="-pinned"] .burger span::before, 
+  .header-sticky[class*="-pinned"] .burger span::after {background-color:#FFF;}
+  
+  .header-sticky[class*="-unpinned"] .burger span, 
+  .header-sticky[class*="-unpinned"] .burger span::before, 
+  .header-sticky[class*="-unpinned"] .burger span::after {background-color:#000;}
   }  
 
 .header-sticky {-webkit-transition: all 0.4s; -moz-transition: all 0.4s; transition: all 0.4s; -webkit-transition-delay: 0s; -moz-transition-delay: 0s; transition-delay: 0s; -webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); position: fixed; top: 0; right: 0; bottom: auto; left: 0;}
