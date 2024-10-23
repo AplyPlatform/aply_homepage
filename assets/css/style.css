@@ -275,17 +275,17 @@ pre code {font-size: inherit; color: inherit;  word-break: normal; }
   margin-right: auto;
   margin-left: auto; }
   @media (min-width: 576px) {
-    .container {
-      max-width: 540px; } }
+    .container {max-width: 540px; }
+    }
   @media (min-width: 768px) {
-    .container {
-      max-width: 720px; } }
+    .container {max-width: 720px; }
+    }
   @media (min-width: 1200px) {
-    .container {
-      max-width: 1170px; } }
+    .container {max-width: 1170px; }
+    }
   @media (min-width: 1600px) {
-    .container {
-      max-width: 1300px; } }
+    .container {max-width: 1300px; }
+    }
 
 .container-fluid {
   width: 100%;
@@ -14957,46 +14957,29 @@ header {
 
 @media (max-width: 1199.98px) {
     header {border-radius: 0.25rem; margin: 15px; width: calc(100% - 30px);}
+    .burger span, .burger span::before, .burger span::after {display: block; width: 20px; height: 2px; background-color:#888;;}
     }
 
-@media (min-width: 1200px) {
-  .header-sticky {
-    -webkit-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-    -webkit-transition-delay: 0s;
-    -moz-transition-delay: 0s;
-    transition-delay: 0s;
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    transform: translate(0, 0);
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: 0; }
-  .header-sticky[class*="-unpinned"] {background: #fff;}
-  }
+.header-sticky {-webkit-transition: all 0.4s; -moz-transition: all 0.4s; transition: all 0.4s; -webkit-transition-delay: 0s; -moz-transition-delay: 0s; transition-delay: 0s; -webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); position: fixed; top: 0; right: 0; bottom: auto; left: 0;}
+.header-sticky[class*="-unpinned"] {background: #fff;}
 
-@media (min-width: 1200px) {
-  .header-dark[class*="-not-top"][class*="-pinned"], .header-light[class*="-not-top"][class*="-pinned"] {padding: 0; background: #fff; }
-  .header-dark[class*="-not-top"][class*="---unpinned"], .header-light[class*="-not-top"][class*="---unpinned"] {padding: 0; background: #fff; }
+.header-dark[class*="-not-top"][class*="-pinned"], .header-light[class*="-not-top"][class*="-pinned"] {padding: 0; background: #fff; }
+.header-dark[class*="-not-top"][class*="---unpinned"], .header-light[class*="-not-top"][class*="---unpinned"] {padding: 0; background: #fff; }
+
+.header-dark[class*="-not-top"][class*="-pinned"] .navbar-logo, .header-light[class*="-not-top"][class*="-pinned"] .navbar-logo {display: none !important; }
+.header-dark[class*="-not-top"][class*="--unpinned"] .navbar-logo, .header-light[class*="-not-top"][class*="--unpinned"] .navbar-logo {display: none !important; }
+
+.header-dark[class*="-not-top"][class*="-pinned"] .navbar-logo.navbar-logo-dark, .header-light[class*="-not-top"][class*="-pinned"] .navbar-logo.navbar-logo-dark {display: block !important; }
+.header-dark[class*="-not-top"][class*="--unpinned"] .navbar-logo.navbar-logo-dark, .header-light[class*="-not-top"][class*="--unpinned"] .navbar-logo.navbar-logo-dark {display: block !important; }
   
-  .header-dark[class*="-not-top"][class*="-pinned"] .navbar-logo, .header-light[class*="-not-top"][class*="-pinned"] .navbar-logo {display: none !important; }
-  .header-dark[class*="-not-top"][class*="--unpinned"] .navbar-logo, .header-light[class*="-not-top"][class*="--unpinned"] .navbar-logo {display: none !important; }
+.header-dark[class*="-not-top"][class*="-pinned"]::before, .header-light[class*="-not-top"][class*="-pinned"]::before {-webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); opacity: 1; }
+.header-dark[class*="-not-top"][class*="-unpinned"]::before, .header-light[class*="-not-top"][class*="-unpinned"]::before {-webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); opacity: 1; }
   
-  .header-dark[class*="-not-top"][class*="-pinned"] .navbar-logo.navbar-logo-dark, .header-light[class*="-not-top"][class*="-pinned"] .navbar-logo.navbar-logo-dark {display: block !important; }
-  .header-dark[class*="-not-top"][class*="--unpinned"] .navbar-logo.navbar-logo-dark, .header-light[class*="-not-top"][class*="--unpinned"] .navbar-logo.navbar-logo-dark {display: block !important; }
+.header-dark[class*="-not-top"][class*="-pinned"] .navbar-nav .nav-item .nav-link, .header-light[class*="-not-top"][class*="-pinned"] .navbar-nav .nav-item .nav-link {color: #888;}
+.header-dark[class*="-not-top"][class*="-unpinned"] .navbar-nav .nav-item .nav-link, .header-light[class*="-not-top"][class*="-unpinned"] .navbar-nav .nav-item .nav-link {color: #888;}
   
-  .header-dark[class*="-not-top"][class*="-pinned"]::before, .header-light[class*="-not-top"][class*="-pinned"]::before {-webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); opacity: 1; }
-  .header-dark[class*="-not-top"][class*="-unpinned"]::before, .header-light[class*="-not-top"][class*="-unpinned"]::before {-webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); transform: translate(0, 0); opacity: 1; }
-  
-  .header-dark[class*="-not-top"][class*="-pinned"] .navbar-nav .nav-item .nav-link, .header-light[class*="-not-top"][class*="-pinned"] .navbar-nav .nav-item .nav-link {color: #888; }
-  .header-dark[class*="-not-top"][class*="-unpinned"] .navbar-nav .nav-item .nav-link, .header-light[class*="-not-top"][class*="-unpinned"] .navbar-nav .nav-item .nav-link {color: #888; }
-  
-  .header-dark[class*="-not-top"][class*="-pinned"] .navbar-brand, .header-light[class*="-not-top"][class*="-pinned"] .navbar-brand {color: #000; }
-  .header-dark[class*="-not-top"][class*="-unpinned"] .navbar-brand, .header-light[class*="-not-top"][class*="-unpinned"] .navbar-brand {color: #000; }
-  }
+.header-dark[class*="-not-top"][class*="-pinned"] .navbar-brand, .header-light[class*="-not-top"][class*="-pinned"] .navbar-brand {color: #000; }
+.header-dark[class*="-not-top"][class*="-unpinned"] .navbar-brand, .header-light[class*="-not-top"][class*="-unpinned"] .navbar-brand {color: #000; }
 
 body {
   position: relative;
