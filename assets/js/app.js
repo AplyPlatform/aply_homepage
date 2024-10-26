@@ -11,6 +11,18 @@ let pageFileTable = {
 let isRecaptchaInit = false;
 
 
+const GA_EVENT = (event_name, event_target_name, event_label) => {  
+  if (typeof gtag !== 'undefined') {
+    gtag(
+        'event', event_name, {
+          'event_category': event_target_name,
+          'event_label': event_label
+        }
+    );
+  }
+}
+
+
 (function ($) {
   "use strict";
   
@@ -421,33 +433,45 @@ function getPageFile(pageName) {
 }
 
 function setMenus() {
-  $("#menu_main").click(function() {        
+  $("#menu_main").click(function() {
+      GA_EVENT("logo_click", "home", "click");
+      location.href = "?p=main";      
+  });
+
+  $("#menu_home").click(function() {
+      GA_EVENT("menu_home_click", "home", "click");
       location.href = "?p=main";
-  });    
+  });
   
-  $("#menu_about").click(function() {                
+  $("#menu_about").click(function() {
+      GA_EVENT("menu_about_click", "home", "click");
       location.href = "?p=about";
   });
 
-  $("#menu_service").click(function() {		
+  $("#menu_service").click(function() {
+      GA_EVENT("menu_service_click", "home", "click");
       location.href = "?p=service";
   });
 
-  $("#menu_team").click(function() {        
+  $("#menu_team").click(function() {
+      GA_EVENT("menu_team_click", "home", "click");
       location.href = "?p=team";
   });
 
   $("#menu_contact").click(function() {
+      GA_EVENT("menu_contact_click", "home", "click");
       location.href = "?p=contact";        
   });
 
   $("#menu_recruit").click(function() {
+      GA_EVENT("menu_recruit_click", "home", "click");
       location.href = "?p=recruit";        
   });
 
   $("#menu_board").click(function() {
-    location.href = "?p=board";        
-});
+      GA_EVENT("menu_board_click", "home", "click");
+      location.href = "?p=board";        
+  });
 }
 
 async function setContent(targetId, templateName, callback) {
