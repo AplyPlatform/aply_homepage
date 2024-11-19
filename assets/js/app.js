@@ -392,7 +392,7 @@ const GA_EVENT = (event_name, event_target_name, event_label) => {
 
 function checkParam() {
   const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);    
+  const urlParams = new URLSearchParams(queryString);
   let p_id = urlParams.get('p');
 
   if (!isSet(p_id)) p_id = "main";
