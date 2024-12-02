@@ -49,7 +49,7 @@ function processChange() {
 					<br>&nbsp;&nbsp;<font color="#6668a6">ADVANCED PLATFORM TO FLY</font>
 					
             		<br>&nbsp;&nbsp;<strong><font size="3" color="#6668a6">주식회사 어플라이 APLY Inc.</font></strong>
-					<br>&nbsp;&nbsp;<img src="https://home.aply.biz/assets/images/aqr_square.png" width="16px" height="16px">&nbsp;&nbsp;<a href="http://aplx.link/to/aply" target="_blank" style="color:#777">aplx.link/to/aply</font></a>
+					<br>&nbsp;&nbsp;<img src="https://home.aply.biz/assets/images/aqr_square.png" style="width:16px;height:16px" title="AQR : 다양한 페이. SNS 링크. 간편 송금. 하나의 QR과 URL에.">&nbsp;&nbsp;<a href="http://aplx.link/to/aply" target="_blank" style="color:#777">aplx.link/to/aply</font></a>
 					<br>
 					<br>&nbsp;&nbsp;<strong style="color:#000"><b>T</b></strong>&nbsp;+82-2-6956-0801&nbsp;&nbsp;<font color="#000">|</font>&nbsp;&nbsp;
 					<strong style="color:#000"><b>H</b></strong>&nbsp;&nbsp;<a href="http://aply.biz/" target="_blank" style="color:#000">www.aply.biz</font></a>
