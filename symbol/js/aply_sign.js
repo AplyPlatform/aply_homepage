@@ -56,10 +56,11 @@ function processChange() {
 					<br>&nbsp;&nbsp;<strong style="color:#000"><b>O</b></strong> 10915 &nbsp;<font color="#000">|</font>&nbsp; 6F, 24-21,&nbsp;Geumbit-ro, Paju-si,<br>&nbsp;&nbsp;Gyeonggi-do, Republic of Korea
 					<br>
 					<br>
+					<br>
 					<table border="0" cellpadding="0" cellspacing="0" width="240px"><tr><td>						
-						<a href="https://aqr.aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_per.png" style="margin-right:40px;width:39px;" title="간편 송금을 지원하는 Link-in-bio 서비스"></a>
-						<a href="https://aqr-m.aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aqrm_per.png" style="margin-right:38px;width:40px;" title="QR코드 기반의 Mass production 관리 솔루션"></a>
-						<a href="https://aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aplx_per.png" style="width:42px;" title="증강현실 기반의 홍보/전시/커뮤니케이션 플랫폼"></a>
+						<a href="https://aqr.aplx.link" target="_blank"><img src="images/aqr_per.png" style="margin-right:44px;width:35px;" title="간편 송금을 지원하는 Link-in-bio 서비스"></a>
+						<a href="https://aqr-m.aplx.link" target="_blank"><img src="images/aqrm_per.png" style="margin-right:42px;width:36px;" title="QR코드 기반의 Mass production 관리 솔루션"></a>
+						<a href="https://aplx.link" target="_blank"><img src="images/aplx_per.png" style="width:40px;" title="증강현실 기반의 홍보/전시/커뮤니케이션 플랫폼"></a>
 					</td>
 					</tr>
 					</table>
