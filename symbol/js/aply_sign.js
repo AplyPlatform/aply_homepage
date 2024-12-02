@@ -57,7 +57,7 @@ function processChange() {
 					<br>
 					<br>
 					<br>
-					<table border="0" cellpadding="0" cellspacing="0" width="240px">
+					<table border="0" cellpadding="0" cellspacing="0" width="240px" style="margin-left:8px";>
 					<tr>
 					<td>						
 						<a href="https://aqr.aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_per.png?20241202" style="margin-right:44px;width:35px;" title="간편 송금을 지원하는 Link-in-bio 서비스"></a>
