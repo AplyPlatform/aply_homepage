@@ -544,19 +544,25 @@ function sendApplicationData(form_id)
   $(form_id).append(ref);
 
   if (isRecaptchaInit == true) {
-    grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
-      $(form_id).find('input[name="form_token"]').val(token);
-      let fed = new FormData($(form_id)[0]);
-      ajaxRequest(fed, form_id + "_send");
+    turnstile.render('#turnstileWidget', {
+      sitekey: '0x4AAAAAAA62_43H2MO9goDN',
+      callback: function(token) {
+        $(form_id).find('input[name="form_token"]').val(token);
+        let fed = new FormData($(form_id)[0]);
+          ajaxRequest(fed, form_id + "_send");
+      },
     });
   }
   else {
-    grecaptcha.ready(function() {
+    turnstile.ready(function () {
       isRecaptchaInit = true;
-      grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
-        $(form_id).find('input[name="form_token"]').val(token);
-        let fed = new FormData($(form_id)[0]);
-        ajaxRequest(fed, form_id + "_send");
+      turnstile.render('#turnstileWidget', {
+        sitekey: '0x4AAAAAAA62_43H2MO9goDN',
+        callback: function(token) {
+          $(form_id).find('input[name="form_token"]').val(token);
+          let fed = new FormData($(form_id)[0]);
+            ajaxRequest(fed, form_id + "_send");
+        },
       });
     });
   }
@@ -613,76 +619,82 @@ $('[name^=form_phone]').keypress(validateNumber);
 
 function sendRecruitApplicationData(form_id)
 {
-let min_type = "";
-if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
-  min_type = "/SW개발";
-}
+  let min_type = "";
+  if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
+    min_type = "/SW개발";
+  }
 
-if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
-  min_type = min_type + "/데이터분석";
-}
+  if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
+    min_type = min_type + "/데이터분석";
+  }
 
-if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
-  min_type = min_type + "/HW개발";
-}
+  if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
+    min_type = min_type + "/HW개발";
+  }
 
-if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
-  min_type = min_type + "/마케팅";
-}
+  if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
+    min_type = min_type + "/마케팅";
+  }
 
-if ($(form_id).find('input[name="min_type_5"]').is(":checked")) {
-  min_type = min_type + "/디자인";
-}
+  if ($(form_id).find('input[name="min_type_5"]').is(":checked")) {
+    min_type = min_type + "/디자인";
+  }
 
-if ($(form_id).find('input[name="min_type_6"]').is(":checked")) {
-  min_type = min_type + "/기획";
-}
+  if ($(form_id).find('input[name="min_type_6"]').is(":checked")) {
+    min_type = min_type + "/기획";
+  }
 
-let form_name = $(form_id).find('input[name="form_name"]').val();
-if (form_name == "") {
-  showDialog("성함을 입력해 주세요.", null);
-  return false;
-}
+  let form_name = $(form_id).find('input[name="form_name"]').val();
+  if (form_name == "") {
+    showDialog("성함을 입력해 주세요.", null);
+    return false;
+  }
 
-let form_phone = $(form_id).find('input[name="form_phone"]').val();
-if (form_phone == "") {
-  showDialog("전화번호를 입력해 주세요.", null);
-  return false;
-}
+  let form_phone = $(form_id).find('input[name="form_phone"]').val();
+  if (form_phone == "") {
+    showDialog("전화번호를 입력해 주세요.", null);
+    return false;
+  }
 
-let form_email = $(form_id).find('input[name="form_email"]').val();
-if (form_email == "") {
-  showDialog("이메일을 입력해 주세요.", null);
-  return false;
-}
+  let form_email = $(form_id).find('input[name="form_email"]').val();
+  if (form_email == "") {
+    showDialog("이메일을 입력해 주세요.", null);
+    return false;
+  }
 
-if ($(form_id).find('input[name="agree_1"').length > 0 && $(form_id).find('input[name="agree_1"').is(":checked") == false) {
-  showDialog("개인정보 처리방침에 동의해 주세요.", null);
-  return false;
-}
+  if ($(form_id).find('input[name="agree_1"').length > 0 && $(form_id).find('input[name="agree_1"').is(":checked") == false) {
+    showDialog("개인정보 처리방침에 동의해 주세요.", null);
+    return false;
+  }
 
-let ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');	
-$(form_id).append(ref);	
-ref = $('<input type="hidden" value="' + min_type + '" name="min_type">');	
-$(form_id).append(ref);	
+  let ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');	
+  $(form_id).append(ref);	
+  ref = $('<input type="hidden" value="' + min_type + '" name="min_type">');	
+  $(form_id).append(ref);	
 
-if (isRecaptchaInit == true) {
-  grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
-    $(form_id).find('input[name="form_token"]').val(token);
-    let fed = new FormData($(form_id)[0]);
-    ajaxRequest(fed, form_id + "_send");
-  });
-}
-else {
-  grecaptcha.ready(function() {
-    isRecaptchaInit = true;
-    grecaptcha.execute('6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7', {action: 'homepage'}).then(function(token) {
-      $(form_id).find('input[name="form_token"]').val(token);
-      let fed = new FormData($(form_id)[0]);
-      ajaxRequest(fed, form_id + "_send");
-    });
-  });
-}
+  if (isRecaptchaInit == true) {
+      turnstile.render('#turnstileWidget', {
+        sitekey: '0x4AAAAAAA62_43H2MO9goDN',
+        callback: function(token) {
+          $(form_id).find('input[name="form_token"]').val(token);
+          let fed = new FormData($(form_id)[0]);
+            ajaxRequest(fed, form_id + "_send");
+        },
+      });
+  }
+  else {
+      turnstile.ready(function () {
+        isRecaptchaInit = true;
+        turnstile.render('#turnstileWidget', {
+          sitekey: '0x4AAAAAAA62_43H2MO9goDN',
+          callback: function(token) {
+            $(form_id).find('input[name="form_token"]').val(token);
+            let fed = new FormData($(form_id)[0]);
+              ajaxRequest(fed, form_id + "_send");
+          },
+        });
+      });
+  }
 }
 
 function setRecruitSubmitHandler(form_p_id) {
@@ -697,12 +709,12 @@ $('[name^=form_phone]').keypress(validateNumber);
 }
 
 function setEmailContact() {
-grecaptcha.ready(function() {
-  isRecaptchaInit = true;
-});
+  turnstile.ready(function() {
+		isRecaptchaInit = true;		
+	});
 
-setSubmitHandler("email_up");
-setRecruitSubmitHandler("recruit_form");
+  setSubmitHandler("email_up");
+  setRecruitSubmitHandler("recruit_form");
 }
 
 function validateNumber(event) {

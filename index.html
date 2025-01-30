@@ -56,14 +56,11 @@
     <!-- Template core CSS-->
     <link rel="stylesheet" href="assets/css/vendor.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <style>
-      .grecaptcha-badge {visibility: hidden;}
-    </style>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
   </head>
   
   <body>
-    <script src='https://www.google.com/recaptcha/api.js?render=6LfPn_UUAAAAAN-EHnm2kRY9dUT8aTvIcfrvxGy7'></script>
-    
+    <div id="turnstileWidget"></div>
     <!-- header -->
     <header class="header-sticky header-dark">
       <div class="container">
