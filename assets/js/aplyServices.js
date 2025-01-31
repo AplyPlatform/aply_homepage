@@ -168,7 +168,7 @@ function sendAAPIContactFormData(form_kind) {
 }
 
 function AAPI_showDialog(msg, callback) {
-	$('#AAPI_askModalContent').text(msg);
+	$('#AAPI_askModalContent').html(msg);
 	$('#AAPI_askModal').modal('show');
   
 	if (callback == null) return;
