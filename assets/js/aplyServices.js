@@ -79,8 +79,8 @@ const AAPI_emailValidate = (emailVal) => {
 function sendAAPIContactFormData(form_kind) {
 	let min_type = "";
 
-	for (let i = 1; i <= 6; i++) {
-		if ($('input[name="form_contact_min_type_' + i + '"]').is(":checked")) {
+	for (let i = 1; i <= 20; i++) {
+		if ($('input[name="form_contact_min_type_' + i + '"]').length && $('input[name="form_contact_min_type_' + i + '"]').is(":checked")) {
 			min_type = min_type + "/" + $('input[name="form_contact_min_type_' + i + '"]').val();
 		}
 	}
