@@ -8,21 +8,6 @@ let pageFileTable = {
   "board" : "board.html",
 };
 
-let isRecaptchaInit = false;
-
-
-const GA_EVENT = (event_name, event_target_name, event_label) => {  
-  if (typeof gtag !== 'undefined') {
-    gtag(
-        'event', event_name, {
-          'event_category': event_target_name,
-          'event_label': event_label
-        }
-    );
-  }
-}
-
-
 (function ($) {
   "use strict";
   
@@ -379,10 +364,10 @@ const GA_EVENT = (event_name, event_target_name, event_label) => {
   };
 
   $(document).ready(function () {
-    initPage(function() {
-      setMenus();
-      setEmailContact();
+    initPage(function(currentPage) {
+      setMenus();      
       fn.Launch();
+      AAPI_setContactForm("aply" + currentPage);
     });    
   });
 
@@ -395,37 +380,18 @@ function checkParam() {
   const urlParams = new URLSearchParams(queryString);
   let p_id = urlParams.get('p');
 
-  if (!isSet(p_id)) p_id = "main";
+  if (!AAPI_isSet(p_id)) p_id = "main";
 
   return p_id;
 }
-
 
 function initPage(callback) {
   let currentPage = checkParam();	
   let pageFile = getPageFile(currentPage);
   if (pageFile == undefined) pageFile = "main.html";
   setContent("#mainContents", pageFile, function() {
-    callback();
+    callback(currentPage);
   });  
-}
-
-
-function showDialog(msg, callback) {
-  $('#askModalContent').text(msg);
-  $('#askModal').modal('show');
-
-  if (callback == null) return;
-
-  $('#askModalOKButton').off('click');
-  $('#askModalOKButton').click(function () {
-      $('#askModal').modal('hide');
-      callback();
-  });
-}
-
-function showPrivacyDialog() {
-  $('#modal-3').modal('show');
 }
 
 function getPageFile(pageName) {
@@ -434,42 +400,42 @@ function getPageFile(pageName) {
 
 function setMenus() {
   $("#menu_main").click(function() {
-      GA_EVENT("logo_click", "home", "click");
+      AAPI_GA_EVENT("logo_click", "home", "click");
       location.href = "?p=main";      
   });
 
   $("#menu_home").click(function() {
-      GA_EVENT("menu_home_click", "home", "click");
+      AAPI_GA_EVENT("menu_home_click", "home", "click");
       location.href = "?p=main";
   });
   
   $("#menu_about").click(function() {
-      GA_EVENT("menu_about_click", "home", "click");
+      AAPI_GA_EVENT("menu_about_click", "home", "click");
       location.href = "?p=about";
   });
 
   $("#menu_service").click(function() {
-      GA_EVENT("menu_service_click", "home", "click");
+      AAPI_GA_EVENT("menu_service_click", "home", "click");
       location.href = "?p=service";
   });
 
   $("#menu_team").click(function() {
-      GA_EVENT("menu_team_click", "home", "click");
+      AAPI_GA_EVENT("menu_team_click", "home", "click");
       location.href = "?p=team";
   });
 
   $("#menu_contact").click(function() {
-      GA_EVENT("menu_contact_click", "home", "click");
+      AAPI_GA_EVENT("menu_contact_click", "home", "click");
       location.href = "?p=contact";        
   });
 
   $("#menu_recruit").click(function() {
-      GA_EVENT("menu_recruit_click", "home", "click");
+      AAPI_GA_EVENT("menu_recruit_click", "home", "click");
       location.href = "?p=recruit";        
   });
 
   $("#menu_board").click(function() {
-      GA_EVENT("menu_board_click", "home", "click");
+      AAPI_GA_EVENT("menu_board_click", "home", "click");
       location.href = "?p=board";        
   });
 }
@@ -486,250 +452,4 @@ async function setContent(targetId, templateName, callback) {
 async function loadTemplate(templateName) {
   const content = await fetch(templateName);
   return content.text();
-}
-
-function sendApplicationData(form_id)
-{
-  let min_type = "";
-  if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
-    min_type = "/제휴및협업";
-  }
-
-  if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
-    min_type = min_type + "/서비스관련";
-  }
-
-  if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
-    min_type = min_type + "/SW개발";
-  }
-
-  if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
-    min_type = min_type + "/기타문의";
-  }
-
-  if (min_type == "") {
-    showDialog("문의 분야를 선택해 주세요.");  
-    return false;
-  }
-
-  let form_content = $(form_id).find('input[name="form_content"').val();
-  if (form_content == "") {
-    showDialog("문의 내용을 입력해 주세요.");  
-    return false;
-  }
-
-  let form_phone = $(form_id).find('input[name="form_phone"]').val();
-  if (form_phone == "") {
-    showDialog("전화번호를 입력해 주세요.");  
-    return false;
-  }
-
-  let form_email = $(form_id).find('input[name="form_email"]').val();
-  if (form_email == "") {
-    showDialog("이메일을 입력해 주세요.");  
-    return false;
-  }
-
-  if ($(form_id).find('input[name="agree_1"').length > 0 && $(form_id).find('input[name="agree_1"').is(":checked") == false) {
-    showDialog("개인정보 처리방침에 동의해 주세요.");  
-    return false;
-  }	
-    
-  let ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');	
-  $(form_id).append(ref);
-
-  ref = $('<input type="hidden" value="' + min_type + '" name="min_type">');	
-  $(form_id).append(ref);	
-  ref = $('<input type="hidden" value="aplycontact" name="form_kind">');	
-  $(form_id).append(ref);
-
-  if (isRecaptchaInit == true) {
-    turnstile.render('#turnstileWidget', {
-      sitekey: '0x4AAAAAAA62_43H2MO9goDN',
-      callback: function(token) {
-        $(form_id).find('input[name="form_token"]').val(token);
-        let fed = new FormData($(form_id)[0]);
-          ajaxRequest(fed, form_id + "_send");
-      },
-    });
-  }
-  else {
-    turnstile.ready(function () {
-      isRecaptchaInit = true;
-      turnstile.render('#turnstileWidget', {
-        sitekey: '0x4AAAAAAA62_43H2MO9goDN',
-        callback: function(token) {
-          $(form_id).find('input[name="form_token"]').val(token);
-          let fed = new FormData($(form_id)[0]);
-            ajaxRequest(fed, form_id + "_send");
-        },
-      });
-    });
-  }
-}
-
-function ajaxRequest(fed, btn_id) {
-  $('.loadingio-spinner').show();
-  $(btn_id).hide();
-
-  $.ajax({
-      type: "POST",
-      url: 'https://aply.biz/contact/handler.php',
-      crossDomain: true,
-      dataType: "json",
-      data:fed,
-      enctype: 'multipart/form-data', // 필수
-      processData: false,
-      contentType: false,
-      cache: false,
-    success: function (data) {
-      $(btn_id).show();
-      $('.loadingio-spinner').hide();
-
-      if (data.result == "success") {
-        showDialog("전송이 완료되었습니다. APLY가 연락드리겠습니다.", function() {
-          location.href = location.href;
-        });
-        return;
-      }
-      
-      showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message);      
-    },
-    error: function(jqXHR, text, error) {
-      $(btn_id).show();
-      $('.loadingio-spinner').hide();
-
-      showDialog("죄송합니다. 일시적인 오류가 발생하였습니다. 다시 시도해 주세요.");
-    }
-  });
-}
-
-function setSubmitHandler(form_p_id) {
-var form_id = "#" + form_p_id;
-
-$(form_id + "_send").on("click", function(e) {
-  e.preventDefault();
-  
-  sendApplicationData(form_id);
-});
-
-$('[name^=form_phone]').keypress(validateNumber);
-}
-
-
-function sendRecruitApplicationData(form_id)
-{
-  let min_type = "";
-  if ($(form_id).find('input[name="min_type_1"]').is(":checked")) {
-    min_type = "/SW개발";
-  }
-
-  if ($(form_id).find('input[name="min_type_2"]').is(":checked")) {
-    min_type = min_type + "/데이터분석";
-  }
-
-  if ($(form_id).find('input[name="min_type_3"]').is(":checked")) {
-    min_type = min_type + "/HW개발";
-  }
-
-  if ($(form_id).find('input[name="min_type_4"]').is(":checked")) {
-    min_type = min_type + "/마케팅";
-  }
-
-  if ($(form_id).find('input[name="min_type_5"]').is(":checked")) {
-    min_type = min_type + "/디자인";
-  }
-
-  if ($(form_id).find('input[name="min_type_6"]').is(":checked")) {
-    min_type = min_type + "/기획";
-  }
-
-  let form_name = $(form_id).find('input[name="form_name"]').val();
-  if (form_name == "") {
-    showDialog("성함을 입력해 주세요.", null);
-    return false;
-  }
-
-  let form_phone = $(form_id).find('input[name="form_phone"]').val();
-  if (form_phone == "") {
-    showDialog("전화번호를 입력해 주세요.", null);
-    return false;
-  }
-
-  let form_email = $(form_id).find('input[name="form_email"]').val();
-  if (form_email == "") {
-    showDialog("이메일을 입력해 주세요.", null);
-    return false;
-  }
-
-  if ($(form_id).find('input[name="agree_1"').length > 0 && $(form_id).find('input[name="agree_1"').is(":checked") == false) {
-    showDialog("개인정보 처리방침에 동의해 주세요.", null);
-    return false;
-  }
-
-  let ref = $('<input type="hidden" value="' + document.referrer + '" name="ref">');	
-  $(form_id).append(ref);	
-  ref = $('<input type="hidden" value="' + min_type + '" name="min_type">');	
-  $(form_id).append(ref);	
-
-  if (isRecaptchaInit == true) {
-      turnstile.render('#turnstileWidget', {
-        sitekey: '0x4AAAAAAA62_43H2MO9goDN',
-        callback: function(token) {
-          $(form_id).find('input[name="form_token"]').val(token);
-          let fed = new FormData($(form_id)[0]);
-            ajaxRequest(fed, form_id + "_send");
-        },
-      });
-  }
-  else {
-      turnstile.ready(function () {
-        isRecaptchaInit = true;
-        turnstile.render('#turnstileWidget', {
-          sitekey: '0x4AAAAAAA62_43H2MO9goDN',
-          callback: function(token) {
-            $(form_id).find('input[name="form_token"]').val(token);
-            let fed = new FormData($(form_id)[0]);
-              ajaxRequest(fed, form_id + "_send");
-          },
-        });
-      });
-  }
-}
-
-function setRecruitSubmitHandler(form_p_id) {
-var form_id = "#" + form_p_id;
-
-$(form_id + "_send").on("click", function(e) {
-  e.preventDefault();  
-  sendRecruitApplicationData(form_id);	  
-});
-
-$('[name^=form_phone]').keypress(validateNumber);
-}
-
-function setEmailContact() {
-  turnstile.ready(function() {
-		isRecaptchaInit = true;		
-	});
-
-  setSubmitHandler("email_up");
-  setRecruitSubmitHandler("recruit_form");
-}
-
-function validateNumber(event) {
-  var key = window.event ? event.keyCode : event.which;
-  if (event.keyCode === 8 || event.keyCode === 46) {
-      return true;
-  } else if ( key < 48 || key > 57 ) {
-      return false;
-  } else {
-      return true;
-  }
-}
-
-function isSet(value) {
-if (value == "" || value == null || value == "undefined") return false;
-
-return true;
 }
