@@ -90,26 +90,35 @@ function sendAAPIContactFormData(form_kind) {
 		return false;
 	}
 
-	let form_name = $('input[name="form_contact_name"]').val();
-	if (form_name == "") {
-		AAPI_showDialog("이름을 입력해 주세요.");
-		return false;
+	let form_name = "";
+	if ($('input[name="form_contact_name"]').length > 0) {
+		form_name = $('input[name="form_contact_name"]').val();
+		if (form_name == "") {
+			AAPI_showDialog("이름을 입력해 주세요.");
+			return false;
+		}
 	}
 
-	let form_phone = $('input[name="form_contact_phone"]').val();
-	if (form_phone == "") {
-		AAPI_showDialog("전화번호를 입력해 주세요.");
-		return false;
-	}
+	let form_phone = "";
+	if ($('input[name="form_contact_phone"]').length > 0) {
+		form_phone = $('input[name="form_contact_phone"]').val();
+		if (form_phone == "") {
+			AAPI_showDialog("전화번호를 입력해 주세요.");
+			return false;
+		}
+	}		
 
-	let form_email = $('input[name="form_contact_email"]').val();
-	if (form_email == "" || AAPI_emailValidate(form_email) == false) {
-		AAPI_showDialog("올바른 이메일 주소를 입력해 주세요.");
-		return false;
-	}
+	let form_email = "";
+	if ($('input[name="form_contact_email"]').length > 0) {
+		form_email = $('input[name="form_contact_email"]').val();
+		if (form_email == "" || AAPI_emailValidate(form_email) == false) {
+			AAPI_showDialog("올바른 이메일 주소를 입력해 주세요.");
+			return false;
+		}
+	}	
 
 	let form_content = "";
-	if (form_kind == "aplycontact") {
+	if ($('textarea[name="form_contact_content"]').length > 0) {
 		form_content = $('textarea[name="form_contact_content"]').val();
 		if (form_content == "") {
 			AAPI_showDialog("문의 내용을 입력해 주세요.");
@@ -133,7 +142,6 @@ function sendAAPIContactFormData(form_kind) {
 
 	$("#form_contact_send_loading").show();
 	$("#form_contact_send").hide();
-
 
 	AAPI_getCaptchaToken(function (token) {
 		fd.append("form_token", token);
