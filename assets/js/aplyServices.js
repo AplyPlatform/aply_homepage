@@ -140,14 +140,16 @@ function sendAAPIContactFormData(form_kind) {
 	fd.append("min_type", min_type);
 	fd.append("ref", document.referrer);
 
-	$("#form_contact_send_loading").show();
+	$("#form_contact_send_loading").show();	
 	$("#form_contact_send").hide();
+	AAPI_showLoader();
 
 	AAPI_getCaptchaToken(function (token) {
 		fd.append("form_token", token);
 		AAPI_ajaxRequest(fd, function(data) {			
 				$("#form_contact_send_loading").hide();
 				$("#form_contact_send").show();
+				AAPI_hideLoader();
 
 				if (data.result == "success") {
 					AAPI_showDialog("전송이 완료되었습니다. APLY가 연락드리겠습니다.", function () {
@@ -161,6 +163,7 @@ function sendAAPIContactFormData(form_kind) {
 			function() {
 				$("#form_contact_send_loading").hide();
 				$("#form_contact_send").show();
+				AAPI_hideLoader();
 
 				AAPI_showDialog("죄송합니다. 일시적인 오류가 발생하였습니다. 다시 시도해 주세요.");
 			});
@@ -178,6 +181,14 @@ function AAPI_showDialog(msg, callback) {
 		$('#AAPI_askModal').modal('hide');
 		callback();
 	});
+}
+
+function AAPI_showLoader() {
+	$("#loading").show();
+}
+
+function AAPI_hideLoader() {
+	$("#loading").fadeOut(800);
 }
 
 function AAPI_phonenumberValidate(event) {
