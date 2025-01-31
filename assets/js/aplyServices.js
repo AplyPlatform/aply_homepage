@@ -86,7 +86,7 @@ function sendAAPIContactFormData(form_kind) {
 	}
 
 	if (min_type == "") {
-		AAPI_showDialog("문의 분야를 선택해 주세요.");
+		AAPI_showDialog("분야를 선택해 주세요.");
 		return false;
 	}
 
