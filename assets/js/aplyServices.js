@@ -134,6 +134,12 @@ function sendAAPIContactFormData(form_kind, needContent = false) {
 	$("#form_contact_send_loading").show();
 	$("#form_contact_send").hide();
 
+
+	AAPI_getCaptchaToken(function(token) {
+		console.log(token);
+	});
+
+	/*
 	AAPI_getCaptchaToken(function (token) {
 		fd.append("form_token", token);
 		AAPI_ajaxRequest(fd, function(data) {			
@@ -156,6 +162,7 @@ function sendAAPIContactFormData(form_kind, needContent = false) {
 				AAPI_showDialog("죄송합니다. 일시적인 오류가 발생하였습니다. 다시 시도해 주세요.");
 			});
 	});
+	*/
 }
 
 function AAPI_showDialog(msg, callback) {
