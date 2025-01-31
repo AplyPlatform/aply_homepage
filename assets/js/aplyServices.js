@@ -134,12 +134,20 @@ function sendAAPIContactFormData(form_kind, needContent = false) {
 	$("#form_contact_send_loading").show();
 	$("#form_contact_send").hide();
 
+	turnstile.render('#turnstileWidget', {
+		sitekey: '0x4AAAAAAA62_43H2MO9goDN',
+		callback: function (token) {
+			console.log(token);
+		}
+	});
+
+	return;
 
 	if (AAPI_isRecaptchaInit == false) {
 		turnstile.ready(function () {
 			AAPI_isRecaptchaInit = true;
 			turnstile.render('#turnstileWidget', {
-				sitekey: AAPI_captchaSiteKey,
+				sitekey: '0x4AAAAAAA62_43H2MO9goDN',
 				callback: function (token) {
 					fd.append("form_token", token);
 					AAPI_ajaxRequest(fd, function(data) {			
@@ -167,7 +175,7 @@ function sendAAPIContactFormData(form_kind, needContent = false) {
 	}
 	else {
 		turnstile.render('#turnstileWidget', {
-			sitekey: AAPI_captchaSiteKey,
+			sitekey: '0x4AAAAAAA62_43H2MO9goDN',
 			callback: function (token) {
 				fd.append("form_token", token);
 				AAPI_ajaxRequest(fd, function(data) {			
