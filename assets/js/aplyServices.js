@@ -192,7 +192,7 @@ function AAPI_phonenumberValidate(event) {
 }
 
 function AAPI_isSet(value) {
-	if (value == "" || value == null || value == "undefined") return false;
+	if (value == "" || value == null || value == "undefined" || value == undefined) return false;
 
 	return true;
 }
