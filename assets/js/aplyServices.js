@@ -99,6 +99,15 @@ function sendAAPIContactFormData(form_kind) {
 		}
 	}
 
+	let form_url = "";
+	if ($('input[name="form_contact_url"]').length > 0) {
+		form_url = $('input[name="form_contact_url"]').val();
+		if (form_url == "") {
+			AAPI_showDialog("웹사이트 주소를 입력해 주세요.");
+			return false;
+		}
+	}
+
 	let form_phone = "";
 	if ($('input[name="form_contact_phone"]').length > 0) {
 		form_phone = $('input[name="form_contact_phone"]').val();
@@ -136,6 +145,7 @@ function sendAAPIContactFormData(form_kind) {
 	fd.append("form_email", form_email);
 	fd.append("form_phone", form_phone);
 	fd.append("form_name", form_name);
+	fd.append("form_url", form_url);	
 	fd.append("form_content", form_content);
 	fd.append("min_type", min_type);
 	fd.append("ref", document.referrer);
