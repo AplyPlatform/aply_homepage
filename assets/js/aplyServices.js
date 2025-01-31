@@ -135,9 +135,63 @@ function sendAAPIContactFormData(form_kind, needContent = false) {
 	$("#form_contact_send").hide();
 
 
-	AAPI_getCaptchaToken(function(token) {
-		console.log(token);
-	});
+	if (AAPI_isRecaptchaInit == false) {
+		turnstile.ready(function () {
+			AAPI_isRecaptchaInit = true;
+			turnstile.render('#turnstileWidget', {
+				sitekey: AAPI_captchaSiteKey,
+				callback: function (token) {
+					fd.append("form_token", token);
+					AAPI_ajaxRequest(fd, function(data) {			
+							$("#form_contact_send_loading").hide();
+							$("#form_contact_send").show();
+
+							if (data.result == "success") {
+								AAPI_showDialog("전송이 완료되었습니다. APLY가 연락드리겠습니다.", function () {
+									location.href = location.href;
+								});
+								return;
+							}
+				
+							AAPI_showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message);
+						},
+						function() {
+							$("#form_contact_send_loading").hide();
+							$("#form_contact_send").show();
+
+							AAPI_showDialog("죄송합니다. 일시적인 오류가 발생하였습니다. 다시 시도해 주세요.");
+						});
+				},
+			});
+		});
+	}
+	else {
+		turnstile.render('#turnstileWidget', {
+			sitekey: AAPI_captchaSiteKey,
+			callback: function (token) {
+				fd.append("form_token", token);
+				AAPI_ajaxRequest(fd, function(data) {			
+						$("#form_contact_send_loading").hide();
+						$("#form_contact_send").show();
+
+						if (data.result == "success") {
+							AAPI_showDialog("전송이 완료되었습니다. APLY가 연락드리겠습니다.", function () {
+								location.href = location.href;
+							});
+							return;
+						}
+			
+						AAPI_showDialog("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요. : " + data.message);
+					},
+					function() {
+						$("#form_contact_send_loading").hide();
+						$("#form_contact_send").show();
+
+						AAPI_showDialog("죄송합니다. 일시적인 오류가 발생하였습니다. 다시 시도해 주세요.");
+					});
+			},
+		});
+	}
 
 	/*
 	AAPI_getCaptchaToken(function (token) {
