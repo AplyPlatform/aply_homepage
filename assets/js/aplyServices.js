@@ -90,19 +90,19 @@ function sendAAPIContactFormData(form_kind) {
 		return false;
 	}
 
-	let form_name = $('input[name="form_contact_name"').val();
+	let form_name = $('input[name="form_contact_name"]').val();
 	if (form_name == "") {
 		AAPI_showDialog("이름을 입력해 주세요.");
 		return false;
 	}
 
-	let form_phone = $('input[name="form_contact_phone"').val();
+	let form_phone = $('input[name="form_contact_phone"]').val();
 	if (form_phone == "") {
 		AAPI_showDialog("전화번호를 입력해 주세요.");
 		return false;
 	}
 
-	let form_email = $('input[name="form_contact_email"').val();
+	let form_email = $('input[name="form_contact_email"]').val();
 	if (form_email == "" || AAPI_emailValidate(form_email) == false) {
 		AAPI_showDialog("올바른 이메일 주소를 입력해 주세요.");
 		return false;
@@ -110,14 +110,14 @@ function sendAAPIContactFormData(form_kind) {
 
 	let form_content = "";
 	if (form_kind == "aplycontact") {
-		form_content = $('textarea[name="form_contact_content"').val();
+		form_content = $('textarea[name="form_contact_content"]').val();
 		if (form_content == "") {
 			AAPI_showDialog("문의 내용을 입력해 주세요.");
 			return false;
 		}
 	}	
 
-	if ($('input[name="form_contact_agree_1"').length > 0 && $('input[name="form_contact_agree_1"').is(":checked") == false) {
+	if ($('input[name="form_contact_agree_1"]').length > 0 && $('input[name="form_contact_agree_1"]').is(":checked") == false) {
 		AAPI_showDialog("개인정보 처리방침에 동의해 주세요.");
 		return false;
 	}
@@ -126,7 +126,7 @@ function sendAAPIContactFormData(form_kind) {
 	fd.append("form_kind", form_kind);
 	fd.append("form_email", form_email);
 	fd.append("form_phone", form_phone);
-	fd.append("form_phone", form_name);
+	fd.append("form_name", form_name);
 	fd.append("form_content", form_content);
 	fd.append("min_type", min_type);
 	fd.append("ref", document.referrer);
