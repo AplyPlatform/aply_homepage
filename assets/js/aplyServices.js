@@ -110,7 +110,7 @@ function sendAAPIContactFormData(form_kind) {
 
 	let form_content = "";
 	if (form_kind == "aplycontact") {
-		form_content = $('input[name="form_contact_content"').val();
+		form_content = $('textarea[name="form_contact_content"').val();
 		if (form_content == "") {
 			AAPI_showDialog("문의 내용을 입력해 주세요.");
 			return false;
