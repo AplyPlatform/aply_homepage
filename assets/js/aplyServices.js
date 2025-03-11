@@ -263,13 +263,13 @@ function AAPI_getCaptchaToken(tokencallback) {
 function setAAPIExtraSiteSelect() {
 	let selContents = '<option selected>Family Sites</option> \
 			<option>--------------------</option> \
-			<option value="aply">APLY Inc.</option> \
-			<option value="recruit">Recruit</option> \
-			<option value="blog">Blog</option> \
+			<option value="aply">APLY 홈페이지</option> \
+			<option value="recruit">APLY 채용</option> \
+			<option value="blog">APLY 블로그</option> \
 			<option>--------------------</option> \
 			<option value="aqr">AQR : 간편 송금 서비스</option> \
 			<option value="aqr-m">AQR-M : QR 관리 솔루션</option> \
-			<option value="aplx">APLX : 증강현실 플랫폼</option> \
+			<option value="aplx">APLX : 증강현실 솔루션</option> \
 			<option value="kiosk">R&D KIOSK : 국가연구개발사업 길잡이</option> \
 			<option>--------------------</option> \
 			<option value="qr">QR코드 만들기</option> \
