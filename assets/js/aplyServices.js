@@ -103,7 +103,7 @@ function sendAAPIContactFormData(form_kind, callbackBeforeSend = null) {
 			AAPI_showDialog(placeHolderName + "을(를) 입력해 주세요.");
 			return false;
 		}
-	}
+	}	
 
 	let form_url = "";
 	if ($('input[name="form_contact_url"]').length > 0) {
@@ -131,7 +131,16 @@ function sendAAPIContactFormData(form_kind, callbackBeforeSend = null) {
 			AAPI_showDialog("올바른 이메일 주소를 입력해 주세요.");
 			return false;
 		}
-	}	
+	}
+
+	let form_biznumber = "";
+	if ($('input[name="form_contact_biznumber"]').length > 0) {
+		form_biznumber = $('input[name="form_contact_biznumber"]').val();
+		if (form_biznumber == "") {
+			AAPI_showDialog("사업자 등록번호를 입력해 주세요.");
+			return false;
+		}
+	}
 
 	let form_content = "";
 	if ($('textarea[name="form_contact_content"]').length > 0) {
@@ -151,6 +160,7 @@ function sendAAPIContactFormData(form_kind, callbackBeforeSend = null) {
 	fd.append("form_kind", form_kind);
 	fd.append("form_email", form_email);
 	fd.append("form_phone", form_phone);
+	fd.append("form_biznumber", form_biznumber);
 	fd.append("form_name", form_name);
 	fd.append("form_url", form_url);	
 	fd.append("form_content", form_content);
