@@ -21,6 +21,7 @@ const AAPI_targetsInfo = [
 	["dunipilot", "https://pilot.duni.io"],
 	["dkdk", "https://dkdk.io"],
 	["drdr", "https://drdr.io"],
+	["give", "https://give.aq.gy"],
 ];
 
 const AAPI_captchaSiteKey = '0x4AAAAAAA62_43H2MO9goDN';
@@ -285,6 +286,7 @@ function setAAPIExtraSiteSelect() {
 			<option value="blog">APLY 블로그</option> \
 			<option>--------------------</option> \
 			<option value="aqr">AQR : 간편 송금 서비스</option> \
+			<option value="give">기부/후원 포트폴리오</option> \
 			<option value="aqr-m">AQR-M : QR 관리 솔루션</option> \
 			<option value="aplx">APLX : 증강현실 솔루션</option> \
 			<option value="kiosk">R&D KIOSK : 국가연구개발사업 길잡이</option> \
