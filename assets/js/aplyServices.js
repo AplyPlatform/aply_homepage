@@ -48,9 +48,9 @@ function setAAPICaptchaInfo() {
 	});
 }
 
-function AAPI_setContactForm(form_kind, sendAAPIContactFormData = null) {
+function AAPI_setContactForm(form_kind, callbackBeforeSend = null) {
 	$("#form_contact_send").click(function (e) {
-		sendAAPIContactFormData(form_kind, sendAAPIContactFormData);
+		sendAAPIContactFormData(form_kind, callbackBeforeSend);
 	});
 
 	$('[name^=form_contact_phone]').keypress(AAPI_phonenumberValidate);
