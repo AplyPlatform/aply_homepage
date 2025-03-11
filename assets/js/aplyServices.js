@@ -48,9 +48,9 @@ function setAAPICaptchaInfo() {
 	});
 }
 
-function AAPI_setContactForm(form_kind) {
+function AAPI_setContactForm(form_kind, sendAAPIContactFormData = null) {
 	$("#form_contact_send").click(function (e) {
-		sendAAPIContactFormData(form_kind);
+		sendAAPIContactFormData(form_kind, sendAAPIContactFormData);
 	});
 
 	$('[name^=form_contact_phone]').keypress(AAPI_phonenumberValidate);
@@ -76,7 +76,12 @@ const AAPI_emailValidate = (emailVal) => {
 	}
 };
 
-function sendAAPIContactFormData(form_kind) {
+function sendAAPIContactFormData(form_kind, callbackBeforeSend = null) {
+
+	if (callbackBeforeSend != null) {
+		if(callbackBeforeSend() == false) return false;
+	}
+
 	let min_type = "";
 
 	for (let i = 1; i <= 20; i++) {
@@ -86,7 +91,7 @@ function sendAAPIContactFormData(form_kind) {
 	}
 
 	if (min_type == "") {
-		AAPI_showDialog("분야를 선택해 주세요.");
+		AAPI_showDialog("분류 항목을 선택해 주세요.");
 		return false;
 	}
 
@@ -94,7 +99,8 @@ function sendAAPIContactFormData(form_kind) {
 	if ($('input[name="form_contact_name"]').length > 0) {
 		form_name = $('input[name="form_contact_name"]').val();
 		if (form_name == "") {
-			AAPI_showDialog("이름을 입력해 주세요.");
+			let placeHolderName = $('input[name="form_contact_name"]').attr("placeholder");
+			AAPI_showDialog(placeHolderName + "을(를) 입력해 주세요.");
 			return false;
 		}
 	}
@@ -103,7 +109,8 @@ function sendAAPIContactFormData(form_kind) {
 	if ($('input[name="form_contact_url"]').length > 0) {
 		form_url = $('input[name="form_contact_url"]').val();
 		if (form_url == "") {
-			AAPI_showDialog("웹사이트 주소를 입력해 주세요.");
+			let placeHolderName = $('input[name="form_contact_url"]').attr("placeholder");
+			AAPI_showDialog(placeHolderName + "을(를) 입력해 주세요.");
 			return false;
 		}
 	}
@@ -130,7 +137,7 @@ function sendAAPIContactFormData(form_kind) {
 	if ($('textarea[name="form_contact_content"]').length > 0) {
 		form_content = $('textarea[name="form_contact_content"]').val();
 		if (form_content == "") {
-			AAPI_showDialog("문의 내용을 입력해 주세요.");
+			AAPI_showDialog("내용을 입력해 주세요.");
 			return false;
 		}
 	}	
