@@ -44,7 +44,7 @@ $(function () {
 });
 
 function setAAPICaptchaInfo() {
-	if (!turnstile || turnstile == null || turnstile === "undefined" || (typeof turnstile === "undefined")) return;
+	if (!turnstile || turnstile === "undefined" || (typeof turnstile === "undefined")) return;
 
 	turnstile.ready(function () {
 		AAPI_isRecaptchaInit = true;
