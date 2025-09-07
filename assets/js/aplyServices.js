@@ -26,6 +26,8 @@ const AAPI_targetsInfo = [
 
 const AAPI_captchaSiteKey = '0x4AAAAAAA62_43H2MO9goDN';
 let AAPI_isRecaptchaInit = false;
+let AAPI_turnstile_widget_id = -1;
+let AAPI_turnstile_callback = null;
 
 const AAPI_GA_EVENT = (event_name, event_target_name, event_label) => {
 	if (typeof gtag !== 'undefined') {
@@ -40,16 +42,8 @@ const AAPI_GA_EVENT = (event_name, event_target_name, event_label) => {
 
 $(function () {
 	setAAPIExtraSiteSelect();
-	setAAPICaptchaInfo();
 });
 
-function setAAPICaptchaInfo() {
-	if ((typeof turnstile === "undefined") || turnstile === "undefined" || !turnstile) return;
-
-	turnstile.ready(function () {
-		AAPI_isRecaptchaInit = true;
-	});
-}
 
 function AAPI_setContactForm(form_kind, callbackBeforeSend = null) {
 	$("#form_contact_send").click(function (e) {
@@ -258,26 +252,30 @@ function AAPI_ajaxRequest(fed, success_callback, error_callback) {
 	});
 }
 
+function AAPI_turnstileSetCallback(token) {  
+  AAPI_isRecaptchaInit = true;
+  if (AAPI_turnstile_callback) {
+    AAPI_turnstile_callback(token);
+    AAPI_turnstile_callback = null;
+  }
+}
+
 function AAPI_getCaptchaToken(tokencallback) {
-	if (AAPI_isRecaptchaInit == false) {
-		turnstile.ready(function () {
-			AAPI_isRecaptchaInit = true;
-			turnstile.render('#turnstileWidget', {
-				sitekey: AAPI_captchaSiteKey,
-				callback: function (token) {
-					tokencallback(token);
-				},
-			});
-		});
-	}
-	else {
-		turnstile.render('#turnstileWidget', {
-			sitekey: AAPI_captchaSiteKey,
-			callback: function (token) {
-				tokencallback(token);
-			},
-		});
-	}
+  if ((typeof turnstile === "undefined") || turnstile === "undefined" || !turnstile) return;
+
+  AAPI_turnstile_callback = tokencallback;
+   
+  if (AAPI_isRecaptchaInit == false) {
+    turnstile.ready(function () {
+      AAPI_turnstile_widget_id = turnstile.render('#turnstileWidget', {
+        sitekey: AAPI_captchaSiteKey,
+        callback: AAPI_turnstileSetCallback,
+      });
+    });
+  }
+  else {
+    turnstile.reset(AAPI_turnstile_widget_id);
+  }
 }
 
 function setAAPIExtraSiteSelect() {
