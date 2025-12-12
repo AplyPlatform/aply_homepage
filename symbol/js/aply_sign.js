@@ -80,7 +80,7 @@ function processChange() {
 
 	<td width="104px" align="left" valign="center" rowspan="2"><a href="https://aply.biz/" target="_blank"><img src="https://home.aply.biz/assets/images/logo.png" height="25px"/></a></td>
 	<td width="1px" rowspan="2" bgcolor="#eee"></td>
-	<td width="65px" height="33px" align="center" valign="center" ><a href="https://aqr.aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_squre2.png" width="25px" height="25px" alt="간편 송금 지원 서비스"/></a></td>
+	<td width="65px" height="33px" align="center" valign="center" ><a href="https://aqr.aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_squre2.png" width="25px" height="25px" alt="간편한 입금 요청 서비스"/></a></td>
 	<td width="65px" align="center" valign="center" rowspan="2"><a href="https://aplx.link/to/aply" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_qr.png" width="58px" height="58px" alt="APLY Link-in-bio"/></a></td></tr>
 	<tr><td width="65px" height="33px" align="center" valign="center" ><a href="https://aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aplx_og_image.png" width="25px" height="25px" alt="증강현실 기반의 홍보/전시/커뮤니케이션 플랫폼"/></a></td></tr></table>
 	<br><br><font color="#ddd" size="1">____________________________________________</font></div>`;
