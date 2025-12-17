@@ -285,7 +285,7 @@ function setAAPIExtraSiteSelect() {
 			<option value="recruit">APLY 채용</option> \
 			<option value="blog">APLY 블로그</option> \
 			<option>--------------------</option> \
-			<option value="aqr">AQR<sup style="font-size:4px;vertical-align:8px;">®</sup> : 간편한 입금요청 서비스</option> \
+			<option value="aqr">AQR : 간편한 입금요청 서비스</option> \
 			<option value="give">기부/후원 포트폴리오</option> \
 			<option value="aqr-m">AQR-M : QR 관리 솔루션</option> \
 			<option value="aplx">APLX : 증강현실 솔루션</option> \
