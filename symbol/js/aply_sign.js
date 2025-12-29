@@ -45,47 +45,29 @@ function processChange() {
 					<br>&nbsp;&nbsp;<strong style="color:#000"><b>M</b></strong>&nbsp;`
           			+ curNumber + `&nbsp;&nbsp;<font color="#000">|</font>&nbsp;&nbsp<strong style="color:#000"><b>E</b></strong>&nbsp;&nbsp;<a href="mailto:`
           			+ curEmail + `" target="_blank" style="color:#777">` + curEmail + `</a><br><br>					
-					<br>&nbsp;&nbsp;<a href="https://aply.biz/" target="_blank"><img src="https://home.aply.biz/assets/images/logo.png" style="height:25px" title="Advanced platform to fly"/></a>
-					<br>&nbsp;&nbsp;<font color="#6668a6">ADVANCED PLATFORM TO FLY</font>
-					
-            		<br>&nbsp;&nbsp;<strong><font size="3" color="#6668a6">주식회사 어플라이 APLY Inc.</font></strong>
-					<br>&nbsp;&nbsp;<img src="https://home.aply.biz/symbol/images/aqr_square.png" style="width:16px;height:16px" title="AQR : 다양한 페이. SNS 링크. 간편 송금. 하나의 QR과 URL에.">&nbsp;&nbsp;<a href="http://aplx.link/to/aply" target="_blank" style="color:#777">aplx.link/to/aply</font></a>
+					<br>&nbsp;&nbsp;<a href="https://aply.biz/" target="_blank"><img src="https://home.aply.biz/assets/images/logo.png" style="height:24px;margin-bottom:4px;" title="Advanced platform to fly"/></a>
+            		<br>&nbsp;&nbsp;<strong><font size="2" color="#000">주식회사 어플라이 APLY Inc.</font></strong>
 					<br>
+					<br>&nbsp;&nbsp;<img src="https://home.aply.biz/symbol/images/aqr_square.png" style="width:14px;height:14px;margin-bottom:4px;" title="AQR : 다양한 페이. SNS 링크. 간편 송금. 하나의 QR과 URL에.">&nbsp;&nbsp;<a href="http://aplx.link/to/aply" target="_blank" style="color:#777">aplx.link/to/aply</font></a>					
 					<br>&nbsp;&nbsp;<strong style="color:#000"><b>T</b></strong>&nbsp;+82-2-6956-0801&nbsp;&nbsp;<font color="#000">|</font>&nbsp;&nbsp;
 					<strong style="color:#000"><b>H</b></strong>&nbsp;&nbsp;<a href="http://aply.biz/" target="_blank" style="color:#000">www.aply.biz</font></a>
 					<br>&nbsp;&nbsp;<strong style="color:#000"><b>O</b></strong> 10915 &nbsp;<font color="#000">|</font>&nbsp; 6F, 24-21,&nbsp;Geumbit-ro, Paju-si,<br>&nbsp;&nbsp;Gyeonggi-do, Republic of Korea
 					<br>
 					<br>
 					<br>
-					<table border="0" cellpadding="0" cellspacing="0" width="240px" style="margin-left:8px";>
+					<table border="0" cellpadding="0" cellspacing="0" width="240px" style="margin-left:2px";>
 					<tr>
 					<td>						
 						<a href="https://aqr.aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_per.png?20241202" style="margin-right:44px;width:35px;" title="간편 송금을 지원하는 Link-in-bio 서비스"></a>
 						<a href="https://aqr-m.aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aqrm_per.png?20241202" style="margin-right:42px;width:36px;" title="QR코드 기반의 Mass production 관리 솔루션"></a>
-						<a href="https://aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aplx_per.png?20241202" style="width:40px;" title="증강현실 기반의 홍보/전시/커뮤니케이션 플랫폼"></a>						
+						<a href="https://aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aplx_per.png?20241202" style="width:38px;" title="증강현실 기반의 홍보/전시/커뮤니케이션 플랫폼"></a>						
 					</td>
 					<tr>					
 					</tr>
 					</table>
 					<br><br>
 					<font color="#ddd" size="1">____________________________________________</font>
-					</div>`;					
-	
-					/*
-
-					<a href="https://home.aply.biz" target="_blank"><img src="https://home.aply.biz/symbol/images/aply_per.png" style="margin-right:16px;width:56px;"></a>
-						<a href="https://aqr.aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_per.png" style="margin-right:18px;width:56px;"></a>
-						<a href="https://aqr-m.aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aqrm_per.png" style="width:48px;"></a>
-
-
-	<td width="104px" align="left" valign="center" rowspan="2"><a href="https://aply.biz/" target="_blank"><img src="https://home.aply.biz/assets/images/logo.png" height="25px"/></a></td>
-	<td width="1px" rowspan="2" bgcolor="#eee"></td>
-	<td width="65px" height="33px" align="center" valign="center" ><a href="https://aqr.aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_squre2.png" width="25px" height="25px" alt="간편한 입금요청 서비스"/></a></td>
-	<td width="65px" align="center" valign="center" rowspan="2"><a href="https://aplx.link/to/aply" target="_blank"><img src="https://home.aply.biz/symbol/images/aqr_qr.png" width="58px" height="58px" alt="APLY Link-in-bio"/></a></td></tr>
-	<tr><td width="65px" height="33px" align="center" valign="center" ><a href="https://aplx.link" target="_blank"><img src="https://home.aply.biz/symbol/images/aplx_og_image.png" width="25px" height="25px" alt="증강현실 기반의 홍보/전시/커뮤니케이션 플랫폼"/></a></td></tr></table>
-	<br><br><font color="#ddd" size="1">____________________________________________</font></div>`;
-	*/
-	
+					</div>`;
 
 	$("#sign_field").html(sigStr);	
 }
