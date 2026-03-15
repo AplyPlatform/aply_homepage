@@ -386,7 +386,7 @@ function setNotice() {
           var subject = $('<div>').text(item.subject).html();
           var url = item.url ? item.url : null;
           if (url) {
-            html += '<li><a href="' + $('<div>').text(url).html() + '" target="_blank" style="color:#333; text-decoration:underline;">' + subject + '</a></li>';
+            html += '<li><a href="' + $('<div>').text(url).html() + '" target="_blank" style="color:#333; text-decoration:none; margin-bottom:5px;">' + subject + '</a></li>';
           } else {
             html += '<li>' + subject + '</li>';
           }
