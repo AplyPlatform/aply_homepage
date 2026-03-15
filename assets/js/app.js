@@ -368,12 +368,38 @@ let pageFileTable = {
       setMenus();      
       fn.Launch();
       AAPI_setContactForm("aply" + currentPage);
+      setNotice();
     });    
   });
 
 })(jQuery);
 
+function setNotice() {
+  $.ajax({
+      url: 'notice.txt',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        if (!data || !data.data || data.data.length === 0) return;
+        var html = '';
+        data.data.forEach(function(item) {
+          var subject = $('<div>').text(item.subject).html();
+          var url = item.url ? item.url : null;
+          if (url) {
+            html += '<li><a href="' + $('<div>').text(url).html() + '" target="_blank" style="color:#333; text-decoration:underline;">' + subject + '</a></li>';
+          } else {
+            html += '<li>' + subject + '</li>';
+          }
+        });
+        $('#notice-popup-list').html(html);
+        $('#notice-popup').fadeIn(300);
+      }
+    });
 
+    $('#notice-popup-close').on('click', function() {
+      $('#notice-popup').fadeOut(200);
+    });
+}
 
 function checkParam() {
   const queryString = window.location.search;
@@ -385,7 +411,7 @@ function checkParam() {
   return p_id;
 }
 
-function initPage(callback) {
+function initPage(callback) {  
   let currentPage = checkParam();	
   let pageFile = getPageFile(currentPage);
   if (pageFile == undefined) pageFile = "main.html";

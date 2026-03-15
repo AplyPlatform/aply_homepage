@@ -1,0 +1,14 @@
+{
+    "data":[
+    {
+        "subject":"캐치미 웹버전이 출시되었어요. 앱설치 없이 '무궁화 꽃이 피었습니다!' 놀이를 즐겨보세요.",
+        "date":"2026/03/15",
+        "url": "https://catchme.aply.biz"
+    },
+    {
+        "subject":"이곳에 APLY의 새로운 소식이 표시됩니다.",
+        "date": "2026/03/15",
+        "url": "https://home.aply.biz"
+    }    
+    ]
+}
