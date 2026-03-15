@@ -368,7 +368,7 @@ let pageFileTable = {
       setMenus();      
       fn.Launch();
       AAPI_setContactForm("aply" + currentPage);
-      setNotice();
+      //setNotice();
     });    
   });
 
