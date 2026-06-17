@@ -292,7 +292,7 @@ function setAAPIExtraSiteSelect() {
 			<option value="kiosk">R&D KIOSK : 국가연구개발사업 길잡이</option> \
 			<option>--------------------</option> \
 			<option value="qr">QR코드 만들기</option> \
-			<option value="store">QR코드 플레이트 스토어</option> \
+			<option value="store">AQR 스마트스토어</option> \
 			<option value="gps">GPS <-> 주소 변환</option> \
 			<option value="catchme">캐치미</option>';
 
