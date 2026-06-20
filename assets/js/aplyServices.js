@@ -13,15 +13,15 @@ const AAPI_targetsInfo = [
 	["aqr-m", "https://aqr-m.aplx.link"],
 	["aplx", "https://home.aplx.link"],
 	["store", "https://mkt.shopping.naver.com/link/6812499d62fffc0a4a49f90c"],
-	["blog", "https://blog.naver.com/aply-platform"],
-	["polaris", "https://polarisconsulting.modoo.at"],
-	["dunistock", "https://dunistock.com"],
-	["dromi", "https://dromi.aply.biz"],
-	["duni", "https://duni.io"],
-	["dunipilot", "https://pilot.duni.io"],
-	["dkdk", "https://dkdk.io"],
-	["drdr", "https://drdr.io"],
+	["blog", "https://blog.naver.com/aply-platform"],	
 	["give", "https://give.aq.gy"],
+	//["polaris", "https://polarisconsulting.modoo.at"],
+	//["dunistock", "https://dunistock.com"],
+	//["dromi", "https://dromi.aply.biz"],
+	//["duni", "https://duni.io"],
+	//["dunipilot", "https://pilot.duni.io"],
+	//["dkdk", "https://dkdk.io"],
+	//["drdr", "https://drdr.io"],	
 ];
 
 const AAPI_captchaSiteKey = '0x4AAAAAAA62_43H2MO9goDN';
