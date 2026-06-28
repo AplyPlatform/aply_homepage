@@ -13,7 +13,7 @@ const AAPI_targetsInfo = [
 	["aqr-m", "https://aqr-m.aplx.link"],
 	["aplx", "https://home.aplx.link"],
 	["store", "https://mkt.shopping.naver.com/link/6812499d62fffc0a4a49f90c"],
-	["blog", "https://blog.naver.com/aply-platform"],	
+	["blog", "https://blog.aply.biz"],	
 	["give", "https://give.aq.gy"],
 	//["polaris", "https://polarisconsulting.modoo.at"],
 	//["dunistock", "https://dunistock.com"],
