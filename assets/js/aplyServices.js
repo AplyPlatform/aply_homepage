@@ -291,7 +291,7 @@ function setAAPIExtraSiteSelect() {
 			<option value="aqr-m">AQR-M : QR 관리 솔루션</option> \
 			<option value="aplx">APLX : 증강현실 솔루션</option> \
 			<option>--------------------</option> \
-			<option value="mgjj">밑줄긋기</option> \
+			<option value="mjgg">밑줄긋기</option> \
 			<option value="qr">QR코드 만들기</option> \
 			<option value="store">AQR 스마트스토어</option> \
 			<option value="gps">GPS <-> 주소 변환</option> \
