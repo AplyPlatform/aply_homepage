@@ -15,7 +15,7 @@ const AAPI_targetsInfo = [
 	["store", "https://mkt.shopping.naver.com/link/6812499d62fffc0a4a49f90c"],
 	["blog", "https://blog.aply.biz"],	
 	["give", "https://give.aq.gy"],
-	["mjgg", "https://airpage.org"],
+	["mjgg", "https://mjgg.airpage.org"],
 	//["polaris", "https://polarisconsulting.modoo.at"],
 	//["dunistock", "https://dunistock.com"],
 	//["dromi", "https://dromi.aply.biz"],
