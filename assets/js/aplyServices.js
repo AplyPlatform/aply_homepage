@@ -15,7 +15,7 @@ const AAPI_targetsInfo = [
 	["store", "https://mkt.shopping.naver.com/link/6812499d62fffc0a4a49f90c"],
 	["blog", "https://blog.aply.biz"],	
 	["give", "https://give.aq.gy"],
-	["mjgg", "https://airpage.org"],
+	["mjgg", "https://mjgg.airpage.org"],
 	//["polaris", "https://polarisconsulting.modoo.at"],
 	//["dunistock", "https://dunistock.com"],
 	//["dromi", "https://dromi.aply.biz"],
@@ -291,7 +291,7 @@ function setAAPIExtraSiteSelect() {
 			<option value="aqr-m">AQR-M : QR 관리 솔루션</option> \
 			<option value="aplx">APLX : 증강현실 솔루션</option> \
 			<option>--------------------</option> \
-			<option value="mgjj">밑줄긋기</option> \
+			<option value="mjgg">밑줄긋기</option> \
 			<option value="qr">QR코드 만들기</option> \
 			<option value="store">AQR 스마트스토어</option> \
 			<option value="gps">GPS <-> 주소 변환</option> \
