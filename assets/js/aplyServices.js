@@ -299,7 +299,7 @@ function setAAPIExtraSiteSelect() {
 			<option value="qr">QR코드 만들기</option> \
 			<option value="gps">GPS <-> 주소 변환</option> \
 			<option value="kiosk">R&D KIOSK : 국가연구개발사업 길잡이</option> \
-			<option value="catchme">캐치미</option>';
+			<option value="catchme">캐치미 게임</option>';
 
 	$('#selSites').append(selContents);
 
