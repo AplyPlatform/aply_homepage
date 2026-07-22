@@ -16,6 +16,8 @@ const AAPI_targetsInfo = [
 	["blog", "https://blog.aply.biz"],	
 	["give", "https://give.aq.gy"],
 	["mjgg", "https://mjgg.airpage.org"],
+	["monstory", "https://monstory.app"],
+	["monstorybiz", "https://biz.monstory.app"],
 	//["polaris", "https://polarisconsulting.modoo.at"],
 	//["dunistock", "https://dunistock.com"],
 	//["dromi", "https://dromi.aply.biz"],
@@ -286,14 +288,15 @@ function setAAPIExtraSiteSelect() {
 			<option value="recruit">APLY 채용</option> \
 			<option value="blog">APLY 블로그</option> \
 			<option>--------------------</option> \
-			<option value="aqr">AQR : 간편한 입금요청 서비스</option> \
-			<option value="give">기부/후원 포트폴리오</option> \
+			<option value="aqr">AQR : 간편 입금요청 서비스</option> \
+			<option value="store">AQR 플레이트 판매 스토어</option> \
+			<option value="give">AQR 기반 기부/후원 포트폴리오</option> \
+			<option>--------------------</option> \
 			<option value="aqr-m">AQR-M : QR 관리 솔루션</option> \
 			<option value="aplx">APLX : 증강현실 솔루션</option> \
-			<option>--------------------</option> \
-			<option value="mjgg">밑줄긋기</option> \
+			<option value="monstory">몬스토리 : 예산·분석 지원 AI 가계부</option> \
+			<option value="mjgg">밑줄긋기 : 감명깊은 글귀를 기록하는 AI 앱</option> \
 			<option value="qr">QR코드 만들기</option> \
-			<option value="store">AQR 스마트스토어</option> \
 			<option value="gps">GPS <-> 주소 변환</option> \
 			<option value="kiosk">R&D KIOSK : 국가연구개발사업 길잡이</option> \
 			<option value="catchme">캐치미</option>';
