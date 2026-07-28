@@ -46,7 +46,9 @@
 
 .info-panel > summary {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
   padding: 1rem 3rem 1rem 1.25rem;
   margin: 0;
   font-size: 0.9375rem;
@@ -84,6 +86,50 @@
 
 .info-panel[open] > summary::after {
   transform: translateY(-50%) rotate(180deg);
+}
+
+/* 제목은 남는 공간을 모두 차지해서 복사 버튼을 우측으로 밀어낸다. */
+.info-panel-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.copy-btn {
+  flex: 0 0 auto;
+  padding: 0.1875rem 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--sym-muted);
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid var(--sym-border);
+  transition: color 0.15s, background-color 0.15s, border-color 0.15s;
+}
+
+.copy-btn:hover {
+  color: #fff;
+  background: var(--sym-primary);
+  border-color: var(--sym-primary);
+}
+
+.copy-btn:focus-visible {
+  outline: 2px solid var(--sym-primary);
+  outline-offset: 1px;
+}
+
+.copy-btn.is-copied,
+.copy-btn.is-copied:hover {
+  color: #fff;
+  background: #1f9d55;
+  border-color: #1f9d55;
+}
+
+.copy-btn.is-failed,
+.copy-btn.is-failed:hover {
+  color: #fff;
+  background: #c62828;
+  border-color: #c62828;
 }
 
 .info-panel-body {
