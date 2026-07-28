@@ -12,6 +12,79 @@
 }
 
 /* --------------------------------------------------------------------------
+   접이식 헤더 (about.html 처럼 기본 접힌 상태로 두고 싶을 때 사용)
+   native <details> 기반이라 별도 스크립트가 필요 없다.
+   -------------------------------------------------------------------------- */
+
+.logo-collapse > summary {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.625rem;
+  padding: 1rem 3rem 1rem 1.25rem;
+  margin: 0;
+  cursor: pointer;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--logo-border);
+  transition: background-color 0.2s;
+}
+
+.logo-collapse > summary::-webkit-details-marker {
+  display: none;
+}
+
+.logo-collapse > summary:hover {
+  background-color: #fafafa;
+}
+
+.logo-collapse > summary:focus-visible {
+  outline: 2px solid var(--logo-primary);
+  outline-offset: -2px;
+}
+
+.logo-collapse > summary::after {
+  content: "\f107"; /* fa-angle-down */
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: var(--logo-muted);
+  transform: translateY(-50%);
+  transition: transform 0.2s;
+}
+
+.logo-collapse[open] > summary::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.logo-collapse[open] > summary {
+  border-bottom-color: transparent;
+}
+
+.logo-collapse-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.logo-collapse-hint {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--logo-muted);
+}
+
+.logo-collapse-body {
+  padding: 1.5rem 1.25rem;
+  background: #fff;
+  border: 1px solid var(--logo-border);
+  border-top: 0;
+}
+
+/* --------------------------------------------------------------------------
    미리보기 배경 전환 툴바
    -------------------------------------------------------------------------- */
 
