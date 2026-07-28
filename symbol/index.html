@@ -48,6 +48,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../assets/css/vendor.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/logo-grid.css">
     <link rel="stylesheet" href="./css/symbol.css">
 </head>
 
@@ -265,14 +266,14 @@
         <!-- / 이메일 서명 -->
 
         <!-- LOGO -->
-        <section class="bg-light" id="logo">
+        <section class="bg-light logo-section" id="logo">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <h6 class="section-title">LOGO</h6>
                         <p>APLY와 각 서비스의 브랜드 심볼입니다. 각 이미지 아래의 Download 버튼으로 원본 파일을 내려받을 수 있습니다.</p>
 
-                        <div class="logo-toolbar" id="logoToolbar">
+                        <div class="logo-toolbar">
                             <span class="logo-toolbar-label">미리보기 배경</span>
                             <button class="logo-bg-btn is-active" type="button" data-bg="checker">체커보드</button>
                             <button class="logo-bg-btn" type="button" data-bg="light">밝게</button>
@@ -633,20 +634,10 @@
     <script src="../assets/js/custom/jquery-3.2.1.min.js"></script>
     <script src="./js/aply_sign.js?v=20260102_01"></script>
     <script src="../assets/js/aplyServices.js?v=20241026_01"></script>
+    <script src="../assets/js/logo-grid.js?v=20260728_01"></script>
     <script>
         $(function () {
             setSign();
-
-            // LOGO 미리보기 배경 전환
-            $('#logoToolbar').on('click', '.logo-bg-btn', function () {
-                var mode = $(this).data('bg');
-                $('#logoToolbar .logo-bg-btn').removeClass('is-active');
-                $(this).addClass('is-active');
-                $('#logo').removeClass('logo-preview-light logo-preview-dark');
-                if (mode !== 'checker') {
-                    $('#logo').addClass('logo-preview-' + mode);
-                }
-            });
 
             // 회사 정보 항목 복사
             // 패널이 접혀 있어도 동작해야 하므로 innerText 대신 DOM에서 직접 텍스트를 만든다.
