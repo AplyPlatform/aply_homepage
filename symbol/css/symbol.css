@@ -258,6 +258,16 @@
   word-break: break-all;
 }
 
+/* 원본 픽셀 크기 - 다운로드 버튼 바로 위에 표시한다. */
+.logo-size {
+  padding: 0.25rem 0.75rem 0;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--sym-dark);
+  letter-spacing: 0.01em;
+}
+
 .logo-download {
   display: block;
   padding: 0.5rem 0.75rem;
