@@ -1,0 +1,24 @@
+# home.aply.biz — 주식회사 어플라이(APLY)
+# 검색엔진(Google·Naver Yeti·Bing)과 AI 검색·인용 크롤러를 모두 허용한다.
+# 학습용(GPTBot·ClaudeBot·Google-Extended 등)까지 허용하는 것은 의도된 정책이다(브랜드 인지).
+
+User-agent: *
+User-agent: Googlebot
+User-agent: Yeti
+User-agent: Bingbot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+Allow: /
+# 팝업으로 불러오는 본문 조각(단독 페이지 아님)
+Disallow: /emailpolicy.html
+Disallow: /contact_privacy.html
+
+Sitemap: https://home.aply.biz/sitemap.xml

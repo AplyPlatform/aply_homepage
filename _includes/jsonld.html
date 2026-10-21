@@ -1,0 +1,59 @@
+{% comment %}
+  구조화 데이터(JSON-LD). Organization·WebSite는 모든 페이지에서 같은 @id로 한 번만 선언한다.
+  화면에 보이는 사실과 다르게 쓰지 말 것 — 회사 정보가 바뀌면 회사소개 연혁과 함께 수정한다.
+  title·description에는 큰따옴표(")를 쓰지 않는다(JSON이 깨진다).
+{% endcomment %}
+{% assign page_url = "https://home.aply.biz" | append: page.url %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://home.aply.biz/#organization",
+          "name": "주식회사 어플라이",
+          "alternateName": ["APLY Inc.", "APLY", "어플라이"],
+          "url": "https://home.aply.biz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://home.aply.biz/assets/img/android-chrome-512x512.png",
+            "width": 512,
+            "height": 512
+          },
+          "description": "APLY는 진보된 SW 플랫폼입니다. 간편 입금요청 서비스 AQR®, QR 기반 Mass Production 관리 솔루션 AQR®-M, 증강현실 기반 홍보 솔루션 APLX®를 개발·운영합니다.",
+          "foundingDate": "2018-09",
+          "sameAs": [
+            "https://www.facebook.com/APLYPLATFORM",
+            "https://www.instagram.com/aplyplatform",
+            "https://kr.linkedin.com/company/aplyplatform",
+            "https://blog.aply.biz/"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://home.aply.biz/#website",
+          "url": "https://home.aply.biz/",
+          "name": "주식회사 어플라이 | APLY Inc.",
+          "inLanguage": "ko-KR",
+          "publisher": { "@id": "https://home.aply.biz/#organization" }
+        },
+        {
+          "@type": "{{ page.schema_type | default: 'WebPage' }}",
+          "@id": "{{ page_url }}#webpage",
+          "url": "{{ page_url }}",
+          "name": "{{ page.title }}",
+          "description": "{{ page.description }}",
+          "inLanguage": "ko-KR",
+          "isPartOf": { "@id": "https://home.aply.biz/#website" },
+          "about": { "@id": "https://home.aply.biz/#organization" }{% if page.page_id != "main" %},
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://home.aply.biz/" },
+              { "@type": "ListItem", "position": 2, "name": "{{ page.nav_name }}", "item": "{{ page_url }}" }
+            ]
+          }{% endif %}
+        }
+      ]
+    }
+    </script>

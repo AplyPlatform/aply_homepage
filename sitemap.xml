@@ -1,0 +1,10 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for p in site.html_pages %}{% if p.page_id and p.sitemap != false %}  <url>
+    <loc>https://home.aply.biz{{ p.url }}</loc>
+    <lastmod>{{ p.last_modified | date: "%Y-%m-%d" }}</lastmod>
+  </url>
+{% endif %}{% endfor %}</urlset>

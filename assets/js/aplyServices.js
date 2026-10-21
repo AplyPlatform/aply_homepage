@@ -8,7 +8,7 @@ const AAPI_targetsInfo = [
 	["kiosk", "https://kiosk.aply.biz"],
 	["gps", "https://gps.aply.biz"],
 	["qr", "https://qr.aply.biz"],
-	["recruit", "https://home.aply.biz/?p=recruit"],
+	["recruit", "https://home.aply.biz/recruit.html"],
 	["aqr", "https://aqr.aplx.link"],
 	["aqr-m", "https://aqr-m.aplx.link"],
 	["aplx", "https://home.aplx.link"],

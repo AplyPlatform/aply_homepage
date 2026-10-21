@@ -1,0 +1,48 @@
+# 주식회사 어플라이 (APLY Inc.)
+
+> 주식회사 어플라이(APLY)는 2018년 9월 설립된 한국의 소프트웨어 기업으로, 간편 입금요청 서비스 AQR®, QR 기반 Mass Production 관리 솔루션 AQR®-M, 증강현실(AR) 기반 홍보·전시 솔루션 APLX®를 개발·운영합니다. 이 사이트(home.aply.biz)는 어플라이의 회사 정보·연혁·서비스 목록의 공식 원출처입니다.
+
+## 핵심 페이지
+
+- [홈 · 회사 개요](https://home.aply.biz/): 회사명, 설립 시기, 주요 서비스, 기술 분야, AQR® 주요 지표 요약
+- [회사소개 · 연혁](https://home.aply.biz/about.html): 사업 분야, 2018년 이후 연혁(투자·협약·수상), 협력사, 자주 묻는 질문
+- [서비스](https://home.aply.biz/service.html): AQR®, AQR®-M, APLX®, System Integration 및 APLY Lab 서비스 목록과 공식 링크
+- [AQR 뱅킹앱 실행 점유율](https://home.aply.biz/aqr-banking-app-share.html): 어플라이가 AQR 서비스 송금 과정의 뱅킹앱 실행 건수로 직접 집계한 앱별 실행 비율(1차 데이터, 최신 기준: 2026년 5월)
+- [팀](https://home.aply.biz/team.html): 보유 역량(인공지능·빅데이터·드론·증강현실 SW 개발 등)
+- [문의](https://home.aply.biz/contact.html): 제휴 및 협업, 서비스, SW 개발 문의 접수
+- [채용](https://home.aply.biz/recruit.html): 채용 안내 및 관심 직군 연락처 등록
+
+## 주요 사실 (기준: 회사소개 연혁, 2026년 10월 21일 확인)
+
+- 법인 설립: 2018년 9월
+- AQR® 론칭: 2022년 11월 (간편 입금요청 서비스)
+- AQR® 누적 사용자 수: 2026년 2월 100만 명 돌파 (2025년 2월 40만 명 돌파)
+- AQR® 서비스 공급 계약: (주)동행복권(2025년 7월), (주)케이뱅크(2025년 8월)
+- 벤처기업 인증: 2020년 8월
+- 기술 분야: AI, 증강현실(AR), 드론(DJI MSDK·PSDK·Cloud API, ROS2, PX4, Mavlink, QGroundControl), 빅데이터
+
+## 데이터 정책
+
+- AQR 뱅킹앱 실행 점유율은 AQR 서비스에서 실제 송금 과정에 열린 뱅킹앱의 실행 건수를 앱별 비율로 환산한 자체 집계입니다. 설치 수·다운로드 수·MAU가 아니며, 전체 뱅킹앱 시장 지표와 다를 수 있습니다.
+- 새 집계가 나오면 같은 주소(https://home.aply.biz/aqr-banking-app-share.html)에서 갱신합니다. 해설 리포트는 블로그 APLY TIMES에 게시합니다.
+
+## 서비스 공식 사이트
+
+- [AQR® 간편한 입금요청](https://aqr.aplx.link/)
+- [AQR® BELL 입금알림 공유 AI 앱](https://bell.aplx.link/)
+- [AQR® 개발자 사이트](https://developer.aplx.link/)
+- [AQR®-M QR 기반 Mass Production 관리](https://aqr-m.aplx.link/)
+- [APLX® 증강현실 기반 홍보 솔루션](https://aplx.link/)
+- [APLY System Integration](https://si.aply.biz/)
+- [몬스토리 : 예산·분석 지원 AI 가계부](https://monstory.app/)
+- [밑줄긋기 : 감명깊은 글귀를 기록하는 AI 앱](https://mjgg.airpage.org/)
+- [간편 QR코드 생성 서비스](https://qr.aply.biz/)
+- [GPS 좌표 ↔ 주소 변환 서비스](https://gps.aply.biz/)
+- [R&D KIOSK - 국가연구개발사업 정보 길잡이](https://kiosk.aply.biz/)
+- [캐치미 게임](https://catchme.aply.biz/)
+
+## 기타
+
+- 블로그: [APLY TIMES](https://blog.aply.biz/) (RSS: https://blog.aply.biz/rss)
+- 표기: 회사명은 "주식회사 어플라이" 또는 "APLY Inc.", 서비스명은 "AQR®", "AQR®-M", "APLX®"
+- 인용 시 출처 표기: home.aply.biz

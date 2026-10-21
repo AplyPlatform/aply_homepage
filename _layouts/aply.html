@@ -1,29 +1,46 @@
 <!DOCTYPE html>
-<html lang="ko" itemscope itemtype="http://schema.org/WebPage">
+{% comment %}
+  공통 레이아웃: <head>·헤더·푸터·모달·스크립트.
+  각 페이지(main.html, about.html …)는 front matter로 title·description 등을 지정하고
+  본문은 #mainContents 안에 빌드 시점에 그대로 들어간다(자바스크립트 없이도 보임).
+{% endcomment %}
+{% assign page_url = "https://home.aply.biz" | append: page.url %}
+<html lang="ko">
   <head>
     <meta charset="UTF-8">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130136264-2"></script>
+    {% if page.page_id == "main" %}
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-	
-    gtag('config', 'UA-130136264-2');
+    // 예전 주소(/?p=about 등)를 새 페이지 주소로 옮긴다
+    (function () {
+      var routes = { about: "/about.html", service: "/service.html", team: "/team.html", contact: "/contact.html", recruit: "/recruit.html", board: "/board.html" };
+      var p = new URLSearchParams(location.search).get("p");
+      if (p && routes[p]) location.replace(routes[p]);
+    })();
+    </script>
+    {% endif %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E53L3G7Q61"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E53L3G7Q61');
     </script>
 
-    <title>주식회사 어플라이 | APLY Inc.</title>
+    <title>{{ page.title }}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="keywords"
     content="AQR, 간편입금요청, QR결제, QR코드, APLX, 증강현실, AR, AI, 인공지능, 드론, 빅데이터, 소프트웨어 개발, 시스템통합, System Integration, 영상처리, Mass Production 관리, 어플라이, APLY, SW 플랫폼, 모바일앱 개발, Android, iOS, 영상분석, advanced platform">
-    <meta name="description" content="AQR 간편 입금요청 서비스, APLX AR 솔루션, AI·증강현실·드론·빅데이터 기반 System Integration. 주식회사 어플라이(APLY)는 진보된 소프트웨어 플랫폼입니다.">
+    <meta name="description" content="{{ page.description }}">
+    {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="주식회사 어플라이 | APLY Inc.">
-    <meta name="twitter:description" content="AQR 간편 입금요청, APLX AR 솔루션, AI·드론·빅데이터 기반 System Integration. 어플라이(APLY)는 진보된 소프트웨어 플랫폼입니다.">
-    <meta name="twitter:image" content="assets/img/site_title.png">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:image" content="https://home.aply.biz/assets/img/og_site_title.png">
 
     <meta property="analytics-track" content="APLY Inc." />
     <meta property="analytics-s-channel" content="APLY" />
@@ -31,16 +48,12 @@
     <meta property="og:site_name" content="주식회사 어플라이 | APLY Inc.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ko_KR" />
-    <meta property="og:title" content="주식회사 어플라이 | APLY Inc." />
-    <meta property="og:image" content="assets/img/og_site_title.png" />
-    <meta property="og:url" content="https://home.aply.biz/" />
-    <meta property="og:description" content="AQR 간편 입금요청 서비스, APLX AR 솔루션, AI·증강현실·드론·빅데이터 기반 System Integration. 주식회사 어플라이(APLY)는 진보된 소프트웨어 플랫폼입니다." />
-
-    <meta itemprop="name" content="주식회사 어플라이 | APLY Inc.">
-    <meta itemprop="image" content="assets/img/site_title.png">
-    <meta itemprop="description" content="AQR 간편 입금요청 서비스, APLX AR 솔루션, AI·증강현실·드론·빅데이터 기반 System Integration. 주식회사 어플라이(APLY)는 진보된 소프트웨어 플랫폼입니다.">
-    <meta itemprop="keywords" content="AQR, 간편입금요청, QR결제, APLX, 증강현실, AR, AI, 인공지능, 드론, 빅데이터, 소프트웨어 개발, 시스템통합, System Integration, 영상처리, 어플라이, APLY, SW 플랫폼">
-    <meta itemprop="url" content="https://home.aply.biz/">
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:image" content="https://home.aply.biz/assets/img/og_site_title.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="{{ page_url }}" />
+    <meta property="og:description" content="{{ page.description }}" />
 
     <!-- Favicons-->
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
@@ -48,8 +61,10 @@
     <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/android-chrome-192x192.png" />
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-    <link rel="alternate" href="https://home.aply.biz/" hreflang="x-default">
-    <link rel="canonical" href="https://home.aply.biz/">
+    <link rel="canonical" href="{{ page_url }}">
+    <link rel="alternate" type="application/rss+xml" title="APLY TIMES" href="https://blog.aply.biz/rss">
+
+    {% include jsonld.html %}
 
     <!-- Web Fonts-->
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -78,7 +93,7 @@
     <header class="header-sticky header-dark">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" id="menu_main" href="#main">
+          <a class="navbar-brand" id="menu_main" href="/">
             <img class="navbar-logo navbar-logo-light" src="assets/img/logo_white.png" style="width:75px;" alt="APLY" />
             <img class="navbar-logo navbar-logo-dark" src="assets/img/logo_black.png" style="width:75px;" alt="APLY" />
           </a>
@@ -88,12 +103,12 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav align-items-center mr-auto">
-              <li class="nav-item" id="menu_home"><a href="#main" class="nav-link">홈</a></li>
-              <li class="nav-item" id="menu_about"><a href="#about" class="nav-link">회사소개</a></li>
-              <li class="nav-item" id="menu_service"><a href="#service" class="nav-link">서비스</a></li>
-              <li class="nav-item" id="menu_team"><a href="#team" class="nav-link">팀</a></li>              
-              <!-- <li class="nav-item" id="menu_board"><a href="#board" class="nav-link">공지</a></li> -->
-              <li class="nav-item" id="menu_contact"><a href="#contact" class="nav-link">문의</a></li>
+              <li class="nav-item" id="menu_home"><a href="/" class="nav-link">홈</a></li>
+              <li class="nav-item" id="menu_about"><a href="/about.html" class="nav-link">회사소개</a></li>
+              <li class="nav-item" id="menu_service"><a href="/service.html" class="nav-link">서비스</a></li>
+              <li class="nav-item" id="menu_team"><a href="/team.html" class="nav-link">팀</a></li>
+              <!-- <li class="nav-item" id="menu_board"><a href="/board.html" class="nav-link">공지</a></li> -->
+              <li class="nav-item" id="menu_contact"><a href="/contact.html" class="nav-link">문의</a></li>
             </ul>
           </div>
         </nav>
@@ -101,8 +116,9 @@
     </header>
     <!-- / header -->
         
-    <!-- main contents (JS코드로 변경됨) -->
-    <div id="mainContents" class="main-container"> 
+    <!-- main contents (각 페이지 파일의 본문) -->
+    <div id="mainContents" class="main-container" data-page="{{ page.page_id }}">
+{{ content }}
     </div>
     <!-- end of main contents -->
         
@@ -114,7 +130,7 @@
             <div class="col-md-5 text-center text-md-left">
               <ul class="nav">
                 <li class="nav-item"><a class="nav-link" href="//blog.aply.biz" target="_blank">블로그</a></li>
-                <li class="nav-item"><a class="nav-link" href="#recruit" id="menu_recruit">채용</a></li>
+                <li class="nav-item"><a class="nav-link" href="/recruit.html" id="menu_recruit">채용</a></li>
                 <li class="nav-item"><a class="nav-link" href="javascript:showEmailPolicyDialog();">이메일무단수집거부</a></li>
               </ul>
             </div>

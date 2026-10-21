@@ -1,13 +1,3 @@
-let pageFileTable = {
-	"main" : "main.html",
-	"about" : "about.html",
-	"service" : "service.html",
-	"team" : "team.html",
-	"contact" : "contact.html",
-	"recruit" : "recruit.html",
-  "board" : "board.html",
-};
-
 (function ($) {
   "use strict";
   
@@ -401,81 +391,42 @@ function setNotice() {
     });
 }
 
-function checkParam() {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  let p_id = urlParams.get('p');
-
-  if (!AAPI_isSet(p_id)) p_id = "main";
-
-  return p_id;
-}
-
-function initPage(callback) {  
-  let currentPage = checkParam();	
-  let pageFile = getPageFile(currentPage);
-  if (pageFile == undefined) pageFile = "main.html";
-  setContent("#mainContents", pageFile, function() {
-    callback(currentPage);
-  });  
-}
-
-function getPageFile(pageName) {
-  return pageFileTable[pageName];
+function initPage(callback) {
+  // 본문은 빌드 시 각 페이지에 들어 있다. 페이지 id만 읽는다.
+  let currentPage = $("#mainContents").data("page") || "main";
+  callback(currentPage);
 }
 
 function setMenus() {
   $("#menu_main").click(function() {
       AAPI_GA_EVENT("logo_click", "home", "click");
-      location.href = "?p=main";      
   });
 
   $("#menu_home").click(function() {
       AAPI_GA_EVENT("menu_home_click", "home", "click");
-      location.href = "?p=main";
   });
   
   $("#menu_about").click(function() {
       AAPI_GA_EVENT("menu_about_click", "home", "click");
-      location.href = "?p=about";
   });
 
   $("#menu_service").click(function() {
       AAPI_GA_EVENT("menu_service_click", "home", "click");
-      location.href = "?p=service";
   });
 
   $("#menu_team").click(function() {
       AAPI_GA_EVENT("menu_team_click", "home", "click");
-      location.href = "?p=team";
   });
 
   $("#menu_contact").click(function() {
       AAPI_GA_EVENT("menu_contact_click", "home", "click");
-      location.href = "?p=contact";        
   });
 
   $("#menu_recruit").click(function() {
       AAPI_GA_EVENT("menu_recruit_click", "home", "click");
-      location.href = "?p=recruit";        
   });
 
   $("#menu_board").click(function() {
       AAPI_GA_EVENT("menu_board_click", "home", "click");
-      location.href = "?p=board";        
   });
-}
-
-async function setContent(targetId, templateName, callback) {
-  let pageContent = await loadTemplate(templateName);  
-  $(targetId)
-  .html(pageContent)
-  .ready(function () {
-    callback();
-  });
-}
-
-async function loadTemplate(templateName) {
-  const content = await fetch(templateName);
-  return content.text();
 }
