@@ -45,8 +45,7 @@ const selContents = '<option selected>Family Sites</option> \
 			<option value="mjgg">밑줄긋기 : 감명깊은 글귀를 기록하는 AI 앱</option> \
 			<option value="qr">QR코드 만들기</option> \
 			<option value="gps">GPS <-> 주소 변환</option> \
-			<option value="kiosk">R&D KIOSK : 국가연구개발사업 길잡이</option> \
-			<option value="catchme">캐치미 게임</option>';
+			<option value="kiosk">R&D KIOSK : 국가연구개발사업 길잡이</option>';
 
 const AAPI_captchaSiteKey = '0x4AAAAAAA62_43H2MO9goDN';
 let AAPI_isRecaptchaInit = false;
