@@ -7,7 +7,13 @@ title: 주식회사 어플라이(APLY) | AQR·AR·AI·드론 소프트웨어 기
 description: 주식회사 어플라이(APLY)는 2018년 9월 설립된 소프트웨어 기업입니다. 간편 입금요청 서비스 AQR®, QR 기반 Mass Production 관리 AQR®-M, 증강현실 홍보 솔루션 APLX®를 운영하고 AI·AR·드론·빅데이터 System Integration을 수행합니다.
 last_modified: 2026-10-21
 ---
-      <!-- cover -->     
+      <style>
+        /* 슬로건 그림자. --tilt-x/--tilt-y는 안드로이드에서 기울기에 따라 아래 스크립트가 바꾼다 */
+        .slogan-shadow {
+          text-shadow: var(--tilt-x, 0px) calc(6px + var(--tilt-y, 0px)) 14px rgba(0, 0, 0, 0.6);
+        }
+      </style>
+      <!-- cover -->
       <section class="p-0">
         <div class="swiper-container mySwiper">
           <div class="swiper-wrapper">
@@ -18,7 +24,7 @@ last_modified: 2026-10-21
                 <div class="container">
                   <div class="row align-items-end justify-content-center vh-90 pb-4">
                     <div class="col-12 col-lg-6 text-center">
-                      <h2 class="display-3 mb-2 font-weight-bold" data-aos="fade-up" data-aos-delay="50">Only, Software.</h2>
+                      <h2 class="display-3 mb-2 font-weight-bold slogan-shadow" data-aos="fade-up" data-aos-delay="50">Only, Software.</h2>
                       <p class="lead mb-8 text-white">The Power of running A.I.</p>
                     </div>
                   </div>
@@ -31,7 +37,7 @@ last_modified: 2026-10-21
                 <div class="container">
                   <div class="row align-items-end justify-content-center vh-90 pb-4">
                     <div class="col-12 col-lg-6 text-center">
-                      <h2 class="display-3 mb-2 font-weight-bold">Only, Software.</h2>
+                      <h2 class="display-3 mb-2 font-weight-bold slogan-shadow">Only, Software.</h2>
                       <p class="lead mb-8 text-white">The Power of running A.I.</p>
                     </div>
                   </div>
@@ -44,7 +50,7 @@ last_modified: 2026-10-21
                 <div class="container">
                   <div class="row align-items-end justify-content-center vh-90 pb-4">
                     <div class="col-12 col-lg-6 text-center">
-                      <h2 class="display-3 mb-2 font-weight-bold">Only, Software.</h2>
+                      <h2 class="display-3 mb-2 font-weight-bold slogan-shadow">Only, Software.</h2>
                       <p class="lead mb-8 text-white">The Power of running A.I.</p>
                     </div>
                   </div>
@@ -57,7 +63,7 @@ last_modified: 2026-10-21
                 <div class="container">
                   <div class="row align-items-end justify-content-center vh-90 pb-4">
                     <div class="col-12 col-lg-6 text-center">
-                      <h2 class="display-3 mb-2 font-weight-bold">Only, Software.</h2>
+                      <h2 class="display-3 mb-2 font-weight-bold slogan-shadow">Only, Software.</h2>
                       <p class="lead mb-8 text-white">The Power of running A.I.</p>
                     </div>
                   </div>
@@ -70,7 +76,7 @@ last_modified: 2026-10-21
                 <div class="container">
                   <div class="row align-items-end justify-content-center vh-90 pb-4">
                     <div class="col-12 col-lg-6 text-center">
-                      <h2 class="display-3 mb-2 font-weight-bold">Only, Software.</h2>
+                      <h2 class="display-3 mb-2 font-weight-bold slogan-shadow">Only, Software.</h2>
                       <p class="lead mb-8 text-white">The Power of running A.I.</p>
                     </div>
                   </div>
@@ -95,4 +101,63 @@ last_modified: 2026-10-21
             },
           });
         });
+
+        // 안드로이드에서만: 휴대폰 기울기에 따라 슬로건 그림자를 움직인다.
+        // Parallax.js 방식 — 첫 측정값을 기준(0)으로 삼고, 목표 위치로 조금씩 따라가게(감쇠) 한다.
+        (function () {
+          var isAndroid = /Android/i.test(navigator.userAgent) ||
+            (navigator.userAgentData && navigator.userAgentData.platform === "Android");
+          if (!isAndroid || !("DeviceOrientationEvent" in window)) return;
+          if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+          var MAX_OFFSET = 12;  // 그림자 최대 이동(px)
+          var RANGE = 30;       // 이 각도(도)만큼 기울이면 최대 이동
+          var FRICTION = 0.1;   // 프레임마다 목표까지 따라가는 비율
+
+          var target = document.querySelector(".mySwiper");
+          var base = null, goalX = 0, goalY = 0, x = 0, y = 0, running = false;
+
+          function clamp(v) { return Math.max(-1, Math.min(1, v)); }
+
+          function screenAngle() {
+            if (screen.orientation && typeof screen.orientation.angle === "number") return screen.orientation.angle;
+            return window.orientation || 0;
+          }
+
+          function step() {
+            x += (goalX - x) * FRICTION;
+            y += (goalY - y) * FRICTION;
+            target.style.setProperty("--tilt-x", x.toFixed(2) + "px");
+            target.style.setProperty("--tilt-y", y.toFixed(2) + "px");
+            if (Math.abs(goalX - x) > 0.05 || Math.abs(goalY - y) > 0.05) {
+              requestAnimationFrame(step);
+            } else {
+              running = false;
+            }
+          }
+
+          window.addEventListener("deviceorientation", function (e) {
+            if (!target || e.beta === null || e.gamma === null) return;
+
+            // 화면 기준 좌우(tiltX)·앞뒤(tiltY) 기울기. 가로 화면이면 축을 바꾼다
+            var tiltX = e.gamma, tiltY = e.beta;
+            var angle = screenAngle();
+            if (angle === 90) { tiltX = e.beta; tiltY = -e.gamma; }
+            else if (angle === 270 || angle === -90) { tiltX = -e.beta; tiltY = e.gamma; }
+
+            if (!base) base = { x: tiltX, y: tiltY };
+
+            // 기울어져 내려간 쪽으로 그림자가 흐른다
+            goalX = clamp((tiltX - base.x) / RANGE) * MAX_OFFSET;
+            goalY = clamp((tiltY - base.y) / RANGE) * MAX_OFFSET;
+
+            if (!running) {
+              running = true;
+              requestAnimationFrame(step);
+            }
+          });
+
+          // 화면을 돌리면 기준을 다시 잡는다
+          window.addEventListener("orientationchange", function () { base = null; });
+        })();
       </script>
